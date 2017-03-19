@@ -20,4 +20,12 @@ interface ConfiguratorInterface
      * @return array
      */
     public function getSocialNetworks();
+
+    /**
+     * This method should returns a array with HTML
+     * options for share links
+     *
+     * @return array
+     */
+    public function getOptions();
 }

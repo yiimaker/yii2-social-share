@@ -11,6 +11,7 @@ use Yii;
 use yii\base\Exception;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -104,6 +105,7 @@ class SocialShare extends Widget
                 $link = $object->getLink();
                 $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
                 $options = isset($socialNetwork['options']) ? $socialNetwork['options'] : [];
+                $options = ArrayHelper::merge($this->_configurator->getOptions(), $options);
 
                 $shareLinks[] = Html::a($label, $link, $options);
             }
