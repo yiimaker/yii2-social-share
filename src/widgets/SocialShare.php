@@ -95,14 +95,19 @@ class SocialShare extends Widget
 
         foreach ($socialNetworks as $key => $socialNetwork) {
             if (isset($socialNetwork['class'])) {
+                $config = isset($socialNetwork['config'])
+                    ? $socialNetwork['config']
+                    : [];
+
                 /* @var \ymaker\social\share\base\Driver $object */
-                $object = Yii::createObject([
+                $object = Yii::createObject(ArrayHelper::merge([
                     'class'       => $socialNetwork['class'],
                     'url'         => $this->url,
                     'title'       => $this->title,
                     'description' => $this->description,
                     'imageUrl'    => $this->imageUrl
-                ]);
+                ], $config));
+
                 $link = $object->getLink();
                 $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
                 $options = isset($socialNetwork['options']) ? $socialNetwork['options'] : [];

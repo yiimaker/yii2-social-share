@@ -47,6 +47,10 @@ abstract class Driver extends Object
      * @var array
      */
     protected $_metaTags = [];
+    /**
+     * @var array
+     */
+    protected $_data = [];
 
 
     /**
@@ -55,6 +59,12 @@ abstract class Driver extends Object
     public function init()
     {
         $this->processShareData();
+        $this->_data = [
+            '{url}'         => $this->url,
+            '{title}'       => $this->title,
+            '{description}' => $this->description,
+            '{imageUrl}'    => $this->imageUrl
+        ];
     }
 
     /**
@@ -84,21 +94,14 @@ abstract class Driver extends Object
      */
     public function getLink()
     {
-        $data = [
-            '{url}'         => $this->url,
-            '{title}'       => $this->title,
-            '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl
-        ];
-
         if (!empty($this->_metaTags)) {
             foreach ($this->_metaTags as $metaTag) {
-                $metaTag['content'] = strtr($metaTag['content'], $data);
+                $metaTag['content'] = strtr($metaTag['content'], $this->_data);
                 Yii::$app->getView()->registerMetaTag($metaTag);
             }
         }
 
-        return strtr($this->_link, $data);
+        return strtr($this->_link, $this->_data);
     }
 
     /**
