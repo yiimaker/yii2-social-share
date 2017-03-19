@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\base;
 
+use Yii;
 use yii\base\Object;
 
 /**
@@ -19,7 +20,7 @@ use yii\base\Object;
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  */
-class Driver extends Object
+abstract class Driver extends Object
 {
     /**
      * @var string Absolute URL to the page
@@ -42,7 +43,40 @@ class Driver extends Object
      * @var string
      */
     protected $_link;
+    /**
+     * @var array
+     */
+    protected $_metaTags = [];
 
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        $this->processShareData();
+    }
+
+    /**
+     * Encode data for URL
+     * @param string $data
+     * @return string
+     */
+    public static function encodeData($data)
+    {
+        return urlencode($data);
+    }
+
+    /**
+     * Decode the encoded data
+     *
+     * @param string $data
+     * @return string
+     */
+    public static function decodeData($data)
+    {
+        return urldecode($data);
+    }
 
     /**
      * This method should return a share link
@@ -50,11 +84,25 @@ class Driver extends Object
      */
     public function getLink()
     {
-        return strtr($this->_link, [
+        $data = [
             '{url}'         => $this->url,
             '{title}'       => $this->title,
             '{description}' => $this->description,
             '{imageUrl}'    => $this->imageUrl
-        ]);
+        ];
+
+        if (!empty($this->_metaTags)) {
+            foreach ($this->_metaTags as $metaTag) {
+                $metaTag['content'] = strtr($metaTag['content'], $data);
+                Yii::$app->getView()->registerMetaTag($metaTag);
+            }
+        }
+
+        return strtr($this->_link, $data);
     }
+
+    /**
+     * Method should to process the share data for current driver
+     */
+    abstract protected function processShareData();
 }

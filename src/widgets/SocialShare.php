@@ -86,22 +86,10 @@ class SocialShare extends Widget
     }
 
     /**
-     * Encode share data
-     */
-    protected function processShareData()
-    {
-        $this->url = urlencode($this->url);
-        $this->title = urlencode($this->title);
-        $this->description = urlencode($this->description);
-        $this->imageUrl = urlencode($this->imageUrl);
-    }
-
-    /**
      * @return array Returns array with share links in <a> HTML tag
      */
     protected function processSocialNetworks()
     {
-        $this->processShareData();
         $socialNetworks = $this->_configurator->getSocialNetworks();
         $shareLinks = [];
 

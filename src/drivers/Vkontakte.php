@@ -16,7 +16,9 @@ use ymaker\social\share\base\Driver;
  */
 class Vkontakte extends Driver
 {
-    // TODO: PHPDoc
+    /**
+     * @inheritdoc
+     */
     public function getLink()
     {
         $this->_link = 'http://vk.com/share.php?'
@@ -26,5 +28,16 @@ class Vkontakte extends Driver
                     . '&image={imageUrl}';
 
         return parent::getLink();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function processShareData()
+    {
+        $this->url = static::encodeData($this->url);
+        $this->title = static::encodeData($this->title);
+        $this->description = static::encodeData($this->description);
+        $this->imageUrl = static::encodeData($this->imageUrl);
     }
 }
