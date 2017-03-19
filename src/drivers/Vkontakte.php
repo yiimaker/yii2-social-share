@@ -10,14 +10,21 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\Driver;
 
 /**
+ * Driver for https://vk.com
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  */
-class VK extends Driver
+class Vkontakte extends Driver
 {
     // TODO: PHPDoc
     public function getLink()
     {
-        $this->_link = "http://vk.com/{url}/{title}/{description}/{imageUrl}";
+        $this->_link = 'http://vk.com/share.php?'
+                    . 'url={url}'
+                    . '&title={title}'
+                    . '&description={description}'
+                    . '&image={imageUrl}';
+
         return parent::getLink();
     }
 }
