@@ -109,9 +109,16 @@ class SocialShare extends Widget
                 ], $config));
 
                 $link = $object->getLink();
+
                 $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
-                $options = isset($socialNetwork['options']) ? $socialNetwork['options'] : [];
-                $options = ArrayHelper::merge($this->_configurator->getOptions(), $options);
+                $options = $this->_configurator->getOptions();
+                if (isset($socialNetwork['options']['class'])) {
+                    Html::addCssClass($options, $socialNetwork['options']['class']);
+                    unset($socialNetwork['options']['class']);
+                }
+                if (isset($socialNetwork['options'])) {
+                    $options = ArrayHelper::merge($options, $socialNetwork['options']);
+                }
 
                 $shareLinks[] = Html::a($label, $link, $options);
             }
