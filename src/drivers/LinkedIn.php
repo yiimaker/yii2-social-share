@@ -15,6 +15,7 @@ use ymaker\social\share\base\Driver;
  * @property bool|string $siteName
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class LinkedIn extends Driver
 {

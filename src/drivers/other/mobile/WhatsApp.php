@@ -17,6 +17,7 @@ use ymaker\social\share\base\Driver;
  * with installed WhatsApp client
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class WhatsApp extends Driver
 {

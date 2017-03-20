@@ -19,6 +19,7 @@ use yii\helpers\ArrayHelper;
  * @property array $seoOptions
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class Configurator extends Object implements ConfiguratorInterface
 {

@@ -13,6 +13,7 @@ use ymaker\social\share\base\Driver;
  * Driver for https://gmail.google.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class Gmail extends Driver
 {

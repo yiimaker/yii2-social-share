@@ -17,6 +17,7 @@ use ymaker\social\share\base\Driver;
  * with installed Viber client
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class Viber extends Driver
 {

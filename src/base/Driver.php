@@ -19,6 +19,7 @@ use yii\base\Object;
  * @property string $imageUrl
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 abstract class Driver extends Object
 {

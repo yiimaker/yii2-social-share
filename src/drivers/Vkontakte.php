@@ -13,6 +13,7 @@ use ymaker\social\share\base\Driver;
  * Driver for https://vk.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class Vkontakte extends Driver
 {

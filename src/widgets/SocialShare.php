@@ -30,6 +30,7 @@ use yii\helpers\Url;
  * @property array $linkWrapperOptions
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class SocialShare extends Widget
 {
