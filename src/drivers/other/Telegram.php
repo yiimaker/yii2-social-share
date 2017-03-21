@@ -16,6 +16,7 @@ use ymaker\social\share\base\Driver;
  * @property bool|string $message
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class Telegram extends Driver
 {

@@ -11,6 +11,7 @@ namespace ymaker\social\share\configurators;
  * Interface for configurators of social network drivers
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 interface ConfiguratorInterface
 {
