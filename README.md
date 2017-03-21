@@ -39,6 +39,8 @@ to the require section of your composer.json.
 
 Usage
 -----
+* [Basic usage](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/basic-usage.md)
+* [Advanced usage](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/advanced-usage.md)
 
 License
 -------
