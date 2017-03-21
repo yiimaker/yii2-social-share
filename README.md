@@ -2,6 +2,7 @@ Widget for sharing to social networks
 =====================================
 With this widget you can share data from your web pages to any social network!
 
+[![Build Status](https://travis-ci.org/yiimaker/yii2-social-share.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-social-share)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-social-share/downloads)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/stable)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/unstable)](https://packagist.org/packages/yiimaker/yii2-social-share)
