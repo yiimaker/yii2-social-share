@@ -59,6 +59,7 @@ abstract class Driver extends Object
      */
     public function init()
     {
+        $this->processShareData();
         $this->_data = [
             '{url}'         => $this->url,
             '{title}'       => $this->title,
@@ -95,12 +96,16 @@ abstract class Driver extends Object
     public function getLink()
     {
         if (!empty($this->_metaTags)) {
+            $data = [];
+            foreach ($this->_data as $key => $value) {
+                $data[$key] = static::decodeData($value);
+            }
+
             foreach ($this->_metaTags as $metaTag) {
-                $metaTag['content'] = strtr($metaTag['content'], $this->_data);
+                $metaTag['content'] = strtr($metaTag['content'], $data);
                 Yii::$app->getView()->registerMetaTag($metaTag);
             }
         }
-        $this->processShareData();
 
         return strtr($this->_link, $this->_data);
     }
