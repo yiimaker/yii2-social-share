@@ -13,3 +13,7 @@ require_once(VENDOR_DIR . implode(DIRECTORY_SEPARATOR, ['', 'yiisoft', 'yii2', '
 Yii::setAlias('@tests', __DIR__);
 Yii::setAlias('@vendor', VENDOR_DIR);
 Yii::setAlias('@data', __DIR__ . DIRECTORY_SEPARATOR . '_data');
+
+Yii::setAlias('@webroot/assets', '@tests/_output');
+Yii::setAlias('@web/assets', '@tests/_output');
+Yii::setAlias('@vendor/yiimaker/yii2-social-share/src/assets/src', '@tests/../src/assets/src');
