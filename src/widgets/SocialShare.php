@@ -13,8 +13,9 @@ use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\helpers\StringHelper;
 use yii\helpers\Url;
+
+use ymaker\social\share\assets\SocialIconsAsset;
 
 /**
  * Widget for rendering the share links
@@ -98,6 +99,16 @@ class SocialShare extends Widget
     }
 
     /**
+     * Generates icon tag
+     * @param string $class
+     * @return string
+     */
+    protected function generateIcon($class)
+    {
+        return Html::tag('i', '', ['class' => $class]);
+    }
+
+    /**
      * @return array Returns array with share links in <a> HTML tag
      */
     protected function processSocialNetworks()
@@ -122,7 +133,15 @@ class SocialShare extends Widget
 
                 $link = $object->getLink();
 
-                $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
+                $label = '';
+                if ($this->_configurator->enableDefaultIcons) {
+                    $driverName = get_class($object);
+                    $label = $this->generateIcon($this->_configurator->getIconSelector($driverName));
+                }
+                else {
+                    $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
+                }
+
                 $options = $this->_configurator->getOptions();
                 if (isset($socialNetwork['options']['class'])) {
                     Html::addCssClass($options, $socialNetwork['options']['class']);
@@ -145,6 +164,10 @@ class SocialShare extends Widget
     public function run()
     {
         $links = $this->processSocialNetworks();
+
+        if ($this->_configurator->enableDefaultIcons) {
+            $this->getView()->registerAssetBundle(SocialIconsAsset::class);
+        }
 
         echo Html::beginTag($this->wrapperTag, $this->wrapperOptions);
         foreach ($links as $link) {
