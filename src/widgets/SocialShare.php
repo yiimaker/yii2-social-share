@@ -16,6 +16,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 use ymaker\social\share\assets\SocialIconsAsset;
+use ymaker\social\share\configurators\Configurator;
 
 /**
  * Widget for rendering the share links
@@ -134,7 +135,8 @@ class SocialShare extends Widget
                 $link = $object->getLink();
 
                 $label = '';
-                if ($this->_configurator->enableDefaultIcons) {
+                if ($this->_configurator instanceof Configurator &&
+                    $this->_configurator->enableDefaultIcons) {
                     $driverName = get_class($object);
                     $label = $this->generateIcon($this->_configurator->getIconSelector($driverName));
                 }
@@ -165,7 +167,8 @@ class SocialShare extends Widget
     {
         $links = $this->processSocialNetworks();
 
-        if ($this->_configurator->enableDefaultIcons) {
+        if ($this->_configurator instanceof Configurator &&
+            $this->_configurator->enableDefaultIcons) {
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
         }
 
