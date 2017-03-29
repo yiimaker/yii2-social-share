@@ -174,7 +174,7 @@ class SocialShare extends Widget
 
         echo Html::beginTag($this->wrapperTag, $this->wrapperOptions);
         foreach ($links as $link) {
-            echo ($this->linkWrapperOptions !== false)
+            echo ($this->linkWrapperTag !== false)
                 ? Html::tag($this->linkWrapperTag, $link, $this->linkWrapperOptions)
                 : $link;
         }
