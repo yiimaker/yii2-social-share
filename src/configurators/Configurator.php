@@ -27,6 +27,8 @@ use ymaker\social\share\drivers\Vkontakte;
  * @property array $options
  * @property bool $enableSeoOptions
  * @property array $seoOptions
+ * @property bool $enableDefaultIcons
+ * @property array $icons
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

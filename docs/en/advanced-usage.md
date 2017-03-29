@@ -12,6 +12,8 @@ Configurator
 |options|HTML options for share links|array|-|
 |enableSeoOptions|Enable/disable appending of SEO options to share links|bool|true|
 |seoOptions|SEO options for share links|array|`['target' => '_blank', 'rel' => 'nofollow']`|
+|enableDefaultIcons|Enable/disable default icons instead text labels|bool|false|
+|icons|Array with drivers names and icons selectors|array|Was used default icons set|
 
 #### 2) Create my configurator component
 
