@@ -48,6 +48,6 @@ License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-social-share/license)](https://packagist.org/packages/yiimaker/yii2-social-share)
 
-This project is released under the terms of the BSD-3-Clause [license](https://github.com/yii2deman/yii2-shop/blob/master/LICENSE)
+This project is released under the terms of the BSD-3-Clause [license](https://github.com/yiimaker/yii2-social-share/blob/master/LICENSE)
 
 Copyright (c) 2017, Yii Maker
