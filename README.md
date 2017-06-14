@@ -40,9 +40,9 @@ to the require section of your composer.json.
 
 Usage
 -----
-* Basic usage [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md)
-* Advanced usage [(EN)](docs/en/advanced-usage.md) [(RU)](docs/ru/advanced-usage.md)
-* Tips and tricks [(EN)](docs/en/tips-and-tricks.md) [(RU)](docs/ru/tips-and-tricks.md)
+* [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md) Basic usage
+* [(EN)](docs/en/advanced-usage.md) [(RU)](docs/ru/advanced-usage.md) Advanced usage
+* [(EN)](docs/en/tips-and-tricks.md) [(RU)](docs/ru/tips-and-tricks.md) Tips and tricks
 
 License
 -------
