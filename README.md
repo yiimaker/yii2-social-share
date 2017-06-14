@@ -40,14 +40,14 @@ to the require section of your composer.json.
 
 Usage
 -----
-* [Basic usage](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/basic-usage.md)
-* [Advanced usage](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/advanced-usage.md)
-* [Tips and tricks](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/tips-and-tricks.md)
+* Basic usage [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md)
+* Advanced usage [(EN)](docs/en/advanced-usage.md) [(RU)](docs/ru/advanced-usage.md)
+* Tips and tricks [(EN)](docs/en/tips-and-tricks.md) [(RU)](docs/ru/tips-and-tricks.md)
 
 License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-social-share/license)](https://packagist.org/packages/yiimaker/yii2-social-share)
 
-This project is released under the terms of the BSD-3-Clause [license](https://github.com/yiimaker/yii2-social-share/blob/master/LICENSE)
+This project is released under the terms of the BSD-3-Clause [license](LICENSE)
 
 Copyright (c) 2017, Yii Maker
