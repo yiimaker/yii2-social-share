@@ -1,8 +1,9 @@
-yiimaker/yii2-social-share commits history
-------------------------------------------
+Social Share Widget Change Log
+------------------------------
 
-## [1.0.0] - 2017-03-29
+1.0.0 March 29, 2017
+--------------------
+* Initial release
 
-- Initial release
-
-## [Development started] - 2017-03-19
+Development started March 19, 2017
+----------------------------------
