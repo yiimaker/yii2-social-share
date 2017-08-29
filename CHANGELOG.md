@@ -1,10 +1,11 @@
 Social Share Extension Change Log
 ---------------------------------
 
-Under development
------------------
+1.2.0 August 29, 2017
+---------------------
 * Enh: Improved PHPDoc blocks
 * Enh: Refactored widget
+* Enh: Adds more tests
 * Fix: Code style
 
 1.1.0 June 14, 2017
