@@ -9,7 +9,6 @@ namespace ymaker\social\share\configurators;
 
 use yii\base\Object;
 use yii\helpers\ArrayHelper;
-
 use ymaker\social\share\drivers\Facebook;
 use ymaker\social\share\drivers\GooglePlus;
 use ymaker\social\share\drivers\LinkedIn;

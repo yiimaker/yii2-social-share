@@ -5,6 +5,7 @@ Under development
 -----------------
 * Enh: Improved PHPDoc blocks
 * Enh: Refactored widget
+* Fix: Code style
 
 1.1.0 June 14, 2017
 -------------------
