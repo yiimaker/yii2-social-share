@@ -26,7 +26,7 @@ and drivers for messengers:
 other drivers:
 * [Gmail](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/Gmail.php)
 
-also you can [create](docs/en/tips-and-tricks.md#2-create-my-social-network-driver) your driver, it's very simple!
+also you can [create](docs/en/advanced-usage.md#2-create-my-social-network-driver) your driver, it's very simple!
 
 Installation
 ------------
@@ -43,12 +43,12 @@ to the require section of your composer.json.
 
 Usage
 -----
-* [(EN)](docs/en/basic-usage.md) Basic usage
-* [(RU)](docs/ru/basic-usage.md) Базовое использование
-* [(EN)](docs/en/advanced-usage.md) Advanced usage
-* [(RU)](docs/ru/advanced-usage.md) Продвинутое использование
-* [(EN)](docs/en/tips-and-tricks.md) Tips and tricks
-* [(RU)](docs/ru/tips-and-tricks.md) Советы и фичи
+* [(EN) Basic usage](docs/en/basic-usage.md)
+* [(RU) Базовое использование](docs/ru/basic-usage.md)
+* [(EN) Advanced usage](docs/en/advanced-usage.md)
+* [(RU) Продвинутое использование](docs/ru/advanced-usage.md)
+* [(EN) Tips and tricks](docs/en/tips-and-tricks.md)
+* [(RU) Советы и фичи](docs/ru/tips-and-tricks.md)
 
 License
 -------
