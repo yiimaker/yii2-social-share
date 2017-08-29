@@ -1,6 +1,7 @@
 Basic usage
 ===========
-> If you want use all features - read the [advanced usage](advanced-usage.md) guide.
+> If you want use all features - read a [advanced usage](advanced-usage.md)
+ and [tips and tricks](tips-and-tricks.md) guides.
 
 Configure drivers for social networks in app config
 ---------------------------------------------------

@@ -1,5 +1,6 @@
 Advanced usage
 ==============
+> Also read [tips and tricks](tips-and-tricks.md) guide.
 
 Configurator
 ------------
@@ -139,4 +140,5 @@ Now you can use this driver in configurator
             ],
         ],
     ],
+],
 ```
