@@ -1,7 +1,7 @@
 {
   "name": "yiimaker/yii2-social-share",
-  "description": "Widget for sharing to social networks",
-  "keywords": ["yii2", "widget", "social", "share", "networks"],
+  "description": "Extension for sharing to social networks",
+  "keywords": ["yii2", "widget", "social", "share", "networks", "media"],
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "support": {
