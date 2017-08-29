@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\widgets;
 
+use yii\base\InvalidConfigException;
 use ymaker\social\share\widgets\SocialShare;
 
 /**
@@ -94,5 +95,19 @@ class SocialShareTest extends \Codeception\Test\Unit
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);
 
         $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
+    }
+
+    public function testInvalidConfigExceptionNotString()
+    {
+        $this->expectException(InvalidConfigException::class);
+
+        SocialShare::widget(['configuratorId' => 123]);
+    }
+
+    public function testInvalidConfigException()
+    {
+        $this->expectException(InvalidConfigException::class);
+
+        SocialShare::widget(['configuratorId' => 'not exists ID']);
     }
 }

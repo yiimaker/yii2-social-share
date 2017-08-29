@@ -3,7 +3,8 @@ Social Share Extension Change Log
 
 Under development
 -----------------
-* Enh: improved PHPDoc blocks.
+* Enh: Improved PHPDoc blocks
+* Enh: Refactored widget
 
 1.1.0 June 14, 2017
 -------------------

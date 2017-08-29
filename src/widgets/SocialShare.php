@@ -11,12 +11,13 @@ use Yii;
 use yii\base\Exception;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
+use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-
 use ymaker\social\share\assets\SocialIconsAsset;
 use ymaker\social\share\configurators\Configurator;
+use ymaker\social\share\configurators\ConfiguratorInterface;
 
 /**
  * Widget for rendering the share links.
@@ -75,14 +76,7 @@ class SocialShare extends Widget
      */
     public function init()
     {
-        if (!is_string($this->configuratorId)) {
-            throw new InvalidConfigException('You should to set the configurator ID');
-        }
-        elseif (!Yii::$app->has($this->configuratorId)) {
-            throw new Exception("The configurator with ID '$this->configuratorId' not found in app");
-        }
-
-        $this->_configurator = Yii::$app->get($this->configuratorId);
+        $this->_configurator = Instance::ensure($this->configuratorId, ConfiguratorInterface::class);
 
         if (empty($this->url)) {
             $this->url = Url::to('', true);
@@ -90,14 +84,66 @@ class SocialShare extends Widget
     }
 
     /**
-     * Generates icon tag.
-     *
-     * @param string $class CSS class.
+     * @return bool
+     */
+    private function enableDefaultIcons()
+    {
+        return $this->_configurator instanceof Configurator &&
+            $this->_configurator->enableDefaultIcons;
+    }
+    
+    /**
+     * Creates driver object.
+     * 
+     * @param string $className
+     * @param array $config
+     * @return object
+     */
+    private function createDriver($className, array $config)
+    {
+        return Yii::createObject(ArrayHelper::merge([
+            'class'       => $className,
+            'url'         => $this->url,
+            'title'       => $this->title,
+            'description' => $this->description,
+            'imageUrl'    => $this->imageUrl
+        ], $config));
+    }
+
+    /**
+     * Build label for driver.
+     * 
+     * @param string $driverName
+     * @param string $label
      * @return string
      */
-    protected function generateIcon($class)
+    protected function buildLabel($driverName, $label)
     {
-        return Html::tag('i', '', ['class' => $class]);
+        $iconSelector = $this->_configurator->getIconSelector($driverName);
+        return $this->enableDefaultIcons()
+            ? Html::tag('i', '', ['class' => $iconSelector,])
+            : $label;
+    }
+
+    /**
+     * Combine global and custom HTML options.
+     *
+     * @param array $options
+     * @return array
+     */
+    private function combineOptions($options)
+    {
+        $globalOptions = $this->_configurator->getOptions();
+        if (empty($globalOptions)) {
+            return $options;
+        }
+
+        if (isset($options['class'])) {
+            Html::addCssClass($globalOptions, $options['class']);
+            unset($options['class']);
+        }
+
+        return ArrayHelper::merge($globalOptions, $options);
     }
 
     /**
@@ -112,41 +158,22 @@ class SocialShare extends Widget
 
         foreach ($socialNetworks as $key => $socialNetwork) {
             if (isset($socialNetwork['class'])) {
-                $config = isset($socialNetwork['config'])
-                    ? $socialNetwork['config']
-                    : [];
+                $label = $this->buildLabel(
+                    $socialNetwork['class'],
+                    isset($socialNetwork['label']) ? $socialNetwork['label'] : $key
+                );
 
-                /* @var \ymaker\social\share\base\Driver $object */
-                $object = Yii::createObject(ArrayHelper::merge([
-                    'class'       => $socialNetwork['class'],
-                    'url'         => $this->url,
-                    'title'       => $this->title,
-                    'description' => $this->description,
-                    'imageUrl'    => $this->imageUrl
-                ], $config));
+                $options = $this->combineOptions(
+                    isset($socialNetwork['options']) ? $socialNetwork['options'] : []
+                );
 
-                $link = $object->getLink();
+                /* @var \ymaker\social\share\base\Driver $driver */
+                $driver = $this->createDriver(
+                    $socialNetwork['class'],
+                    isset($socialNetwork['config']) ? $socialNetwork['config'] : []
+                );
 
-                $label = '';
-                if ($this->_configurator instanceof Configurator &&
-                    $this->_configurator->enableDefaultIcons) {
-                    $driverName = get_class($object);
-                    $label = $this->generateIcon($this->_configurator->getIconSelector($driverName));
-                }
-                else {
-                    $label = isset($socialNetwork['label']) ? $socialNetwork['label'] : $key;
-                }
-
-                $options = $this->_configurator->getOptions();
-                if (isset($socialNetwork['options']['class'])) {
-                    Html::addCssClass($options, $socialNetwork['options']['class']);
-                    unset($socialNetwork['options']['class']);
-                }
-                if (isset($socialNetwork['options'])) {
-                    $options = ArrayHelper::merge($options, $socialNetwork['options']);
-                }
-
-                $shareLinks[] = Html::a($label, $link, $options);
+                $shareLinks[] = Html::a($label, $driver->getLink(), $options);
             }
         }
 
@@ -160,8 +187,7 @@ class SocialShare extends Widget
     {
         $links = $this->processSocialNetworks();
 
-        if ($this->_configurator instanceof Configurator &&
-            $this->_configurator->enableDefaultIcons) {
+        if ($this->enableDefaultIcons()) {
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
         }
 
