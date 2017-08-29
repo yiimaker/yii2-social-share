@@ -135,7 +135,7 @@ Now you can use this driver in configurator
             'linkedIn' => [
                 'class' => \namespace\of\my\driver\LinkedIn::class,
                 'label' => Yii::t('app', 'LinkedIn'),
-                'options' => ['class' => 'in']
+                'options' => ['class' => 'in'],
             ],
         ],
     ],

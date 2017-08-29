@@ -1,7 +1,8 @@
 Tips and tricks
 ===============
 
-1. Using HTML content instead text labels
+Using HTML content instead text labels
+--------------------------------------
 
 ```php
 'components' => [
@@ -19,7 +20,8 @@ Tips and tricks
 ],
 ```
 
-2. Translate text labels
+Translate text labels
+---------------------
 
 ```php
 'components' => [
@@ -37,9 +39,11 @@ Tips and tricks
 ],
 ```
 
-3. Overwrite icon in default icons set
+Overwrite icon in default icons set
+-----------------------------------
 
-In this example for Facebook will be used `my-facebook-icon` CSS class
+In this example for Facebook will be used `my-facebook-icon` CSS class.
+For other social networks will be used default icons.
 
 ```php
 'components' => [
@@ -48,7 +52,7 @@ In this example for Facebook will be used `my-facebook-icon` CSS class
         'class' => \ymaker\social\share\configurators\Configurator::class,
         'enableDefaultIcons' => true,
         'icons' => [
-            \ymaker\social\share\drivers\Facebook::class => 'my-facebook-icon'
+            \ymaker\social\share\drivers\Facebook::class => 'my-facebook-icon',
         ],
     ],
 ],

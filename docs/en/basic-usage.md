@@ -1,7 +1,10 @@
 Basic usage
 ===========
+> If you want use all features - read the [advanced usage](advanced-usage.md) guide.
 
-1) Configure drivers for social networks in app config
+Configure drivers for social networks in app config
+---------------------------------------------------
+
 ```php
 'components' => [
     // ...
@@ -35,7 +38,9 @@ Basic usage
 ],
 ```
 
-2) Call widget in view file
+Call widget in view file
+------------------------
+
 ```php
 <?= \ymaker\social\share\widgets\SocialShare::widget([
     'configuratorId' => 'socialShare',
@@ -45,5 +50,3 @@ Basic usage
     'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
 ]); ?>
 ```
-
-#### If you want use all features - read the [advanced usage](https://github.com/yiimaker/yii2-social-share/blob/master/docs/en/advanced-usage.md) guide
