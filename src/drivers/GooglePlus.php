@@ -10,7 +10,8 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for https://plus.google.com
+ * Driver for Google Plus.
+ * @link https://plus.google.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

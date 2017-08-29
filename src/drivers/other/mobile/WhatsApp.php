@@ -10,11 +10,11 @@ namespace ymaker\social\share\drivers\other\mobile;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for WhatsApp messenger
+ * Driver for WhatsApp messenger.
  * @link https://www.whatsapp.com
  *
  * WARNING: This driver works only in mobile devices
- * with installed WhatsApp client
+ * with installed WhatsApp client.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

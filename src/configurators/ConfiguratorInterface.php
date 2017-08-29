@@ -8,7 +8,7 @@
 namespace ymaker\social\share\configurators;
 
 /**
- * Interface for configurators of social network drivers
+ * Interface for configurators of social network drivers.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -17,14 +17,15 @@ interface ConfiguratorInterface
 {
     /**
      * This method should returns a array with config
-     * for social network drivers
+     * for social network drivers.
+     *
      * @return array
      */
     public function getSocialNetworks();
 
     /**
      * This method should returns a array with HTML
-     * options for share links
+     * options for share links.
      *
      * @return array
      */

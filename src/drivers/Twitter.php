@@ -10,9 +10,8 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for https://twitter.com
- *
- * @property bool|string $account
+ * Driver for Twitter.
+ * @link https://twitter.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

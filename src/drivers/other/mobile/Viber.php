@@ -10,11 +10,11 @@ namespace ymaker\social\share\drivers\other\mobile;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for Viber messenger
+ * Driver for Viber messenger.
  * @link https://viber.com
  *
  * WARNING: This driver works only in mobile devices
- * with installed Viber client
+ * with installed Viber client.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

@@ -10,7 +10,8 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for https://linkedin.com
+ * Driver for LinkedIn.
+ * @link https://linkedin.com
  *
  * @property bool|string $siteName
  *

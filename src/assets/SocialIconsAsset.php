@@ -10,7 +10,7 @@ namespace ymaker\social\share\assets;
 use yii\web\AssetBundle;
 
 /**
- * Asset for social icons font
+ * Asset for social icons font.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

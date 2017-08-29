@@ -10,9 +10,10 @@ namespace ymaker\social\share\tests\unit\widgets;
 use ymaker\social\share\widgets\SocialShare;
 
 /**
- * Test case for  [[ymaker\social\share\widgets\SocialShare]]
+ * Test case for  [[ymaker\social\share\widgets\SocialShare]].
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ * @since 1.0
  */
 class SocialShareTest extends \Codeception\Test\Unit
 {
@@ -31,6 +32,12 @@ class SocialShareTest extends \Codeception\Test\Unit
     public $gmail = "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=test+title&amp;body=test description\ntest url";
 
 
+    /**
+     * Returns actual HTML code.
+     *
+     * @param string $configuratorId
+     * @return string
+     */
     protected function getActualHTML($configuratorId)
     {
         $widget = new SocialShare([

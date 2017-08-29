@@ -10,10 +10,8 @@ namespace ymaker\social\share\drivers\other;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for Telegram messenger
+ * Driver for Telegram messenger.
  * @link https://telegram.org
- *
- * @property bool|string $message
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

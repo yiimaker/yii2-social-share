@@ -10,7 +10,8 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\Driver;
 
 /**
- * Driver for https://pinterest.com
+ * Driver for Pinterest.
+ * @link https://pinterest.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

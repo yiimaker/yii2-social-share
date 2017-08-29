@@ -21,14 +21,7 @@ use ymaker\social\share\drivers\Twitter;
 use ymaker\social\share\drivers\Vkontakte;
 
 /**
- * Configurator for social network drivers
- *
- * @property array $socialNetworks
- * @property array $options
- * @property bool $enableSeoOptions
- * @property array $seoOptions
- * @property bool $enableDefaultIcons
- * @property array $icons
+ * Configurator for social network drivers.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -36,27 +29,27 @@ use ymaker\social\share\drivers\Vkontakte;
 class Configurator extends Object implements ConfiguratorInterface
 {
     /**
-     * @var array
+     * @var array Configuration of social network drivers.
      */
     public $socialNetworks = [];
     /**
-     * @var array
+     * @var array CSS options for share links.
      */
     public $options = [];
     /**
-     * @var bool
+     * @var bool Enable SEO options for share links.
      */
     public $enableSeoOptions = true;
     /**
-     * @var array
+     * @var array HTML attributes from this option will be applyed if `enableSeoOptions` is true.
      */
     public $seoOptions = [];
     /**
-     * @var bool
+     * @var bool Enable default icons instead labels for social networks.
      */
     public $enableDefaultIcons = false;
     /**
-     * @var array
+     * @var array Configuration of icons for social network drivers.
      */
     public $icons = [];
 
@@ -78,7 +71,9 @@ class Configurator extends Object implements ConfiguratorInterface
     }
 
     /**
-     * Default icons for social networks
+     * Default icons for social networks.
+     *
+     * @return array
      */
     private function getDefaultIcons()
     {
@@ -114,7 +109,7 @@ class Configurator extends Object implements ConfiguratorInterface
     }
 
     /**
-     * Get icon selector by driver name
+     * Get icon selector by driver name.
      *
      * @param string $driverName
      * @return string

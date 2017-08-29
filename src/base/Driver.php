@@ -11,12 +11,7 @@ use Yii;
 use yii\base\Object;
 
 /**
- * Base driver for social network definition classes
- *
- * @property string $url
- * @property string $title
- * @property string $description
- * @property string $imageUrl
+ * Base driver for social network definition classes.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -24,19 +19,19 @@ use yii\base\Object;
 abstract class Driver extends Object
 {
     /**
-     * @var string Absolute URL to the page
+     * @var string Absolute URL to the page.
      */
     public $url;
     /**
-     * @var string Title for share
+     * @var string Title for share.
      */
     public $title;
     /**
-     * @var string Description for share
+     * @var string Description for share.
      */
     public $description;
     /**
-     * @var string Absolute URL to the image for share
+     * @var string Absolute URL to the image for share.
      */
     public $imageUrl;
 
@@ -69,7 +64,8 @@ abstract class Driver extends Object
     }
 
     /**
-     * Encode data for URL
+     * Encode data for URL.
+     *
      * @param string $data
      * @return string
      */
@@ -79,7 +75,7 @@ abstract class Driver extends Object
     }
 
     /**
-     * Decode the encoded data
+     * Decode the encoded data.
      *
      * @param string $data
      * @return string
@@ -90,7 +86,8 @@ abstract class Driver extends Object
     }
 
     /**
-     * This method should return a share link
+     * This method should return a share link.
+     *
      * @return string
      */
     public function getLink()
@@ -111,7 +108,7 @@ abstract class Driver extends Object
     }
 
     /**
-     * Method should to process the share data for current driver
+     * Method should process the share data for current driver.
      */
     abstract protected function processShareData();
 }

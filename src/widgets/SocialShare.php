@@ -19,17 +19,7 @@ use ymaker\social\share\assets\SocialIconsAsset;
 use ymaker\social\share\configurators\Configurator;
 
 /**
- * Widget for rendering the share links
- *
- * @property string $configuratorId
- * @property string $url
- * @property string $title
- * @property string $description
- * @property string $imageUrl
- * @property string $wrapperTag
- * @property array $wrapperOptions
- * @property string $linkWrapperTag
- * @property array $linkWrapperOptions
+ * Widget for rendering the share links.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -37,40 +27,40 @@ use ymaker\social\share\configurators\Configurator;
 class SocialShare extends Widget
 {
     /**
-     * @var string ID of configurator component
+     * @var string ID of configurator component.
      */
     public $configuratorId;
     /**
-     * @var string Absolute URL to the page
+     * @var string Absolute URL to the page.
      */
     public $url = '';
     /**
-     * @var string Title for share
+     * @var string Title for share.
      */
     public $title = '';
     /**
-     * @var string Description for share
+     * @var string Description for share.
      */
     public $description = '';
     /**
-     * @var string Absolute URL to the image for share
+     * @var string Absolute URL to the image for share.
      */
     public $imageUrl = '';
     /**
-     * @var string Name of the wrapper tag
+     * @var string Name of the wrapper tag.
      */
     public $wrapperTag = 'ul';
     /**
-     * @var array HTML options for wrapper tag
+     * @var array HTML options for wrapper tag.
      */
     public $wrapperOptions = ['class' => 'social-share'];
     /**
-     * @var bool|string Name of the wrapper tag for link
-     * Set `false` value if you don't want using wrapper for link
+     * @var bool|string Name of the wrapper tag for link.
+     * Set `false` value if you don't want using wrapper for link.
      */
     public $linkWrapperTag = 'li';
     /**
-     * @var array HTML options for link wrapper tag
+     * @var array HTML options for link wrapper tag.
      */
     public $linkWrapperOptions = [];
 
@@ -100,8 +90,9 @@ class SocialShare extends Widget
     }
 
     /**
-     * Generates icon tag
-     * @param string $class
+     * Generates icon tag.
+     *
+     * @param string $class CSS class.
      * @return string
      */
     protected function generateIcon($class)
@@ -110,7 +101,9 @@ class SocialShare extends Widget
     }
 
     /**
-     * @return array Returns array with share links in <a> HTML tag
+     * Returns array with share links in <a> HTML tag.
+     *
+     * @return array
      */
     protected function processSocialNetworks()
     {
