@@ -8,6 +8,13 @@
     "source": "https://github.com/yiimaker/yii2-social-share",
     "issues": "https://github.com/yiimaker/yii2-social-share/issues"
   },
+  "authors": [
+    {
+      "name": "Vladimir Kuprienko",
+      "email": "vldmr.kuprienko@gmail.com",
+      "role": "developer"
+    }
+  ],
   "repositories": [
     {
       "type": "composer",
@@ -23,13 +30,6 @@
     "codeception/verify": "*",
     "codeception/specify": "*"
   },
-  "authors": [
-    {
-      "name": "Vladimir Kuprienko",
-      "email": "vldmr.kuprienko@gmail.com",
-      "role": "developer"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "ymaker\\social\\share\\": "src",
