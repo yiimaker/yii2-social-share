@@ -1,5 +1,11 @@
-Extension for sharing to social networks
-========================================
+<p align="center">
+    <a href="https://github.com/yiimaker" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
+    </a>
+    <h1 align="center">Extension for sharing to social networks</h1>
+    <br>
+</p>
+
 With this extension you can share data from your web pages to any social network!
 
 Features: SEO support, default icons for social networks, easy creation of custom drivers
