@@ -95,43 +95,46 @@ class SocialShare extends Widget
     /**
      * Creates driver object.
      * 
-     * @param string $className
-     * @param array $config
+     * @param array $driverConfig
      * @return object
      */
-    private function createDriver($className, array $config)
+    private function createDriver($driverConfig)
     {
         return Yii::createObject(ArrayHelper::merge([
-            'class'       => $className,
+            'class'       => $driverConfig['class'],
             'url'         => $this->url,
             'title'       => $this->title,
             'description' => $this->description,
             'imageUrl'    => $this->imageUrl
-        ], $config));
+        ], isset($driverConfig['config']) ? $driverConfig['config'] : []));
     }
 
     /**
      * Build label for driver.
      * 
-     * @param string $driverName
-     * @param string $label
+     * @param array $driverConfig
+     * @param string $defaultLabel
      * @return string
      */
-    protected function buildLabel($driverName, $label)
+    protected function buildLabel($driverConfig, $defaultLabel)
     {
         return $this->enableDefaultIcons()
-            ? Html::tag('i', '', ['class' => $this->_configurator->getIconSelector($driverName)])
-            : $label;
+            ? Html::tag('i', '', [
+                'class' => $this->_configurator->getIconSelector($driverConfig['class'])
+            ])
+            : isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel;
     }
 
     /**
      * Combine global and custom HTML options.
      *
-     * @param array $options
+     * @param array $driverConfig
      * @return array
      */
-    private function combineOptions($options)
+    private function combineOptions($driverConfig)
     {
+        $options = $driverConfig['options'];
+
         $globalOptions = $this->_configurator->getOptions();
         if (empty($globalOptions)) {
             return $options;
@@ -157,22 +160,14 @@ class SocialShare extends Widget
 
         foreach ($socialNetworks as $key => $socialNetwork) {
             if (isset($socialNetwork['class'])) {
-                $label = $this->buildLabel(
-                    $socialNetwork['class'],
-                    isset($socialNetwork['label']) ? $socialNetwork['label'] : $key
-                );
-
-                $options = $this->combineOptions(
-                    isset($socialNetwork['options']) ? $socialNetwork['options'] : []
-                );
-
                 /* @var \ymaker\social\share\base\Driver $driver */
-                $driver = $this->createDriver(
-                    $socialNetwork['class'],
-                    isset($socialNetwork['config']) ? $socialNetwork['config'] : []
-                );
+                $driver = $this->createDriver($socialNetwork);
 
-                $shareLinks[] = Html::a($label, $driver->getLink(), $options);
+                $shareLinks[] = Html::a(
+                    $this->buildLabel($socialNetwork, $key),
+                    $driver->getLink(),
+                    $this->combineOptions($socialNetwork)
+                );
             }
         }
 
