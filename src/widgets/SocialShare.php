@@ -133,7 +133,7 @@ class SocialShare extends Widget
      */
     private function combineOptions($driverConfig)
     {
-        $options = $driverConfig['options'];
+        $options = isset($driverConfig['options']) ? $driverConfig['options'] : [];
 
         $globalOptions = $this->_configurator->getOptions();
         if (empty($globalOptions)) {
