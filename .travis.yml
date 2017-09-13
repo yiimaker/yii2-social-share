@@ -20,7 +20,6 @@ cache:
 # install dependencies
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer global require "fxp/composer-asset-plugin:~1.1.0"
   - travis_retry composer update --prefer-dist --no-interaction
 
 before_script:
