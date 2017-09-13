@@ -122,7 +122,7 @@ class SocialShare extends Widget
             ? Html::tag('i', '', [
                 'class' => $this->_configurator->getIconSelector($driverConfig['class'])
             ])
-            : isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel;
+            : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
     }
 
     /**
