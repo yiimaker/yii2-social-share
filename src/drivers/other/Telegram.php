@@ -45,7 +45,7 @@ class Telegram extends Driver
     protected function processShareData()
     {
         $this->url = static::encodeData($this->url);
-        if ($this->message) {
+        if (is_string($this->message)) {
             $this->message = static::encodeData($this->message);
         }
     }

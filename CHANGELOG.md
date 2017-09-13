@@ -1,6 +1,11 @@
 Social Share Extension Change Log
 ---------------------------------
 
+Under development
+-----------------
+* Fix: code style
+* Fix: bug with configurator in widget
+
 1.2.0 August 29, 2017
 ---------------------
 * Enh: Improved PHPDoc blocks

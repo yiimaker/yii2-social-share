@@ -53,7 +53,7 @@ class LinkedIn extends Driver
         $this->title = static::encodeData($this->title);
         $this->description = static::encodeData($this->description);
 
-        if ($this->siteName) {
+        if (is_string($this->siteName)) {
             $this->siteName = static::encodeData($this->siteName);
         }
     }

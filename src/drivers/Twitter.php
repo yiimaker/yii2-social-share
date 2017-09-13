@@ -55,7 +55,8 @@ class Twitter extends Driver
     {
         $this->url = static::encodeData($this->url);
         $this->description = static::encodeData($this->description);
-        if ($this->account) {
+
+        if (is_string($this->account)) {
             $this->account = static::encodeData($this->account);
         }
     }
