@@ -121,7 +121,7 @@ class SocialShare extends Widget
     {
         $iconSelector = $this->_configurator->getIconSelector($driverName);
         return $this->enableDefaultIcons()
-            ? Html::tag('i', '', ['class' => $iconSelector,])
+            ? Html::tag('i', '', ['class' => $iconSelector])
             : $label;
     }
 

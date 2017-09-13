@@ -39,10 +39,10 @@ class Twitter extends Driver
         }
 
         $this->_metaTags = [
-            [ 'name' => 'twitter:card',         'content' => 'summary_large_image' ],
-            [ 'name' => 'twitter:title',        'content' => '{title}' ],
-            [ 'name' => 'twitter:description',  'content' => '{description}' ],
-            [ 'name' => 'twitter:image',        'content' => '{imageUrl}' ]
+            ['name' => 'twitter:card',         'content' => 'summary_large_image'],
+            ['name' => 'twitter:title',        'content' => '{title}'],
+            ['name' => 'twitter:description',  'content' => '{description}'],
+            ['name' => 'twitter:image',        'content' => '{imageUrl}']
         ];
 
         return parent::getLink();

@@ -25,11 +25,11 @@ class Facebook extends Driver
     {
         $this->_link = 'http://www.facebook.com/sharer.php?u={url}';
         $this->_metaTags = [
-            [ 'property' => 'og:url',         'content' => '{url}' ],
-            [ 'property' => 'og:type',        'content' => 'website' ],
-            [ 'property' => 'og:title',       'content' => '{title}' ],
-            [ 'property' => 'og:description', 'content' => '{description}' ],
-            [ 'property' => 'og:image',       'content' => '{imageUrl}' ],
+            ['property' => 'og:url',         'content' => '{url}'],
+            ['property' => 'og:type',        'content' => 'website'],
+            ['property' => 'og:title',       'content' => '{title}'],
+            ['property' => 'og:description', 'content' => '{description}'],
+            ['property' => 'og:image',       'content' => '{imageUrl}'],
         ];
 
         return parent::getLink();
