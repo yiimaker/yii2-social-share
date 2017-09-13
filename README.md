@@ -12,6 +12,7 @@ Features: SEO support, default icons for social networks, easy creation of custo
 for other social networks and more!
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-social-share.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-social-share)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/?branch=master)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-social-share/downloads)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/stable)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/unstable)](https://packagist.org/packages/yiimaker/yii2-social-share)
