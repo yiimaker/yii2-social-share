@@ -5,6 +5,7 @@ Under development
 -----------------
 * Enh: Code style
 * Enh: Refactored widget
+* Enh: Use Inflector in widget for default link labels
 * Fix: Bug with configurator in widget
 
 1.2.0 August 29, 2017

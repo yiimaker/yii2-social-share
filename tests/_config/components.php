@@ -12,7 +12,7 @@ $drivers = [
     'googlePlus' => [
         'class' => \ymaker\social\share\drivers\GooglePlus::class,
     ],
-    'linkedIn' => [
+    'linkedin' => [
         'class' => \ymaker\social\share\drivers\LinkedIn::class,
     ],
     'pinterest' => [

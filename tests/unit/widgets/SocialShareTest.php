@@ -60,16 +60,16 @@ class SocialShareTest extends \Codeception\Test\Unit
     {
         $expectedHTML =
                     "<ul class=\"social-share\">"
-                        . "<li><a href=\"$this->vk\" rel=\"nofollow\" target=\"_blank\">vkontakte</a></li>"
-                        . "<li><a href=\"$this->facebook\" rel=\"nofollow\" target=\"_blank\">facebook</a></li>"
-                        . "<li><a href=\"$this->twitter\" rel=\"nofollow\" target=\"_blank\">twitter</a></li>"
-                        . "<li><a href=\"$this->googlePlus\" rel=\"nofollow\" target=\"_blank\">googlePlus</a></li>"
-                        . "<li><a href=\"$this->linkedIn\" rel=\"nofollow\" target=\"_blank\">linkedIn</a></li>"
-                        . "<li><a href=\"$this->pinterest\" rel=\"nofollow\" target=\"_blank\">pinterest</a></li>"
-                        . "<li><a href=\"$this->telegram\" rel=\"nofollow\" target=\"_blank\">telegram</a></li>"
-                        . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\">viber</a></li>"
-                        . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\">whatsApp</a></li>"
-                        . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\">gmail</a></li>"
+                        . "<li><a href=\"$this->vk\" rel=\"nofollow\" target=\"_blank\">Vkontakte</a></li>"
+                        . "<li><a href=\"$this->facebook\" rel=\"nofollow\" target=\"_blank\">Facebook</a></li>"
+                        . "<li><a href=\"$this->twitter\" rel=\"nofollow\" target=\"_blank\">Twitter</a></li>"
+                        . "<li><a href=\"$this->googlePlus\" rel=\"nofollow\" target=\"_blank\">Google Plus</a></li>"
+                        . "<li><a href=\"$this->linkedIn\" rel=\"nofollow\" target=\"_blank\">Linkedin</a></li>"
+                        . "<li><a href=\"$this->pinterest\" rel=\"nofollow\" target=\"_blank\">Pinterest</a></li>"
+                        . "<li><a href=\"$this->telegram\" rel=\"nofollow\" target=\"_blank\">Telegram</a></li>"
+                        . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\">Viber</a></li>"
+                        . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\">Whats App</a></li>"
+                        . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\">Gmail</a></li>"
                     . "</ul>";
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 

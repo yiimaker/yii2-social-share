@@ -14,6 +14,7 @@ use yii\base\Widget;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Inflector;
 use yii\helpers\Url;
 use ymaker\social\share\assets\SocialIconsAsset;
 use ymaker\social\share\configurators\Configurator;
@@ -164,7 +165,7 @@ class SocialShare extends Widget
                 $driver = $this->createDriver($socialNetwork);
 
                 $shareLinks[] = Html::a(
-                    $this->buildLabel($socialNetwork, $key),
+                    $this->buildLabel($socialNetwork, Inflector::camel2words($key)),
                     $driver->getLink(),
                     $this->combineOptions($socialNetwork)
                 );
