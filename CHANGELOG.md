@@ -1,8 +1,8 @@
-Social Share Extension Change Log
----------------------------------
+Social Share Change Log
+=======================
 
-Under development
------------------
+1.3.0 October 02, 2017
+----------------------
 * Enh: Code style
 * Enh: Refactored widget
 * Enh: Use Inflector in widget for default link labels
