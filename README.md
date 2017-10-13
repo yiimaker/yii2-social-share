@@ -2,7 +2,7 @@
     <a href="https://github.com/yiimaker" target="_blank">
         <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
     </a>
-    <h1 align="center">Extension for sharing to social networks</h1>
+    <h1 align="center">Extension for sharing on social networks</h1>
     <br>
 </p>
 
