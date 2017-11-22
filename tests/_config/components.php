@@ -30,6 +30,9 @@ $drivers = [
     'gmail' => [
         'class' => \ymaker\social\share\drivers\other\Gmail::class,
     ],
+    'tumblr' => [
+        'class' => \ymaker\social\share\drivers\Tumblr::class,
+    ],
 ];
 
 return [

@@ -66,11 +66,17 @@ abstract class Driver extends Object
     /**
      * Encode data for URL.
      *
-     * @param string $data
-     * @return string
+     * @param string|array $data
+     * @return string|array
      */
     public static function encodeData($data)
     {
+        if (is_array($data)) {
+            foreach ($data as $key => $value) {
+                $data[$key] = urlencode($value);
+            }
+            return $data;
+        }
         return urlencode($data);
     }
 
@@ -83,6 +89,28 @@ abstract class Driver extends Object
     public static function decodeData($data)
     {
         return urldecode($data);
+    }
+
+    /**
+     * Adds URL param to link.
+     *
+     * @param string $name Param name.
+     * @param string $value Param value.
+     * @since 1.4.0
+     */
+    protected function addUrlParam($name, $value)
+    {
+        $base = $name . '=' . $value;
+
+        if (strpos('?', $this->_link) !== false) {
+            $last = substr($this->_link, -1);
+            if ($last === '?' || $last === '&') {
+                $this->_link .= $base;
+            }
+            $this->_link .= '&' . $base;
+        }
+
+        $this->_link .= '?' . $base;
     }
 
     /**

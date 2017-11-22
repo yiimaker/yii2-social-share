@@ -49,6 +49,11 @@ class SocialShare extends Widget
      */
     public $imageUrl = '';
     /**
+     * @var array Properties for specific driver.
+     * @since 1.4.0
+     */
+    public $driverProperties = [];
+    /**
      * @var string Name of the wrapper tag.
      */
     public $wrapperTag = 'ul';
@@ -101,13 +106,24 @@ class SocialShare extends Widget
      */
     private function createDriver($driverConfig)
     {
-        return Yii::createObject(ArrayHelper::merge([
+        /* @var \ymaker\social\share\base\Driver $driver */
+        $driver = Yii::createObject(ArrayHelper::merge([
             'class'       => $driverConfig['class'],
             'url'         => $this->url,
             'title'       => $this->title,
             'description' => $this->description,
             'imageUrl'    => $this->imageUrl
         ], isset($driverConfig['config']) ? $driverConfig['config'] : []));
+
+        if (key_exists($driverConfig['class'], $this->driverProperties)) {
+            foreach ($this->driverProperties[$driverConfig['class']] as $property => $value) {
+                if ($driver->hasProperty($property)) {
+                    $driver->$property = $value;
+                }
+            }
+        }
+
+        return $driver;
     }
 
     /**

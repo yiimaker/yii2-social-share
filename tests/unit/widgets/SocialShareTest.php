@@ -31,6 +31,7 @@ class SocialShareTest extends \Codeception\Test\Unit
     public $viber = 'viber://forward?text=test+url';
     public $whatsApp = 'whatsapp://send?text=test+url';
     public $gmail = "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=test+title&amp;body=test description\ntest url";
+    public $tumblr = "https://www.tumblr.com/widgets/share/tool?canonicalUrl=test+url?posttype=link?caption=test+title?content=test+url";
 
 
     /**
@@ -70,6 +71,7 @@ class SocialShareTest extends \Codeception\Test\Unit
                         . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\">Viber</a></li>"
                         . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\">Whats App</a></li>"
                         . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\">Gmail</a></li>"
+                        . "<li><a href=\"$this->tumblr\" rel=\"nofollow\" target=\"_blank\">Tumblr</a></li>"
                     . "</ul>";
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
@@ -90,6 +92,7 @@ class SocialShareTest extends \Codeception\Test\Unit
             . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\"><i class=\"\"></i></a></li>"
             . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-whatsapp\"></i></a></li>"
             . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-gmail\"></i></a></li>"
+            . "<li><a href=\"$this->tumblr\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-tumblr\"></i></a></li>"
             . "</ul>";
 
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);

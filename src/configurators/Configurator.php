@@ -16,6 +16,7 @@ use ymaker\social\share\drivers\other\Gmail;
 use ymaker\social\share\drivers\other\mobile\WhatsApp;
 use ymaker\social\share\drivers\other\Telegram;
 use ymaker\social\share\drivers\Pinterest;
+use ymaker\social\share\drivers\Tumblr;
 use ymaker\social\share\drivers\Twitter;
 use ymaker\social\share\drivers\Vkontakte;
 
@@ -85,7 +86,8 @@ class Configurator extends Object implements ConfiguratorInterface
             Pinterest::class    => 'si si-pinterest',
             Telegram::class     => 'si si-telegram',
             WhatsApp::class     => 'si si-whatsapp',
-            Gmail::class        => 'si si-gmail'
+            Gmail::class        => 'si si-gmail',
+            Tumblr::class       => 'si si-tumblr',
         ];
     }
 
