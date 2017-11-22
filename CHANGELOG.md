@@ -1,6 +1,12 @@
 Social Share Change Log
 =======================
 
+1.4.0 Under development
+-----------------------
+* Enh: Created driver for Tumblr
+* Enh: Added `driverProperties` property to widget for adding of
+custom properties to drivers
+
 1.3.0 October 02, 2017
 ----------------------
 * Enh: Code style
