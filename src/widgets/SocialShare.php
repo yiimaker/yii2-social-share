@@ -180,11 +180,9 @@ class SocialShare extends Widget
                 /* @var \ymaker\social\share\base\Driver $driver */
                 $driver = $this->createDriver($socialNetwork);
 
-                $shareLinks[] = Html::a(
-                    $this->buildLabel($socialNetwork, Inflector::camel2words($key)),
-                    $driver->getLink(),
-                    $this->combineOptions($socialNetwork)
-                );
+                $linkOptions = $this->combineOptions($socialNetworks);
+                $linkOptions['href'] = $driver->getLink();
+                $shareLinks[] = Html::tag('a', $this->buildLabel($socialNetwork, Inflector::camel2words($key)), $linkOptions);
             }
         }
 
