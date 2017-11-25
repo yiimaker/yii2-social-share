@@ -6,3 +6,4 @@
 /codeception.yml    export-ignore
 /tests              export-ignore
 /docs               export-ignore
+/fonts.json         export-ignore
