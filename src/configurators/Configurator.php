@@ -55,7 +55,7 @@ class Configurator extends Object implements ConfiguratorInterface
 
 
     /**
-     * @inheritdoc
+     * Set default values for special link options.
      */
     public function init()
     {
@@ -71,7 +71,7 @@ class Configurator extends Object implements ConfiguratorInterface
     }
 
     /**
-     * Default icons for social networks.
+     * Returns map of default icons for social networks.
      *
      * @return array
      */
@@ -110,7 +110,7 @@ class Configurator extends Object implements ConfiguratorInterface
     }
 
     /**
-     * Get icon selector by driver name.
+     * Returns icon selector by driver name.
      *
      * @param string $driverName
      * @return string

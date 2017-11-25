@@ -136,9 +136,7 @@ class SocialShare extends Widget
     protected function buildLabel($driverConfig, $defaultLabel)
     {
         return $this->enableDefaultIcons()
-            ? Html::tag('i', '', [
-                'class' => $this->_configurator->getIconSelector($driverConfig['class'])
-            ])
+            ? Html::tag('i', '', ['class' => $this->_configurator->getIconSelector($driverConfig['class'])])
             : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
     }
 
@@ -202,9 +200,7 @@ class SocialShare extends Widget
 
         echo Html::beginTag($this->wrapperTag, $this->wrapperOptions);
         foreach ($links as $link) {
-            echo ($this->linkWrapperTag !== false)
-                ? Html::tag($this->linkWrapperTag, $link, $this->linkWrapperOptions)
-                : $link;
+            echo ($this->linkWrapperTag !== false) ? Html::tag($this->linkWrapperTag, $link, $this->linkWrapperOptions) : $link;
         }
         echo Html::endTag($this->wrapperTag);
     }

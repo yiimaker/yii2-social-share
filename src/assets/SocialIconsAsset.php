@@ -24,7 +24,5 @@ class SocialIconsAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $css = [
-        'css/style.css'
-    ];
+    public $css = ['css/style.css'];
 }

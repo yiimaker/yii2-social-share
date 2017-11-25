@@ -50,7 +50,7 @@ abstract class Driver extends Object
 
 
     /**
-     * @inheritdoc
+     * Prepare data data to insert into the link.
      */
     public function init()
     {
