@@ -8,6 +8,7 @@ Social Share Change Log
 custom properties to drivers
 * Enh: Creates unit tests for `Tumblr` driver
 * Fix: Using `Html::tag()` instead of `Html::a()` in widget
+* Fix: Call parent implementation of method `init()` in widget
 
 1.3.0 October 02, 2017
 ----------------------

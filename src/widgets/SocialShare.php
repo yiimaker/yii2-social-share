@@ -87,6 +87,8 @@ class SocialShare extends Widget
         if (empty($this->url)) {
             $this->url = Url::to('', true);
         }
+
+        parent::init();
     }
 
     /**
