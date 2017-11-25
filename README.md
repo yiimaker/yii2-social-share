@@ -3,13 +3,13 @@
         <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
     </a>
     <h1 align="center">Extension for sharing on social networks</h1>
+</p>
+
 [![Build Status](https://travis-ci.org/yiimaker/yii2-social-share.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-social-share)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/?branch=master)
 [![Monthly Downloads](https://poser.pugx.org/yiimaker/yii2-social-share/d/monthly)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/stable)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/unstable)](https://packagist.org/packages/yiimaker/yii2-social-share)
-    <br>
-</p>
 
 With this extension you can share data from your web pages to any social network!
 Features: SEO support, default icons for social networks, easy creation of custom drivers
