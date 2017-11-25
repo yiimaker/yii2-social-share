@@ -6,6 +6,7 @@ Social Share Change Log
 * Enh: Created driver for Tumblr
 * Enh: Added `driverProperties` property to widget for adding of
 custom properties to drivers
+* Enh: Creates unit tests for `Tumblr` driver
 
 1.3.0 October 02, 2017
 ----------------------
