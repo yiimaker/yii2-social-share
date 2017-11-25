@@ -3,21 +3,20 @@
         <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
     </a>
     <h1 align="center">Extension for sharing on social networks</h1>
-    <br>
-</p>
-
-With this extension you can share data from your web pages to any social network!
-
-Features: SEO support, default icons for social networks, easy creation of custom drivers
-for other social networks and more!
-
 [![Build Status](https://travis-ci.org/yiimaker/yii2-social-share.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-social-share)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/?branch=master)
 [![Monthly Downloads](https://poser.pugx.org/yiimaker/yii2-social-share/d/monthly)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/stable)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-social-share/v/unstable)](https://packagist.org/packages/yiimaker/yii2-social-share)
+    <br>
+</p>
+
+With this extension you can share data from your web pages to any social network!
+Features: SEO support, default icons for social networks, easy creation of custom drivers
+for other social networks and more!
 
 Extension supports from the box next social network drivers:
+
 * [Vkontakte](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Vkontakte.php)
 * [Facebook](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Facebook.php)
 * [Twitter](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Twitter.php)
@@ -38,16 +37,19 @@ also you can [create](docs/en/advanced-usage.md#2-create-my-social-network-drive
 
 Installation
 ------------
+
 #### Install package
+
 Run command
 ```
-composer require yiimaker/yii2-social-share
+$ composer require yiimaker/yii2-social-share
 ```
+
 or add
 ```json
 "yiimaker/yii2-social-share": "~1.0"
 ```
-to the require section of your composer.json.
+to the require section of your `composer.json` file.
 
 Usage
 -----
@@ -57,6 +59,20 @@ Usage
 * [(RU) Продвинутое использование](docs/ru/advanced-usage.md)
 * [(EN) Tips and tricks](docs/en/tips-and-tricks.md)
 * [(RU) Советы и фичи](docs/ru/tips-and-tricks.md)
+
+Tests
+-----
+You can run tests with composer command
+
+```bash
+$ composer test
+```
+
+or using following command
+
+```bash
+$ codecept build && codecept run
+```
 
 License
 -------
