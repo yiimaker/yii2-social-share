@@ -102,15 +102,16 @@ abstract class Driver extends Object
     {
         $base = $name . '=' . $value;
 
-        if (strpos('?', $this->_link) !== false) {
+        if (strpos($this->_link, '?') !== false) {
             $last = substr($this->_link, -1);
             if ($last === '?' || $last === '&') {
                 $this->_link .= $base;
+            } else {
+                $this->_link .= '&' . $base;
             }
-            $this->_link .= '&' . $base;
+        } else {
+            $this->_link .= '?' . $base;
         }
-
-        $this->_link .= '?' . $base;
     }
 
     /**

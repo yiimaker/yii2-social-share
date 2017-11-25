@@ -31,7 +31,7 @@ class SocialShareTest extends \Codeception\Test\Unit
     public $viber = 'viber://forward?text=test+url';
     public $whatsApp = 'whatsapp://send?text=test+url';
     public $gmail = "https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=test+title&amp;body=test description\ntest url";
-    public $tumblr = "https://www.tumblr.com/widgets/share/tool?canonicalUrl=test+url?posttype=link?caption=test+title?content=test+url";
+    public $tumblr = "https://www.tumblr.com/widgets/share/tool?canonicalUrl=test+url&amp;posttype=link&amp;caption=test+title&amp;content=test+url";
 
 
     /**
