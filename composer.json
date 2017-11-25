@@ -44,5 +44,11 @@
     "branch-alias": {
       "dev-master": "1.4.x-dev"
     }
+  },
+  "scripts": {
+    "test": [
+      "codecept build",
+      "codecept run"
+    ]
   }
 }
