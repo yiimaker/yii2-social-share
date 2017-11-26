@@ -38,7 +38,7 @@ class LinkedIn extends Driver
 
         if ($this->siteName) {
             $this->_data['{siteName}'] = $this->siteName;
-            $this->_link .= '&source={siteName}';
+            $this->addUrlParam('source', '{siteName}');
         }
 
         return parent::getLink();
