@@ -54,11 +54,7 @@ class TumblrTest extends \Codeception\Test\Unit
         $url = 'http://example.com';
         $title = 'test title';
 
-        $driver = new Tumblr([
-            'tags' => $tags,
-            'url' => $url,
-            'title' => $title,
-        ]);
+        $driver = new Tumblr(compact('tags', 'url', 'title'));
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
             . '?canonicalUrl=' . Driver::encodeData($url)
