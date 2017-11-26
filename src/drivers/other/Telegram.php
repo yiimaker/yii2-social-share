@@ -33,7 +33,7 @@ class Telegram extends Driver
 
         if ($this->message) {
             $this->_data['{message}'] = $this->message;
-            $this->_link .= '&text={message}';
+            $this->addUrlParam('text', '{message}');
         }
 
         return parent::getLink();
