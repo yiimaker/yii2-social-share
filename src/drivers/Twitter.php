@@ -35,7 +35,7 @@ class Twitter extends Driver
 
         if ($this->account) {
             $this->_data['{account}'] = $this->account;
-            $this->_link .= '&via={account}';
+            $this->addUrlParam('via', '{account}');
         }
 
         $this->_metaTags = [

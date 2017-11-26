@@ -4,3 +4,4 @@ modules:
     enabled:
         - Asserts
         - Yii2
+        - \Helper\Unit
