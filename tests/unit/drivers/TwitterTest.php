@@ -37,7 +37,7 @@ class TwitterTest extends \Codeception\Test\Unit
         $this->assertEquals($expected, $driver->getLink());
     }
 
-    public function testRegistredMetaTags()
+    public function testRegisteredMetaTags()
     {
         $title = 'this is title';
         $description = 'this is description';

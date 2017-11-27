@@ -24,4 +24,16 @@ class Unit extends \Codeception\Module
     {
         return "<meta name=\"$name\" content=\"$content\">";
     }
+
+    /**
+     * Creates HTML meta tag in Open Graph format.
+     *
+     * @param string $property
+     * @param string $content
+     * @return string
+     */
+    public function openGraphMetaTag($property, $content)
+    {
+        return "<meta property=\"$property\" content=\"$content\">";
+    }
 }
