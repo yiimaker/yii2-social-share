@@ -24,5 +24,5 @@ class SocialIconsAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $css = ['css/style.css'];
+    public $css = [YII_ENV_PROD ? 'css/style.min.css' : 'css/style.css'];
 }
