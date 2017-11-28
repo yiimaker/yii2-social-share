@@ -6,7 +6,8 @@ Social Share Change Log
 * Enh: Created driver for Tumblr
 * Enh: Added `driverProperties` property to widget for adding of
 custom properties to drivers
-* Enh: Creates unit tests for `Tumblr`, `Twitter`, `LinkedIn`, `Telegram`, `Facebook` drivers
+* Enh: Creates unit tests for `Tumblr`, `Twitter`, `LinkedIn`, `Telegram`,
+ `Facebook`, `Gmail` drivers
 * Fix: Using `Html::tag()` instead of `Html::a()` in widget
 * Fix: Call parent implementation of method `init()` in widget
 * Fix: Encode `body` param in Gmail driver
