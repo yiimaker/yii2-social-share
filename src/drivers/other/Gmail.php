@@ -21,7 +21,12 @@ class Gmail extends Driver
     /**
      * @var string
      */
-    public $bodyPattern = "{description}\n{url}";
+    public $bodyPattern = '{description} - {url}';
+
+    /**
+     * @var string
+     */
+    protected $body;
 
 
     /**
@@ -29,11 +34,7 @@ class Gmail extends Driver
      */
     public function getLink()
     {
-        $this->_data['{body}'] = strtr($this->bodyPattern, [
-            '{url}'         => $this->url,
-            '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl
-        ]);
+        $this->_data['{body}'] = $this->body;
 
         $this->_link = 'https://mail.google.com/mail/?view=cm&fs=1'
                     . '&su={title}'
@@ -48,5 +49,12 @@ class Gmail extends Driver
     protected function processShareData()
     {
         $this->title = static::encodeData($this->title);
+
+        $this->body = strtr($this->bodyPattern, [
+            '{url}'         => $this->url,
+            '{description}' => $this->description,
+            '{imageUrl}'    => $this->imageUrl
+        ]);
+        $this->body = static::encodeData($this->body);
     }
 }

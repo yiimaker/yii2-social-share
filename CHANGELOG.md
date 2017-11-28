@@ -9,6 +9,7 @@ custom properties to drivers
 * Enh: Creates unit tests for `Tumblr`, `Twitter`, `LinkedIn`, `Telegram`, `Facebook` drivers
 * Fix: Using `Html::tag()` instead of `Html::a()` in widget
 * Fix: Call parent implementation of method `init()` in widget
+* Fix: Encode `body` param in Gmail driver
 
 1.3.0 October 02, 2017
 ----------------------
