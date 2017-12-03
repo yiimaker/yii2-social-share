@@ -19,7 +19,7 @@ Configurator
 #### 2) Create my configurator component
 
 If you want to create your configurator, you should to:
-1. Create class end inherit it from `\yii\base\Object` or `\yii\base\Component`
+1. Create class and inherit it from `\yii\base\Object` or `\yii\base\Component`
 2. Implement the [ConfiguratorInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/ConfiguratorInterface.php) interface
 3. And implement methods from this interface
 

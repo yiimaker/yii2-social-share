@@ -6,7 +6,7 @@
 </p>
 
 Avec cette extension vous pouvez partager vos informations à partir de votre page web  à tous réseaux sociaux.
-Les caractéristiques : SEO support,  les icones par défaut pour les réseaux sociaux, la création facile des pilotes personnalisés (custom drivers) pour  les autres réseaux sociaux, etc.
+Les caractéristiques: SEO support, les icones par défaut pour les réseaux sociaux, la création facile des pilotes personnalisés (custom drivers) pour les autres réseaux sociaux, etc.
 
 L’extension supporte les pilotes pour les réseaux sociaux suivantes:
 

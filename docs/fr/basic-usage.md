@@ -1,6 +1,7 @@
 L’utilisation de base
 =====================
-> Si vous voulez utiliser toutes les fonctionnalités – lisez le guide de l’utilisation avancée et des trucs et astuces.
+> Si vous voulez utiliser toutes les fonctionnalités – lisez le guide de 
+[l’utilisation avancée](advanced-usage.md) et des [trucs et astuces](tips-and-tricks.md).
 
 Configurez les pilotes pour les réseaux sociaux dans l’ app config
 ------------------------------------------------------------------
