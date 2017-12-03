@@ -10,15 +10,15 @@ Configurator
 | Option | Description | Type | Default |
 |----|----|----|----|
 |socialNetworks|Array with configuration for social network drivers|array|-|
-|options|HTML options for share links|array|-|
+|options|HTML options for share-links|array|-|
 |enableSeoOptions|Enable/disable appending of SEO options to share links|bool|true|
-|seoOptions|SEO options for share links|array|`['target' => '_blank', 'rel' => 'nofollow']`|
-|enableDefaultIcons|Enable/disable default icons instead text labels|bool|false|
-|icons|Array with drivers names and icons selectors|array|Was used default icons set|
+|seoOptions|SEO options for share-links|array|`['target' => '_blank', 'rel' => 'nofollow']`|
+|enableDefaultIcons|Enable/disable default icons instead of text labels|bool|false|
+|icons|Array with drivers names and icons selectors|array|Default icons set will be used|
 
 #### 2) Create my configurator component
 
-If you want to create your configurator, you should to:
+If you want to create your configurator, you should:
 1. Create class and inherit it from `\yii\base\Object` or `\yii\base\Component`
 2. Implement the [ConfiguratorInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/ConfiguratorInterface.php) interface
 3. And implement methods from this interface
@@ -54,7 +54,7 @@ Social network drivers
 
 #### 2) Create my social network driver
 
-For creating of driver for social network you should to:
+For creating driver for social network you should:
 
 1. Create class and inherit it from `\ymaker\social\share\base\Driver`
 ```php
@@ -88,7 +88,7 @@ class LinkedIn extends Driver
 }
 ```
 
-In `getLink()` method you should assign a string with share link of social network to `_link` variable and return parent `getLink()` method result.
+In `getLink()` method you should assign a string with share-link of social network to `_link` variable and return parent `getLink()` method result.
 
 ```php
 /**
@@ -105,10 +105,10 @@ public function getLink()
 }
 ```
 
-In this string you can use a four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
+In this string you can use four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
 In result this keys will be replaced by data from widget config.
 
-In second method, you should to process your data.
+In second method, you should process your data.
 
 ```php
 /**
@@ -122,7 +122,7 @@ protected function processShareData()
 }
 ```
 
-If data will be using in url - you should to encode this data for correct work of sharing.
+If data is using in url - you should encode this data for correct work of sharing.
 Base Driver class has a static method for this.
 
 Now you can use this driver in configurator

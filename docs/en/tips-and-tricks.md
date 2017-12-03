@@ -1,8 +1,8 @@
 Tips and tricks
 ===============
 
-Using HTML content instead text labels
---------------------------------------
+Using HTML content instead of text labels
+-----------------------------------------
 
 ```php
 'components' => [
@@ -42,8 +42,8 @@ Translate text labels
 Overwrite icon in default icons set
 -----------------------------------
 
-In this example for Facebook will be used `my-facebook-icon` CSS class.
-For other social networks will be used default icons.
+CSS class `my-facebook-icon` will be used for Facebook driver in this example.
+Default icons will be used for other social networks.
 
 ```php
 'components' => [
