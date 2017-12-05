@@ -1,10 +1,27 @@
-Basic usage
-===========
-> If you want use all features - read a [advanced usage](advanced-usage.md)
- and [tips and tricks](tips-and-tricks.md) guides.
+Installation
+============
 
-Configure drivers for social networks in app config
----------------------------------------------------
+## Getting Composer package
+
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
+
+```
+$ composer require yiimaker/yii2-social-share
+```
+
+or add
+
+```
+"yiimaker/yii2-social-share": "~1.0"
+```
+
+to the require section of your composer.json.
+
+## Configuring application
+
+To use this extension, simply add the following code in your application configuration:
 
 ```php
 'components' => [
@@ -37,17 +54,4 @@ Configure drivers for social networks in app config
         ],
     ],
 ],
-```
-
-Call widget in view file
-------------------------
-
-```php
-<?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShare',
-    'url'            => \yii\helpers\Url::to('absolute/route/to/page', true),
-    'title'          => 'Title of the page',
-    'description'    => 'Description of the page...',
-    'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
-]); ?>
 ```

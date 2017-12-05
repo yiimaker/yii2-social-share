@@ -15,6 +15,8 @@ With this extension you can share data from your web pages to any social network
 Features: SEO support, default icons for social networks, easy creation of custom drivers
 for other social networks and more!
 
+Documentation is at [docs/guide/README.md](docs/guide/README.md).
+
 Extension supports from the box next social network drivers:
 
 * [Vkontakte](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Vkontakte.php)
@@ -38,27 +40,36 @@ also you can [create](docs/en/advanced-usage.md#2-create-my-social-network-drive
 Installation
 ------------
 
-#### Install package
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Run command
+Either run
+
 ```
 $ composer require yiimaker/yii2-social-share
 ```
 
 or add
-```json
+
+```
 "yiimaker/yii2-social-share": "~1.0"
 ```
-to the require section of your `composer.json` file.
+
+to the require section of your composer.json.
 
 Usage
 -----
-* [(EN) Basic usage](docs/en/basic-usage.md)
-* [(RU) Базовое использование](docs/ru/basic-usage.md)
-* [(EN) Advanced usage](docs/en/advanced-usage.md)
-* [(RU) Продвинутое использование](docs/ru/advanced-usage.md)
-* [(EN) Tips and tricks](docs/en/tips-and-tricks.md)
-* [(RU) Советы и фичи](docs/ru/tips-and-tricks.md)
+
+Call widget in view file
+
+```php
+<?= \ymaker\social\share\widgets\SocialShare::widget([
+    'configuratorId' => 'socialShare',
+    'url'            => \yii\helpers\Url::to('absolute/route/to/page', true),
+    'title'          => 'Title of the page',
+    'description'    => 'Description of the page...',
+    'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
+]); ?>
+```
 
 Tests
 -----
