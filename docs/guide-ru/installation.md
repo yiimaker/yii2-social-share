@@ -1,10 +1,27 @@
-Базовое использование
-=====================
-Если вы хотите использовать все возможности - прочтите [продвинутуе использование](advanced-usage.md)
-и [cоветы и фичи](tips-and-tricks.md).
+Установка
+=========
 
-Настройка драйверов социальных сетей в конфигурации приложения
---------------------------------------------------------------
+## Получение с помощью Composer
+
+Предпочтительный способ установки расширения через [composer](http://getcomposer.org/download/).
+
+Для этого запустите
+
+```
+$ composer require yiimaker/yii2-social-share
+```
+
+или добавьте
+
+```
+"yiimaker/yii2-social-share": "~1.0"
+```
+
+в секцию `require` вашего `composer.json`.
+
+## Настройка приложения
+
+Для использования расширения, просто добавьте этот код в конфигурацию вашего приложения:
 
 ```php
 'components' => [
@@ -37,17 +54,4 @@
         ],
     ],
 ],
-```
-
-Вызов виджета в файле вида
---------------------------
-
-```php
-<?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShare',
-    'url'            => \yii\helpers\Url::to('absolute/route/to/page', true),
-    'title'          => 'Title of the page',
-    'description'    => 'Description of the page...',
-    'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
-]); ?>
 ```
