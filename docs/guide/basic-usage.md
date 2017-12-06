@@ -1,8 +1,7 @@
 Basic usage
 ===========
 
-Call widget in view file
-------------------------
+## Call widget in view file
 
 ```php
 <?= \ymaker\social\share\widgets\SocialShare::widget([

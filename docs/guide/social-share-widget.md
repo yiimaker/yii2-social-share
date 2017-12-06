@@ -1,8 +1,7 @@
 Social share widget
 ===================
 
-Configuration options
----------------------
+## Configuration options
 
 | Option | Description | Type | Default |
 |--------|-------------|------|---------|

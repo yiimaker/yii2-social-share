@@ -1,8 +1,7 @@
 Social network drivers
 ======================
 
-Configuration options
----------------------
+## Configuration options
 
 | Option | Description | Type | Default |
 |--------|-------------|------|---------|

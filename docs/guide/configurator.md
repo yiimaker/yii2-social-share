@@ -1,8 +1,7 @@
 Configurator
 ============
 
-Configuration options
----------------------
+## Configuration options
 
 | Option | Description | Type | Default |
 |--------|-------------|------|---------|
@@ -13,8 +12,7 @@ Configuration options
 |enableDefaultIcons|Enable/disable default icons instead of text labels|bool|false|
 |icons|Array with drivers names and icons selectors|array|Default icons set will be used|
 
-Create my configurator component
---------------------------------
+## Create my configurator component
 
 If you want to create your configurator, you should:
 

@@ -15,9 +15,9 @@ or add
 
 ```
 "yiimaker/yii2-social-share": "~1.0"
-```
+````
 
-to the require section of your composer.json.
+to the `require` section of your `composer.json`.
 
 ## Configuring application
 

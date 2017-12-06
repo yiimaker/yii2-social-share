@@ -1,8 +1,7 @@
 Tips and tricks
 ===============
 
-Using HTML content instead of text labels
------------------------------------------
+## Using HTML content instead of text labels
 
 ```php
 'components' => [
@@ -20,8 +19,7 @@ Using HTML content instead of text labels
 ],
 ```
 
-Translate text labels
----------------------
+## Translate text labels
 
 ```php
 'components' => [
@@ -39,8 +37,7 @@ Translate text labels
 ],
 ```
 
-Overwrite icon in default icons set
------------------------------------
+## Overwrite icon in default icons set
 
 CSS class `my-facebook-icon` will be used for Facebook driver in this example.
 Default icons will be used for other social networks.
@@ -58,8 +55,7 @@ Default icons will be used for other social networks.
 ],
 ```
 
-Using of different social networks in different pages
------------------------------------------------------
+## Using of different social networks in different pages
 
 Configure several social share components in app config
 

@@ -1,9 +1,10 @@
 Расширение для шаринга в социальные сети
 ========================================
 
-With this extension you can share data from your web pages to any social network!
-Features: SEO support, default icons for social networks, easy creation of custom drivers
-for other social networks and more!
+С помощью этого расширения вы можете шэйрить данные с ваших веб-страниц в разные
+социальные сети!
+Особенности: поддержка SEO, стандартный набор шрифтовых иконок для социальных сетей,
+простое создание своих драйверов для остальных социальных сетей и многое другое!
 
 Как начать
 ----------
