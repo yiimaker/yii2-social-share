@@ -8,7 +8,6 @@
 namespace ymaker\social\share\tests\unit\drivers;
 
 use Yii;
-use ymaker\social\share\base\Driver;
 use ymaker\social\share\drivers\Facebook;
 
 /**

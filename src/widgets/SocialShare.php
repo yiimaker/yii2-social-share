@@ -8,8 +8,6 @@
 namespace ymaker\social\share\widgets;
 
 use Yii;
-use yii\base\Exception;
-use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
