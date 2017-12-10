@@ -56,6 +56,26 @@ public function getLink()
 In this string you can use four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
 In result this keys will be replaced by data from widget config.
 
+If you need to register some meta tags you should to add this tags to `_metaTags` array
+
+```php
+/**
+ * @inheritdoc
+ */
+public function getLink()
+{
+    $this->_metaTags = [
+        ['property' => 'og:url',         'content' => '{url}'],
+        ['property' => 'og:type',        'content' => 'website'],
+        ['property' => 'og:title',       'content' => '{title}'],
+        ['property' => 'og:description', 'content' => '{description}'],
+        ['property' => 'og:image',       'content' => '{imageUrl}'],
+    ];
+                    
+    return parent::getLink();
+}
+```
+
 In second method, you should process your data.
 
 ```php

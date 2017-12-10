@@ -56,6 +56,26 @@ public function getLink()
 В этой строке вы можете использовать четыре ключа: `{url}`, `{title}`, `{description}` и `{imageUrl}`.
 В результате эти ключи будут заменены на данные из конфигурации виджета.
 
+Если вам нужно добавить мета-теги на страницу - вы должны добавить эти мета теги в массив `_metaTags`
+
+```php
+/**
+ * @inheritdoc
+ */
+public function getLink()
+{
+    $this->_metaTags = [
+        ['property' => 'og:url',         'content' => '{url}'],
+        ['property' => 'og:type',        'content' => 'website'],
+        ['property' => 'og:title',       'content' => '{title}'],
+        ['property' => 'og:description', 'content' => '{description}'],
+        ['property' => 'og:image',       'content' => '{imageUrl}'],
+    ];
+                    
+    return parent::getLink();
+}
+```
+
 Во втором методе вам необходимо обработать данные из конфирурации виджета
 
 ```php

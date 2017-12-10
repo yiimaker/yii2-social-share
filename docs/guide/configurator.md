@@ -3,14 +3,25 @@ Configurator
 
 ## Configuration options
 
-| Option | Description | Type | Default |
-|--------|-------------|------|---------|
-|socialNetworks|Array with configuration for social network drivers|array|-|
-|options|HTML options for share-links|array|-|
-|enableSeoOptions|Enable/disable appending of SEO options to share links|bool|true|
-|seoOptions|SEO options for share-links|array|`['target' => '_blank', 'rel' => 'nofollow']`|
-|enableDefaultIcons|Enable/disable default icons instead of text labels|bool|false|
-|icons|Array with drivers names and icons selectors|array|Default icons set will be used|
+| Option            | Description                                           | Type  | Default                                       |
+|-------------------|-------------------------------------------------------|-------|-----------------------------------------------|
+|socialNetworks     |Array with configuration for social network drivers    |array  |-                                              |
+|options            |HTML options for share-links                           |array  |-                                              |
+|enableSeoOptions   |Enable/disable appending of SEO options to share links |bool   |true                                           |
+|seoOptions         |SEO options for share-links                            |array  |`['target' => '_blank', 'rel' => 'nofollow']`  |
+|enableDefaultIcons |Enable/disable default icons instead of text labels    |bool   |false                                          |
+|icons              |Array with drivers names and icons selectors           |array  |Default icons set will be used                 |
+
+## Configuration examples
+
+### icons
+
+```php
+'icons' => [
+    \ymaker\social\share\drivers\Twitter::class => 'icon-twitter', // CSS class
+    \ymaker\social\share\drivers\Facebook::class => 'icon-facebook,  // CSS class
+],
+```
 
 ## Create my configurator component
 

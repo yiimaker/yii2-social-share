@@ -47,7 +47,7 @@ class SocialShare extends Widget
      */
     public $imageUrl = '';
     /**
-     * @var array Properties for specific driver.
+     * @var array Special properties for specific driver.
      * @since 1.4.0
      */
     public $driverProperties = [];
