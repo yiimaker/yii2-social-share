@@ -28,14 +28,16 @@ Extension supports from the box next social network drivers:
 * [Tumblr](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Tumblr.php)
 
 and drivers for messengers:
+
 * [Telegram](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/Telegram.php)
 * [Viber](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/mobile/Viber.php)
 * [WhatsApp](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/mobile/WhatsApp.php)
 
 other drivers:
+
 * [Gmail](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/Gmail.php)
 
-also you can [create](docs/en/advanced-usage.md#2-create-my-social-network-driver) your driver, it's very simple!
+also you can [create](docs/guide/create-driver.md) your driver, it's very simple!
 
 Installation
 ------------
@@ -75,13 +77,13 @@ Tests
 -----
 You can run tests with composer command
 
-```bash
+```
 $ composer test
 ```
 
 or using following command
 
-```bash
+```
 $ codecept build && codecept run
 ```
 
