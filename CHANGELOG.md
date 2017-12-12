@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+2.0.0 Under development
+-----------------------
+* No changes in this release
+
 1.4.0 December 12, 2017 
 -----------------------
 * Enh: Created driver for Tumblr
