@@ -1,9 +1,9 @@
-Create my social network driver
-===============================
+La création de votre propre pilote de réseaux sociaux
+=====================================================
 
-For creating driver for social network you should:
+Si vous voulez créer votre propre pilote de réseaux sociaux, vous devez:
 
-1. Create class and inherit it from `\ymaker\social\share\base\Driver`
+1. Créer la classe et hériter ce classe de `\ymaker\social\share\base\Driver`
 
 ```php
 use ymaker\social\share\base\Driver;
@@ -13,7 +13,7 @@ class LinkedIn extends Driver
 }
 ```
 
-2. And implement two methods
+2. Mettre en œuvre les deux méthodes
 
 ```php
 use ymaker\social\share\base\Driver;
@@ -36,7 +36,8 @@ class LinkedIn extends Driver
 }
 ```
 
-In `getLink()` method you should assign a string with share-link of social network to `_link` variable and return parent `getLink()` method result.
+Dans la méthode `getLink()` vous devrez assigner le chaîne avec le lien de partage des réseaux social à la
+variable `_link` et retourner la méthode parental `getLink()` résultat.
 
 ```php
 /**
@@ -53,10 +54,10 @@ public function getLink()
 }
 ```
 
-In this string you can use four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
-In result this keys will be replaced by data from widget config.
+Dans ce chaîne il faut utiliser quatre clés - `{url}`, `{title}`, `{description}` et `{imageUrl}`.
+Comme le résultat ces clés seront remplacées par les données de widget config.
 
-If you need to register some meta tags you should add this tags to `_metaTags` array
+Si vous voulez enregistrer les méta-tags, il faut ajouter ces tags au tableau `_metaTags` array
 
 ```php
 /**
@@ -76,7 +77,7 @@ public function getLink()
 }
 ```
 
-In second method, you should process your data.
+Dans la seconde méthode vous devrez traiter vos données.
 
 ```php
 /**
@@ -90,10 +91,10 @@ protected function processShareData()
 }
 ```
 
-If data is using in url - you should encode this data for correct work of sharing.
-Base Driver class has a static method for this.
+Si les données sont utilisées dans url – vous devrez encoder cette information pour garantir un usage correct du partage.
+La classe Base Driver a la méthode statique pour ça.
 
-Now you can use this driver in configurator
+Maintenant, vous pouvez utiliser ce pilote dans le configurateur.
 
 ```php
 'components' => [

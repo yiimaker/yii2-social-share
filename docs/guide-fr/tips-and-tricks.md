@@ -1,8 +1,7 @@
 Les trucs et astuces
 ====================
 
-L’utilisation de HTML contenu à lieu des étiquettes de texte
-------------------------------------------------------------
+## L’utilisation de HTML contenu à lieu des  étiquettes de texte
 
 ```php
 'components' => [
@@ -20,8 +19,7 @@ L’utilisation de HTML contenu à lieu des étiquettes de texte
 ],
 ```
 
-Pour traduire les étiquettes de texte
--------------------------------------
+## Pour traduire les étiquettes de texte
 
 ```php
 'components' => [
@@ -39,10 +37,9 @@ Pour traduire les étiquettes de texte
 ],
 ```
 
-Ecraser l’icône dans le set des icônes par défaut
--------------------------------------------------
+## Ecraser l’icône dans le set des icônes par défaut
 
-Dans cet exemple pour Facebook utilisez `my-facebook-icon` CSS class.
+Dans cet exemple pour Facebook utilisez my-facebook-icon CSS class.
 Pour les autres réseaux sociaux utilisez les icônes par défaut.
 
 ```php
@@ -58,8 +55,7 @@ Pour les autres réseaux sociaux utilisez les icônes par défaut.
 ],
 ```
 
-L’utilisation des différents réseaux sociaux sur les pages différentes
-----------------------------------------------------------------------
+## L’utilisation des différents réseaux sociaux sur les pages différentes
 
 Installez certains composants du partage sur les réseaux sociaux dans l’app config
 
@@ -103,7 +99,7 @@ Installez certains composants du partage sur les réseaux sociaux dans l’app c
 ],
 ```
 
-Appelez le widget avec le composant exigé dans le fichier affiché
+Appelez le widget avec le composant exigé dans  le fichier affiché
 
 ```php
 // blog-article.php view file

@@ -6,7 +6,7 @@ Social share widget
 | Option            | Description                                   | Type          | Default                       |
 |-------------------|-----------------------------------------------|---------------|-------------------------------|
 |configuratorId     |ID of configurator component from app config   |string         |-                              |
-|url                |Absolute URL to share page|string              |string         |Result of `Url::to('', true)`  |
+|url                |Absolute URL to share page                     |string         |Result of `Url::to('', true)`  |
 |title              |Title of share page                            |string         |-                              |
 |description        |Description of share page                      |string         |-                              |
 |imageUrl           |Absolute URL to image for share page           |string         |-                              |

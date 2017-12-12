@@ -1,10 +1,27 @@
-L’utilisation de base
-=====================
-> Si vous voulez utiliser toutes les fonctionnalités – lisez le guide de 
-[l’utilisation avancée](advanced-usage.md) et des [trucs et astuces](tips-and-tricks.md).
+L’installation
+==============
 
-Configurez les pilotes pour les réseaux sociaux dans l’ app config
-------------------------------------------------------------------
+## Un package d’iInstallation
+
+Le moyen préférable pour installer cette extension c’est d’utiliser le [composer](http://getcomposer.org/download/).
+
+Exécutez une commande
+
+```
+$ composer require yiimaker/yii2-social-share
+```
+
+ou ajoutez
+
+```
+"yiimaker/yii2-social-share": "~1.0"
+````
+
+pour la section `require` de votre `composer.json` file.
+
+## La configuration de l’application
+
+Pour utiliser cette extension juste ajoutez le code suivant dans votre configuration de l’application:
 
 ```php
 'components' => [
@@ -37,17 +54,4 @@ Configurez les pilotes pour les réseaux sociaux dans l’ app config
         ],
     ],
 ],
-```
-
-Appelez le widget dans  le fichier affiché
-------------------------------------------
-
-```php
-<?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShare',
-    'url'            => \yii\helpers\Url::to('absolute/route/to/page', true),
-    'title'          => 'Title of the page',
-    'description'    => 'Description of the page...',
-    'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
-]); ?>
 ```
