@@ -1,7 +1,7 @@
 Social Share Change Log
 =======================
 
-1.4.0 Under development
+1.4.0 December 12, 2017 
 -----------------------
 * Enh: Created driver for Tumblr
 * Enh: Added `driverProperties` property to widget for adding of
