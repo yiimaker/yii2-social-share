@@ -62,7 +62,7 @@ class Configurator extends Object implements ConfiguratorInterface
         if (empty($this->seoOptions)) {
             $this->seoOptions = [
                 'target' => '_blank',
-                'rel'    => 'nofollow',
+                'rel'    => 'noopener',
             ];
         }
         if ($this->enableDefaultIcons) {

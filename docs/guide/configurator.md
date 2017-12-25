@@ -8,7 +8,7 @@ Configurator
 |socialNetworks     |Array with configuration for social network drivers    |array  |-                                              |
 |options            |HTML options for share-links                           |array  |-                                              |
 |enableSeoOptions   |Enable/disable appending of SEO options to share links |bool   |true                                           |
-|seoOptions         |SEO options for share-links                            |array  |`['target' => '_blank', 'rel' => 'nofollow']`  |
+|seoOptions         |SEO options for share-links                            |array  |`['target' => '_blank', 'rel' => 'noopener']`  |
 |enableDefaultIcons |Enable/disable default icons instead of text labels    |bool   |false                                          |
 |icons              |Array with drivers names and icons selectors           |array  |Default icons set will be used                 |
 

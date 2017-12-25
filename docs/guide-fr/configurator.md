@@ -8,7 +8,7 @@ Le configurateur
 |socialNetworks     |Le tableau des configurations des pilotes pour les réseaux sociaux                 |array  |-                                              |
 |options            |Les attributs HTML pour le lien du partage                                         |array  |-                                              |
 |enableSeoOptions   |L’adjonction des attributs SEO marche/arrêt pour le lien                           |bool   |true                                           |
-|seoOptions         |Les attributs SEO pour le lien                                                     |array  |`['target' => '_blank', 'rel' => 'nofollow']`  |
+|seoOptions         |Les attributs SEO pour le lien                                                     |array  |`['target' => '_blank', 'rel' => 'noopener']`  |
 |enableDefaultIcons |L’utilisation des icônes marche/arrêt à lieu des étiquettes de texte               |bool   |false                                          |
 |icons              |Le tableau associatif avec le nom de classe de pilote et le secteur pour l’icône   |array  |Des icônes par défaut                          |
 

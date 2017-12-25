@@ -8,7 +8,7 @@
 |socialNetworks     |Массив с настройками драйверов социальных сетей                    |array          |-                                              |
 |options            |HTML аттрибуты для ссылки                                          |array          |-                                              |
 |enableSeoOptions   |Вкл/выкл добавление SEO аттрибутов для ссылки                      |bool           |true                                           |
-|seoOptions         |SEO аттрибуты для ссылки                                           |array          |`['target' => '_blank', 'rel' => 'nofollow']`  |
+|seoOptions         |SEO аттрибуты для ссылки                                           |array          |`['target' => '_blank', 'rel' => 'noopener']`  |
 |enableDefaultIcons |Вкл/выкл использование иконок вместо текстовых лэйблов             |bool           |false                                          |
 |icons              |Ассоциативный массив с именем класса драйвера и селектором иконки  |array          |Используется стандартный набор иконок          |
 

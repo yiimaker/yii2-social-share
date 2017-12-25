@@ -1,9 +1,9 @@
 Social Share Change Log
 =======================
 
-2.0.0 Under development
+1.4.1 Under development
 -----------------------
-* No changes in this release
+* Fix #5: Fixes vulnerability of `target="_blank"`
 
 1.4.0 December 12, 2017 
 -----------------------
