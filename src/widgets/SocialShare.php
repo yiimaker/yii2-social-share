@@ -97,7 +97,17 @@ class SocialShare extends Widget
         return $this->_configurator instanceof Configurator &&
             $this->_configurator->enableDefaultIcons;
     }
-    
+
+    /**
+     * @return bool
+     * @since 1.4.1
+     */
+    private function isSeoEnabled()
+    {
+        return $this->_configurator instanceof Configurator &&
+            $this->_configurator->enableSeoOptions;
+    }
+
     /**
      * Creates driver object.
      * 
@@ -198,10 +208,19 @@ class SocialShare extends Widget
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
         }
 
+        $isSeoEnabled = $this->isSeoEnabled();
+        if ($isSeoEnabled) {
+            echo '<!--noindex-->';
+        }
+
         echo Html::beginTag($this->wrapperTag, $this->wrapperOptions);
         foreach ($links as $link) {
             echo ($this->linkWrapperTag !== false) ? Html::tag($this->linkWrapperTag, $link, $this->linkWrapperOptions) : $link;
         }
         echo Html::endTag($this->wrapperTag);
+
+        if ($isSeoEnabled) {
+            echo '<!--/noindex-->';
+        }
     }
 }

@@ -60,19 +60,21 @@ class SocialShareTest extends \Codeception\Test\Unit
     public function testDefaultConfig()
     {
         $expectedHTML =
-                    "<ul class=\"social-share\">"
-                        . "<li><a href=\"$this->vk\" rel=\"nofollow\" target=\"_blank\">Vkontakte</a></li>"
-                        . "<li><a href=\"$this->facebook\" rel=\"nofollow\" target=\"_blank\">Facebook</a></li>"
-                        . "<li><a href=\"$this->twitter\" rel=\"nofollow\" target=\"_blank\">Twitter</a></li>"
-                        . "<li><a href=\"$this->googlePlus\" rel=\"nofollow\" target=\"_blank\">Google Plus</a></li>"
-                        . "<li><a href=\"$this->linkedIn\" rel=\"nofollow\" target=\"_blank\">Linkedin</a></li>"
-                        . "<li><a href=\"$this->pinterest\" rel=\"nofollow\" target=\"_blank\">Pinterest</a></li>"
-                        . "<li><a href=\"$this->telegram\" rel=\"nofollow\" target=\"_blank\">Telegram</a></li>"
-                        . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\">Viber</a></li>"
-                        . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\">Whats App</a></li>"
-                        . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\">Gmail</a></li>"
-                        . "<li><a href=\"$this->tumblr\" rel=\"nofollow\" target=\"_blank\">Tumblr</a></li>"
-                    . "</ul>";
+                    "<!--noindex-->"
+                    . "<ul class=\"social-share\">"
+                        . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\">Vkontakte</a></li>"
+                        . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\">Facebook</a></li>"
+                        . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\">Twitter</a></li>"
+                        . "<li><a href=\"$this->googlePlus\" rel=\"noopener\" target=\"_blank\">Google Plus</a></li>"
+                        . "<li><a href=\"$this->linkedIn\" rel=\"noopener\" target=\"_blank\">Linkedin</a></li>"
+                        . "<li><a href=\"$this->pinterest\" rel=\"noopener\" target=\"_blank\">Pinterest</a></li>"
+                        . "<li><a href=\"$this->telegram\" rel=\"noopener\" target=\"_blank\">Telegram</a></li>"
+                        . "<li><a href=\"$this->viber\" rel=\"noopener\" target=\"_blank\">Viber</a></li>"
+                        . "<li><a href=\"$this->whatsApp\" rel=\"noopener\" target=\"_blank\">Whats App</a></li>"
+                        . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\">Gmail</a></li>"
+                        . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\">Tumblr</a></li>"
+                    . "</ul>"
+                    . "<!--/noindex-->";
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
         $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
@@ -81,19 +83,21 @@ class SocialShareTest extends \Codeception\Test\Unit
     public function testDefaultIcons()
     {
         $expectedHTML =
-            "<ul class=\"social-share\">"
-            . "<li><a href=\"$this->vk\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-vk\"></i></a></li>"
-            . "<li><a href=\"$this->facebook\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-facebook\"></i></a></li>"
-            . "<li><a href=\"$this->twitter\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-twitter\"></i></a></li>"
-            . "<li><a href=\"$this->googlePlus\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-google-plus\"></i></a></li>"
-            . "<li><a href=\"$this->linkedIn\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-linkedin\"></i></a></li>"
-            . "<li><a href=\"$this->pinterest\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-pinterest\"></i></a></li>"
-            . "<li><a href=\"$this->telegram\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-telegram\"></i></a></li>"
-            . "<li><a href=\"$this->viber\" rel=\"nofollow\" target=\"_blank\"><i class=\"\"></i></a></li>"
-            . "<li><a href=\"$this->whatsApp\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-whatsapp\"></i></a></li>"
-            . "<li><a href=\"$this->gmail\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-gmail\"></i></a></li>"
-            . "<li><a href=\"$this->tumblr\" rel=\"nofollow\" target=\"_blank\"><i class=\"si si-tumblr\"></i></a></li>"
-            . "</ul>";
+            "<!--noindex-->"
+            . "<ul class=\"social-share\">"
+                . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-vk\"></i></a></li>"
+                . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-facebook\"></i></a></li>"
+                . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-twitter\"></i></a></li>"
+                . "<li><a href=\"$this->googlePlus\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-google-plus\"></i></a></li>"
+                . "<li><a href=\"$this->linkedIn\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-linkedin\"></i></a></li>"
+                . "<li><a href=\"$this->pinterest\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-pinterest\"></i></a></li>"
+                . "<li><a href=\"$this->telegram\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-telegram\"></i></a></li>"
+                . "<li><a href=\"$this->viber\" rel=\"noopener\" target=\"_blank\"><i class=\"\"></i></a></li>"
+                . "<li><a href=\"$this->whatsApp\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-whatsapp\"></i></a></li>"
+                . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-gmail\"></i></a></li>"
+                . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-tumblr\"></i></a></li>"
+            . "</ul>"
+            . "<!--/noindex-->";
 
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);
 
