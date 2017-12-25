@@ -1,9 +1,10 @@
 Social Share Change Log
 =======================
 
-1.4.1 Under development
+1.4.1 December 25, 2017
 -----------------------
 * Fix #5: Fixes vulnerability of `target="_blank"`
+* Chg: Using '<!--noindex-->' comment instead of 'rel="nofollow"' attribute
 
 1.4.0 December 12, 2017 
 -----------------------
