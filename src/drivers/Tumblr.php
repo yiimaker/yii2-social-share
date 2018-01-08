@@ -102,7 +102,7 @@ class Tumblr extends DriverAbstract
         }
 
         if (!empty($this->tags)) {
-            $this->appendToData('tags', implode(',' , $this->tags));
+            $this->appendToData('tags', implode(',', $this->tags));
         }
     }
 

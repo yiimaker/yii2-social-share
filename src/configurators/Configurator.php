@@ -53,6 +53,22 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      */
     public $icons = [];
 
+    /**
+     * @var array
+     */
+    private $_defaultIconsMap = [
+        Vkontakte::class    => 'si si-vk',
+        Facebook::class     => 'si si-facebook',
+        Twitter::class      => 'si si-twitter',
+        GooglePlus::class   => 'si si-google-plus',
+        LinkedIn::class     => 'si si-linkedin',
+        Pinterest::class    => 'si si-pinterest',
+        Telegram::class     => 'si si-telegram',
+        WhatsApp::class     => 'si si-whatsapp',
+        Gmail::class        => 'si si-gmail',
+        Tumblr::class       => 'si si-tumblr',
+    ];
+
 
     /**
      * Set default values for special link options.
@@ -66,29 +82,8 @@ class Configurator extends BaseObject implements ConfiguratorInterface
             ];
         }
         if ($this->enableDefaultIcons) {
-            $this->icons = ArrayHelper::merge($this->getDefaultIcons(), $this->icons);
+            $this->icons = ArrayHelper::merge($this->_defaultIconsMap, $this->icons);
         }
-    }
-
-    /**
-     * Returns map of default icons for social networks.
-     *
-     * @return array
-     */
-    private function getDefaultIcons()
-    {
-        return [
-            Vkontakte::class    => 'si si-vk',
-            Facebook::class     => 'si si-facebook',
-            Twitter::class      => 'si si-twitter',
-            GooglePlus::class   => 'si si-google-plus',
-            LinkedIn::class     => 'si si-linkedin',
-            Pinterest::class    => 'si si-pinterest',
-            Telegram::class     => 'si si-telegram',
-            WhatsApp::class     => 'si si-whatsapp',
-            Gmail::class        => 'si si-gmail',
-            Tumblr::class       => 'si si-tumblr',
-        ];
     }
 
     /**
