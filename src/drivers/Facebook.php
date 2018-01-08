@@ -7,39 +7,44 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\DriverAbstract;
 
 /**
- * Driver for Facebook.
+ * DriverAbstract for Facebook.
  * @link https://facebook.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Facebook extends Driver
+class Facebook extends DriverAbstract
 {
-    /**
-     * @inheritdoc
-     */
-    public function getLink()
-    {
-        $this->_link = 'http://www.facebook.com/sharer.php?u={url}';
-        $this->_metaTags = [
-            ['property' => 'og:url',         'content' => '{url}'],
-            ['property' => 'og:type',        'content' => 'website'],
-            ['property' => 'og:title',       'content' => '{title}'],
-            ['property' => 'og:description', 'content' => '{description}'],
-            ['property' => 'og:image',       'content' => '{imageUrl}'],
-        ];
-
-        return parent::getLink();
-    }
-
     /**
      * @inheritdoc
      */
     protected function processShareData()
     {
         $this->url = static::encodeData($this->url);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildLink()
+    {
+        return 'http://www.facebook.com/sharer.php?u={url}';
+    }
+
+    /**
+     * @return array
+     */
+    protected function getMetaTags()
+    {
+        return [
+            ['property' => 'og:url',         'content' => '{url}'],
+            ['property' => 'og:type',        'content' => 'website'],
+            ['property' => 'og:title',       'content' => '{title}'],
+            ['property' => 'og:description', 'content' => '{description}'],
+            ['property' => 'og:image',       'content' => '{imageUrl}'],
+        ];
     }
 }

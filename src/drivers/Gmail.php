@@ -10,23 +10,31 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\DriverAbstract;
 
 /**
- * DriverAbstract for Vkontakte.
- * @link https://vk.com
+ * DriverAbstract for Gmail.
+ * @link https://gmail.google.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Vkontakte extends DriverAbstract
+class Gmail extends DriverAbstract
 {
+    /**
+     * @var string
+     */
+    public $bodyPattern = '{description} - {url}';
+
+
     /**
      * @inheritdoc
      */
     protected function processShareData()
     {
-        $this->url = static::encodeData($this->url);
         $this->title = static::encodeData($this->title);
-        $this->description = static::encodeData($this->description);
-        $this->imageUrl = static::encodeData($this->imageUrl);
+        $this->appendToData('body', strtr($this->bodyPattern, [
+            '{url}'         => $this->url,
+            '{description}' => $this->description,
+            '{imageUrl}'    => $this->imageUrl
+        ]));
     }
 
     /**
@@ -34,10 +42,6 @@ class Vkontakte extends DriverAbstract
      */
     protected function buildLink()
     {
-        return 'http://vk.com/share.php?'
-            . 'url={url}'
-            . '&title={title}'
-            . '&description={description}'
-            . '&image={imageUrl}';
+        return 'https://mail.google.com/mail/?view=cm&fs=1&su={title}&body={body}';
     }
 }

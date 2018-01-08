@@ -20,16 +20,16 @@ $drivers = [
         'class' => \ymaker\social\share\drivers\Pinterest::class,
     ],
     'telegram' => [
-        'class' => \ymaker\social\share\drivers\other\Telegram::class,
+        'class' => \ymaker\social\share\drivers\Telegram::class,
     ],
     'viber' => [
-        'class' => \ymaker\social\share\drivers\other\mobile\Viber::class,
+        'class' => \ymaker\social\share\drivers\Viber::class,
     ],
     'whatsApp' => [
-        'class' => \ymaker\social\share\drivers\other\mobile\WhatsApp::class,
+        'class' => \ymaker\social\share\drivers\WhatsApp::class,
     ],
     'gmail' => [
-        'class' => \ymaker\social\share\drivers\other\Gmail::class,
+        'class' => \ymaker\social\share\drivers\Gmail::class,
     ],
     'tumblr' => [
         'class' => \ymaker\social\share\drivers\Tumblr::class,

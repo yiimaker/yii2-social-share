@@ -7,10 +7,10 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\DriverAbstract;
 
 /**
- * Driver for LinkedIn.
+ * DriverAbstract for LinkedIn.
  * @link https://linkedin.com
  *
  * @property bool|string $siteName
@@ -18,31 +18,13 @@ use ymaker\social\share\base\Driver;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class LinkedIn extends Driver
+class LinkedIn extends DriverAbstract
 {
     /**
      * @var bool|string
      */
     public $siteName = false;
 
-
-    /**
-     * @inheritdoc
-     */
-    public function getLink()
-    {
-        $this->_link = 'https://www.linkedin.com/shareArticle?mini=true'
-                    . '&url={url}'
-                    . '&title={title}'
-                    . '&summary={description}';
-
-        if ($this->siteName) {
-            $this->_data['{siteName}'] = $this->siteName;
-            $this->addUrlParam('source', '{siteName}');
-        }
-
-        return parent::getLink();
-    }
 
     /**
      * @inheritdoc
@@ -54,7 +36,24 @@ class LinkedIn extends Driver
         $this->description = static::encodeData($this->description);
 
         if (is_string($this->siteName)) {
-            $this->siteName = static::encodeData($this->siteName);
+            $this->appendToData('siteName', $this->siteName);
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildLink()
+    {
+        $link = 'https://www.linkedin.com/shareArticle?mini=true'
+                    . '&url={url}'
+                    . '&title={title}'
+                    . '&summary={description}';
+
+        if ($this->siteName) {
+            $this->addUrlParam($link, 'source', '{siteName}');
+        }
+
+        return $link;
     }
 }

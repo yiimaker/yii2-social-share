@@ -10,20 +10,29 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\DriverAbstract;
 
 /**
- * DriverAbstract for Google Plus.
- * @link https://plus.google.com
+ * DriverAbstract for Telegram messenger.
+ * @link https://telegram.org
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class GooglePlus extends DriverAbstract
+class Telegram extends DriverAbstract
 {
+    /**
+     * @var bool|string
+     */
+    public $message = false;
+
+
     /**
      * @inheritdoc
      */
     protected function processShareData()
     {
         $this->url = static::encodeData($this->url);
+        if (is_string($this->message)) {
+            $this->appendToData('message', $this->message);
+        }
     }
 
     /**
@@ -31,6 +40,12 @@ class GooglePlus extends DriverAbstract
      */
     protected function buildLink()
     {
-        return 'https://plusone.google.com/_/+1/confirm?hl=en&url={url}';
+        $link = 'https://telegram.me/share/url?url={url}';
+
+        if ($this->message) {
+            $this->addUrlParam($link, 'text', '{message}');
+        }
+
+        return $link;
     }
 }

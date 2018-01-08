@@ -8,16 +8,16 @@
 namespace ymaker\social\share\drivers;
 
 use yii\base\InvalidConfigException;
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\DriverAbstract;
 
 /**
- * Driver for Tumblr.
+ * DriverAbstract for Tumblr.
  * @link https://www.tumblr.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class Tumblr extends Driver
+class Tumblr extends DriverAbstract
 {
     const POST_TYPE_LINK    = 'link';
     const POST_TYPE_TEXT    = 'text';
@@ -34,7 +34,7 @@ class Tumblr extends Driver
      */
     public $shareUrl;
     /**
-     * @var array Share photos list for type of post `photo`.
+     * @var array|string Share photos list for type of post `photo`.
      */
     public $sharePhotos = [];
     /**
@@ -42,7 +42,7 @@ class Tumblr extends Driver
      */
     public $shareVideoUrl;
     /**
-     * @var array
+     * @var array|string
      */
     public $tags = [];
 
@@ -76,46 +76,6 @@ class Tumblr extends Driver
     /**
      * @inheritdoc
      */
-    public function getLink()
-    {
-        $this->_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}';
-
-        $this->addUrlParam('posttype', $this->postType);
-
-        if ($this->postType === self::POST_TYPE_TEXT) {
-            $this->addUrlParam('title', '{title}');
-        } else {
-            $this->addUrlParam('caption', '{title}');
-        }
-
-        switch ($this->postType) {
-            case self::POST_TYPE_LINK:
-                $url = $this->shareUrl === null
-                    ? '{url}'
-                    : $this->shareUrl;
-                $this->addUrlParam('content', $url);
-                break;
-            case self::POST_TYPE_PHOTO:
-                $this->addUrlParam('content', implode(',', $this->sharePhotos));
-                break;
-            case self::POST_TYPE_VIDEO:
-                $this->addUrlParam('content', $this->shareVideoUrl);
-                break;
-            default:
-                $this->addUrlParam('content', '{description}');
-                break;
-        }
-
-        if (!empty($this->tags)) {
-            $this->addUrlParam('tags', implode(',' , $this->tags));
-        }
-
-        return parent::getLink();
-    }
-
-    /**
-     * Method should process the share data for current driver.
-     */
     protected function processShareData()
     {
         $this->url = static::encodeData($this->url);
@@ -124,20 +84,49 @@ class Tumblr extends Driver
 
         switch ($this->postType) {
             case self::POST_TYPE_LINK:
-                if (is_string($this->shareUrl)) {
-                    $this->shareUrl = static::encodeData($this->shareUrl);
-                }
+                $this->appendToData(
+                    'content',
+                    null === $this->shareUrl ? $this->url : $this->shareUrl,
+                    null !== $this->shareUrl
+                );
                 break;
             case self::POST_TYPE_PHOTO:
-                $this->sharePhotos = static::encodeData($this->sharePhotos);
+                $this->appendToData('content', implode(',', $this->sharePhotos));
                 break;
             case self::POST_TYPE_VIDEO:
-                $this->shareVideoUrl = static::encodeData($this->shareVideoUrl);
+                $this->appendToData('content', $this->shareVideoUrl);
+                break;
+            default:
+                $this->appendToData('content', $this->description, false);
                 break;
         }
 
         if (!empty($this->tags)) {
-            $this->tags = static::encodeData($this->tags);
+            $this->appendToData('tags', implode(',' , $this->tags));
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildLink()
+    {
+        $link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}';
+
+        $this->addUrlParam($link, 'posttype', $this->postType);
+
+        if ($this->postType === self::POST_TYPE_TEXT) {
+            $this->addUrlParam($link, 'title', '{title}');
+        } else {
+            $this->addUrlParam($link, 'caption', '{title}');
+        }
+
+        $this->addUrlParam($link, 'content', '{content}');
+
+        if (!empty($this->tags)) {
+            $this->addUrlParam($link, 'tags', '{tags}');
+        }
+
+        return $link;
     }
 }

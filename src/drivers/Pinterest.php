@@ -7,30 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\DriverAbstract;
 
 /**
- * Driver for Pinterest.
+ * DriverAbstract for Pinterest.
  * @link https://pinterest.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Pinterest extends Driver
+class Pinterest extends DriverAbstract
 {
-    /**
-     * @inheritdoc
-     */
-    public function getLink()
-    {
-        $this->_link = 'https://www.pinterest.com/pin/create/link/?'
-                    . 'url={url}'
-                    . '&media={imageUrl}'
-                    . '&description={description}';
-
-        return parent::getLink();
-    }
-
     /**
      * @inheritdoc
      */
@@ -39,5 +26,16 @@ class Pinterest extends Driver
         $this->url = static::encodeData($this->url);
         $this->imageUrl = static::encodeData($this->imageUrl);
         $this->description = static::encodeData($this->description);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildLink()
+    {
+        return 'https://www.pinterest.com/pin/create/link/?'
+            . 'url={url}'
+            . '&media={imageUrl}'
+            . '&description={description}';
     }
 }

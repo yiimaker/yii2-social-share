@@ -7,7 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\DriverAbstract;
 use ymaker\social\share\drivers\Tumblr;
 
 /**
@@ -57,11 +57,11 @@ class TumblrTest extends \Codeception\Test\Unit
         $driver = new Tumblr(compact('tags', 'url', 'title'));
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_LINK
-            . '&caption=' . Driver::encodeData($title)
-            . '&content=' . Driver::encodeData($url)
-            . '&tags=' . implode(',', $tags);
+            . '&caption=' . DriverAbstract::encodeData($title)
+            . '&content=' . DriverAbstract::encodeData($url)
+            . '&tags=' . DriverAbstract::encodeData(implode(',', $tags));
 
         $this->assertEquals($expected, $driver->getLink());
     }
@@ -80,10 +80,10 @@ class TumblrTest extends \Codeception\Test\Unit
         ]);
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_LINK
-            . '&caption=' . Driver::encodeData($title)
-            . '&content=' . Driver::encodeData($shareUrl);
+            . '&caption=' . DriverAbstract::encodeData($title)
+            . '&content=' . DriverAbstract::encodeData($shareUrl);
 
         $this->assertEquals($expected, $driver->getLink());
     }
@@ -102,10 +102,10 @@ class TumblrTest extends \Codeception\Test\Unit
         ]);
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_TEXT
-            . '&title=' . Driver::encodeData($title)
-            . '&content=' . Driver::encodeData($description);
+            . '&title=' . DriverAbstract::encodeData($title)
+            . '&content=' . DriverAbstract::encodeData($description);
 
         $this->assertEquals($expected, $driver->getLink());
     }
@@ -124,10 +124,10 @@ class TumblrTest extends \Codeception\Test\Unit
         ]);
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_QUOTE
-            . '&caption=' . Driver::encodeData($title)
-            . '&content=' . Driver::encodeData($description);
+            . '&caption=' . DriverAbstract::encodeData($title)
+            . '&content=' . DriverAbstract::encodeData($description);
 
         $this->assertEquals($expected, $driver->getLink());
     }
@@ -146,9 +146,9 @@ class TumblrTest extends \Codeception\Test\Unit
         ]);
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_PHOTO
-            . '&caption=' . Driver::encodeData($title)
+            . '&caption=' . DriverAbstract::encodeData($title)
             . '&content=' . implode(',', $sharePhotos);
 
         $this->assertEquals($expected, $driver->getLink());
@@ -168,10 +168,10 @@ class TumblrTest extends \Codeception\Test\Unit
         ]);
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
-            . '?canonicalUrl=' . Driver::encodeData($url)
+            . '?canonicalUrl=' . DriverAbstract::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_VIDEO
-            . '&caption=' . Driver::encodeData($title)
-            . '&content=' . Driver::encodeData($shareVideoUrl);
+            . '&caption=' . DriverAbstract::encodeData($title)
+            . '&content=' . DriverAbstract::encodeData($shareVideoUrl);
 
         $this->assertEquals($expected, $driver->getLink());
     }

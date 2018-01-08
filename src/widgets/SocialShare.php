@@ -116,7 +116,7 @@ class SocialShare extends Widget
      */
     private function createDriver($driverConfig)
     {
-        /* @var \ymaker\social\share\base\Driver $driver */
+        /* @var \ymaker\social\share\base\DriverAbstract $driver */
         $driver = Yii::createObject(ArrayHelper::merge([
             'class'       => $driverConfig['class'],
             'url'         => $this->url,
@@ -185,7 +185,7 @@ class SocialShare extends Widget
 
         foreach ($socialNetworks as $key => $socialNetwork) {
             if (isset($socialNetwork['class'])) {
-                /* @var \ymaker\social\share\base\Driver $driver */
+                /* @var \ymaker\social\share\base\DriverAbstract $driver */
                 $driver = $this->createDriver($socialNetwork);
 
                 $linkOptions = $this->combineOptions($socialNetworks);
