@@ -1,4 +1,5 @@
 <?php
+
 $drivers = [
     'vkontakte' => [
         'class' => \ymaker\social\share\drivers\Vkontakte::class,
