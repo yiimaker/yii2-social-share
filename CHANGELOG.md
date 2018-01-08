@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+2.0.0 Under development
+-----------------------
+* Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13`
+
 1.4.1 December 25, 2017
 -----------------------
 * Fix #5: Fixes vulnerability of `target="_blank"`

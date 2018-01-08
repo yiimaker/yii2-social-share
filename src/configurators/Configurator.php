@@ -7,7 +7,7 @@
 
 namespace ymaker\social\share\configurators;
 
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 use ymaker\social\share\drivers\Facebook;
 use ymaker\social\share\drivers\GooglePlus;
@@ -26,7 +26,7 @@ use ymaker\social\share\drivers\Vkontakte;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Configurator extends Object implements ConfiguratorInterface
+class Configurator extends BaseObject implements ConfiguratorInterface
 {
     /**
      * @var array Configuration of social network drivers.

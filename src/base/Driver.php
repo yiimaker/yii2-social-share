@@ -8,7 +8,7 @@
 namespace ymaker\social\share\base;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 
 /**
  * Base driver for social network definition classes.
@@ -16,7 +16,7 @@ use yii\base\Object;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-abstract class Driver extends Object
+abstract class Driver extends BaseObject
 {
     /**
      * @var string Absolute URL to the page.
