@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for WhatsApp messenger.
+ *
  * @link https://www.whatsapp.com
  *
  * WARNING: This driver works only in mobile devices

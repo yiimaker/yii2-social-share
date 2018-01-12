@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Vkontakte.
+ *
  * @link https://vk.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

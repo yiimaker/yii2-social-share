@@ -12,6 +12,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Tumblr.
+ *
  * @link https://www.tumblr.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
@@ -30,15 +31,21 @@ class Tumblr extends DriverAbstract
      */
     public $postType = self::POST_TYPE_LINK;
     /**
-     * @var string Share URL for type of post `link`.
+     * Share URL for type of post `link`.
+     *
+     * @var string
      */
     public $shareUrl;
     /**
-     * @var array|string Share photos list for type of post `photo`.
+     * Share photos list for type of post `photo`.
+     *
+     * @var array|string
      */
     public $sharePhotos = [];
     /**
-     * @var string Share URL or embed code for type of post `video`.
+     * Share URL or embed code for type of post `video`.
+     *
+     * @var string
      */
     public $shareVideoUrl;
     /**

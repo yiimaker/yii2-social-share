@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for LinkedIn.
+ *
  * @link https://linkedin.com
  *
  * @property bool|string $siteName

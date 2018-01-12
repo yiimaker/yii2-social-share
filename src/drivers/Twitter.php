@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Twitter.
+ *
  * @link https://twitter.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

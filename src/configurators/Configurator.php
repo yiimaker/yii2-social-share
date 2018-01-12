@@ -29,27 +29,39 @@ use ymaker\social\share\drivers\Vkontakte;
 class Configurator extends BaseObject implements ConfiguratorInterface
 {
     /**
-     * @var array Configuration of social network drivers.
+     * Configuration of social network drivers.
+     *
+     * @var array
      */
     public $socialNetworks = [];
     /**
-     * @var array CSS options for share links.
+     * CSS options for share links.
+     *
+     * @var array
      */
     public $options = [];
     /**
-     * @var bool Enable SEO options for share links.
+     * Enable SEO options for share links.
+     *
+     * @var bool
      */
     public $enableSeoOptions = true;
     /**
-     * @var array HTML attributes from this option will be applyed if `enableSeoOptions` is true.
+     * HTML attributes from this option will be applied if `enableSeoOptions` is true.
+     *
+     * @var array
      */
     public $seoOptions = [];
     /**
-     * @var bool Enable default icons instead labels for social networks.
+     * Enable default icons instead labels for social networks.
+     *
+     * @var bool
      */
     public $enableDefaultIcons = false;
     /**
-     * @var array Configuration of icons for social network drivers.
+     * Configuration of icons for social network drivers.
+     *
+     * @var array
      */
     public $icons = [];
 
@@ -108,6 +120,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      * Returns icon selector by driver name.
      *
      * @param string $driverName
+     *
      * @return string
      */
     public function getIconSelector($driverName)

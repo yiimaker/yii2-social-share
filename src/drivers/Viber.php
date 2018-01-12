@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Viber messenger.
+ *
  * @link https://viber.com
  *
  * WARNING: This driver works only in mobile devices

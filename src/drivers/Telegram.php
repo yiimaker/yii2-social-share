@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Telegram messenger.
+ *
  * @link https://telegram.org
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

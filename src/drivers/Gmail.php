@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Gmail.
+ *
  * @link https://gmail.google.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

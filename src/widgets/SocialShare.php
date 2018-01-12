@@ -58,6 +58,7 @@ class SocialShare extends Widget
      * Special properties for specific driver.
      *
      * @var array
+     *
      * @since 1.4.0
      */
     public $driverProperties = [];
@@ -137,6 +138,7 @@ class SocialShare extends Widget
 
     /**
      * @return bool
+     *
      * @since 1.4.1
      */
     final protected function isSeoEnabled()
@@ -148,8 +150,9 @@ class SocialShare extends Widget
     /**
      * Build label for driver.
      *
-     * @param array $driverConfig
-     * @param string $defaultLabel
+     * @param array     $driverConfig
+     * @param string    $defaultLabel
+     *
      * @return string
      */
     protected function getLinkLabel($driverConfig, $defaultLabel)
@@ -163,7 +166,9 @@ class SocialShare extends Widget
      * Creates driver instance.
      *
      * @param array $config Configuration for driver.
+     *
      * @return \ymaker\social\share\base\DriverAbstract
+     *
      * @throws \yii\base\InvalidConfigException
      */
     private function createDriver($config)
@@ -187,6 +192,7 @@ class SocialShare extends Widget
      * Combine global and custom HTML options.
      *
      * @param array $driverConfig
+     *
      * @return array
      */
     private function combineOptions($driverConfig)
@@ -210,6 +216,7 @@ class SocialShare extends Widget
      * Returns array with share links in <a> HTML tag.
      *
      * @return array
+     *
      * @throws \yii\base\InvalidConfigException
      */
     private function getLinkList()

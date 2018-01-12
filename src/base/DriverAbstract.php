@@ -59,6 +59,7 @@ abstract class DriverAbstract extends BaseObject
 
     /**
      * @param string $url
+     *
      * @since 2.0
      */
     public function setUrl($url)
@@ -68,6 +69,7 @@ abstract class DriverAbstract extends BaseObject
 
     /**
      * @param string $title
+     *
      * @since 2.0
      */
     public function setTitle($title)
@@ -77,6 +79,7 @@ abstract class DriverAbstract extends BaseObject
 
     /**
      * @param string $description
+     *
      * @since 2.0
      */
     public function setDescription($description)
@@ -86,6 +89,7 @@ abstract class DriverAbstract extends BaseObject
 
     /**
      * @param string $imageUrl
+     *
      * @since 2.0
      */
     public function setImageUrl($imageUrl)
@@ -96,9 +100,10 @@ abstract class DriverAbstract extends BaseObject
     /**
      * Append value to data array.
      *
-     * @param string $key
-     * @param string $value
-     * @param bool $urlEncode
+     * @param string    $key
+     * @param string    $value
+     * @param bool      $urlEncode
+     *
      * @since 2.0
      */
     public function appendToData($key, $value, $urlEncode = true)
@@ -147,6 +152,7 @@ abstract class DriverAbstract extends BaseObject
      * Encode data for URL.
      *
      * @param string|array $data
+     *
      * @return string|array
      */
     public static function encodeData($data)
@@ -166,6 +172,7 @@ abstract class DriverAbstract extends BaseObject
      * Decode the encoded data.
      *
      * @param string|array $data
+     *
      * @return string|array
      */
     public static function decodeData($data)
@@ -185,8 +192,9 @@ abstract class DriverAbstract extends BaseObject
      * Adds URL param to link.
      *
      * @param string $link
-     * @param string $name Param name.
+     * @param string $name  Param name.
      * @param string $value Param value.
+     *
      * @since 1.4.0
      */
     final protected function addUrlParam(&$link, $name, $value)
@@ -209,6 +217,7 @@ abstract class DriverAbstract extends BaseObject
      * Returns array of meta tags.
      *
      * @return array
+     *
      * @since 2.0
      */
     protected function getMetaTags()
@@ -225,6 +234,7 @@ abstract class DriverAbstract extends BaseObject
      * Method should build template of share link.
      *
      * @return string
+     *
      * @since 2.0
      */
     abstract protected function buildLink();

@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Pinterest.
+ *
  * @link https://pinterest.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

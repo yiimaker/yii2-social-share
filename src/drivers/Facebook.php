@@ -11,6 +11,7 @@ use ymaker\social\share\base\DriverAbstract;
 
 /**
  * DriverAbstract for Facebook.
+ *
  * @link https://facebook.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>

@@ -37,13 +37,14 @@ class SocialShareTest extends \Codeception\Test\Unit
     /**
      * Returns actual HTML code.
      *
-     * @param string $configuratorId
+     * @param string $configurator
+     *
      * @return string
      */
-    protected function getActualHTML($configuratorId)
+    protected function getActualHTML($configurator)
     {
         $widget = new SocialShare([
-            'configurator'  => $configuratorId,
+            'configurator'  => $configurator,
             'url'           => 'test url',
             'title'         => 'test title',
             'description'   => 'test description',
