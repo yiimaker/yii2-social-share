@@ -27,60 +27,65 @@ use ymaker\social\share\configurators\ConfiguratorInterface;
 class SocialShare extends Widget
 {
     /**
-     * @var string ID of configurator component.
+     * @var string|array|ConfiguratorInterface
      */
-    public $configuratorId;
+    public $configurator;
     /**
-     * @var string Absolute URL to the page.
+     * Absolute URL to the page.
+     *
+     * @var string
      */
     public $url = '';
     /**
-     * @var string Title for share.
+     * Title for share.
+     *
+     * @var string
      */
     public $title = '';
     /**
-     * @var string Description for share.
+     * Description for share.
+     *
+     * @var string
      */
     public $description = '';
     /**
-     * @var string Absolute URL to the image for share.
+     * Absolute URL to the image for share.
+     *
+     * @var string
      */
     public $imageUrl = '';
     /**
-     * @var array Special properties for specific driver.
+     * Special properties for specific driver.
+     *
+     * @var array
      * @since 1.4.0
      */
     public $driverProperties = [];
     /**
-     * @var string Name of the wrapper tag.
+     * HTML options for links container tag.
+     * If you won't to use it - set `tag` option to `false`.
+     *
+     * @var array
      */
-    public $wrapperTag = 'ul';
+    public $containerOptions = ['tag' => 'ul', 'class' => 'social-share'];
     /**
-     * @var array HTML options for wrapper tag.
+     * HTML options for link container tag.
+     * If you won't to use it - set `tag` option to `false`.
+     *
+     * @var array
      */
-    public $wrapperOptions = ['class' => 'social-share'];
-    /**
-     * @var bool|string Name of the wrapper tag for link.
-     * Set `false` value if you don't want using wrapper for link.
-     */
-    public $linkWrapperTag = 'li';
-    /**
-     * @var array HTML options for link wrapper tag.
-     */
-    public $linkWrapperOptions = [];
-
-    /**
-     * @var \ymaker\social\share\configurators\ConfiguratorInterface
-     */
-    protected $_configurator;
+    public $linkContainerOptions = ['tag' => 'li'];
 
 
     /**
-     * @inheritdoc
+     * Initialize the widget: gets configurator instance,
+     * sets [[url]] property if empty. Triggers [[EVENT_INIT]] event after initialization.
+     *
+     * @throws \yii\base\InvalidConfigException
      */
     public function init()
     {
-        $this->_configurator = Instance::ensure($this->configuratorId, ConfiguratorInterface::class);
+        $this->configurator = Instance::ensure($this->configurator, ConfiguratorInterface::class);
 
         if (empty($this->url)) {
             $this->url = Url::to('', true);
@@ -90,64 +95,92 @@ class SocialShare extends Widget
     }
 
     /**
+     * @inheritdoc
+     */
+    public function run()
+    {
+        if ($this->enableDefaultIcons()) {
+            $this->getView()->registerAssetBundle(SocialIconsAsset::class);
+        }
+
+        if ($this->isSeoEnabled()) {
+            echo '<!--noindex-->';
+        }
+
+        $containerTag = ArrayHelper::remove($this->containerOptions, 'tag', false);
+        if ($containerTag) {
+            echo Html::beginTag($containerTag, $this->containerOptions);
+        }
+
+        $wrapTag = ArrayHelper::remove($this->linkContainerOptions, 'tag', false);
+        foreach ($this->getLinkList() as $link) {
+            echo $wrapTag ? Html::tag($wrapTag, $link, $this->linkContainerOptions) : $link;
+        }
+
+        if ($containerTag) {
+            echo Html::endTag($containerTag);
+        }
+
+        if ($this->isSeoEnabled()) {
+            echo '<!--/noindex-->';
+        }
+    }
+
+    /**
      * @return bool
      */
-    private function enableDefaultIcons()
+    final protected function enableDefaultIcons()
     {
-        return $this->_configurator instanceof Configurator &&
-            $this->_configurator->enableDefaultIcons;
+        return $this->configurator instanceof Configurator &&
+            $this->configurator->enableDefaultIcons;
     }
 
     /**
      * @return bool
      * @since 1.4.1
      */
-    private function isSeoEnabled()
+    final protected function isSeoEnabled()
     {
-        return $this->_configurator instanceof Configurator &&
-            $this->_configurator->enableSeoOptions;
-    }
-
-    /**
-     * Creates driver object.
-     * 
-     * @param array $driverConfig
-     * @return object
-     */
-    private function createDriver($driverConfig)
-    {
-        /* @var \ymaker\social\share\base\DriverAbstract $driver */
-        $driver = Yii::createObject(ArrayHelper::merge([
-            'class'       => $driverConfig['class'],
-            'url'         => $this->url,
-            'title'       => $this->title,
-            'description' => $this->description,
-            'imageUrl'    => $this->imageUrl
-        ], isset($driverConfig['config']) ? $driverConfig['config'] : []));
-
-        if (key_exists($driverConfig['class'], $this->driverProperties)) {
-            foreach ($this->driverProperties[$driverConfig['class']] as $property => $value) {
-                if ($driver->hasProperty($property)) {
-                    $driver->$property = $value;
-                }
-            }
-        }
-
-        return $driver;
+        return $this->configurator instanceof Configurator &&
+            $this->configurator->enableSeoOptions;
     }
 
     /**
      * Build label for driver.
-     * 
+     *
      * @param array $driverConfig
      * @param string $defaultLabel
      * @return string
      */
-    protected function buildLabel($driverConfig, $defaultLabel)
+    protected function getLinkLabel($driverConfig, $defaultLabel)
     {
         return $this->enableDefaultIcons()
-            ? Html::tag('i', '', ['class' => $this->_configurator->getIconSelector($driverConfig['class'])])
+            ? Html::tag('i', '', ['class' => $this->configurator->getIconSelector($driverConfig['class'])])
             : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
+    }
+
+    /**
+     * Creates driver instance.
+     *
+     * @param array $config Configuration for driver.
+     * @return \ymaker\social\share\base\DriverAbstract
+     * @throws \yii\base\InvalidConfigException
+     */
+    private function createDriver($config)
+    {
+        $fullConfig = ArrayHelper::merge(
+            [
+                'class'       => $config['class'],
+                'url'         => $this->url,
+                'title'       => $this->title,
+                'description' => $this->description,
+                'imageUrl'    => $this->imageUrl
+            ],
+            isset($config['config']) ? $config['config'] : [],
+            isset($this->driverProperties[$config['class']]) ? $this->driverProperties[$config['class']] : []
+        );
+
+        return Yii::createObject($fullConfig);
     }
 
     /**
@@ -160,7 +193,7 @@ class SocialShare extends Widget
     {
         $options = isset($driverConfig['options']) ? $driverConfig['options'] : [];
 
-        $globalOptions = $this->_configurator->getOptions();
+        $globalOptions = $this->configurator->getOptions();
         if (empty($globalOptions)) {
             return $options;
         }
@@ -177,50 +210,20 @@ class SocialShare extends Widget
      * Returns array with share links in <a> HTML tag.
      *
      * @return array
+     * @throws \yii\base\InvalidConfigException
      */
-    protected function processSocialNetworks()
+    private function getLinkList()
     {
-        $socialNetworks = $this->_configurator->getSocialNetworks();
-        $shareLinks = [];
+        $linkList = [];
 
-        foreach ($socialNetworks as $key => $socialNetwork) {
+        foreach ($this->configurator->getSocialNetworks() as $key => $socialNetwork) {
             if (isset($socialNetwork['class'])) {
-                /* @var \ymaker\social\share\base\DriverAbstract $driver */
-                $driver = $this->createDriver($socialNetwork);
-
-                $linkOptions = $this->combineOptions($socialNetworks);
-                $linkOptions['href'] = $driver->getLink();
-                $shareLinks[] = Html::tag('a', $this->buildLabel($socialNetwork, Inflector::camel2words($key)), $linkOptions);
+                $linkOptions = $this->combineOptions($socialNetwork);
+                $linkOptions['href'] = $this->createDriver($socialNetwork)->getLink();
+                $linkList[] = Html::tag('a', $this->getLinkLabel($socialNetwork, Inflector::camel2words($key)), $linkOptions);
             }
         }
 
-        return $shareLinks;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function run()
-    {
-        $links = $this->processSocialNetworks();
-
-        if ($this->enableDefaultIcons()) {
-            $this->getView()->registerAssetBundle(SocialIconsAsset::class);
-        }
-
-        $isSeoEnabled = $this->isSeoEnabled();
-        if ($isSeoEnabled) {
-            echo '<!--noindex-->';
-        }
-
-        echo Html::beginTag($this->wrapperTag, $this->wrapperOptions);
-        foreach ($links as $link) {
-            echo ($this->linkWrapperTag !== false) ? Html::tag($this->linkWrapperTag, $link, $this->linkWrapperOptions) : $link;
-        }
-        echo Html::endTag($this->wrapperTag);
-
-        if ($isSeoEnabled) {
-            echo '<!--/noindex-->';
-        }
+        return $linkList;
     }
 }

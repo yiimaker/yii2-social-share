@@ -43,11 +43,11 @@ class SocialShareTest extends \Codeception\Test\Unit
     protected function getActualHTML($configuratorId)
     {
         $widget = new SocialShare([
-            'configuratorId' => $configuratorId,
-            'url' => 'test url',
-            'title' => 'test title',
-            'description' => 'test description',
-            'imageUrl' => 'test image url'
+            'configurator'  => $configuratorId,
+            'url'           => 'test url',
+            'title'         => 'test title',
+            'description'   => 'test description',
+            'imageUrl'      => 'test image url'
         ]);
         ob_start();
         $widget->run();
@@ -108,13 +108,13 @@ class SocialShareTest extends \Codeception\Test\Unit
     {
         $this->expectException(InvalidConfigException::class);
 
-        SocialShare::widget(['configuratorId' => 123]);
+        SocialShare::widget(['configurator' => 123]);
     }
 
     public function testInvalidConfigException()
     {
         $this->expectException(InvalidConfigException::class);
 
-        SocialShare::widget(['configuratorId' => 'not exists ID']);
+        SocialShare::widget(['configurator' => 'not exists ID']);
     }
 }
