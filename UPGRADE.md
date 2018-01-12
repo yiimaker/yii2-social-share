@@ -11,30 +11,30 @@ Upgrade from 1.x to 2.x
 
 * Base class for drivers `Driver` renamed to `DriveAbstract`
 
+* Move all drivers to `ymaker\social\share\drivers` namespace.
+
 * Updates API of `DriverAbstract` class:
 
-- added `buildLink()`, `getMetaTags()`, `appendToData()` methods
-
-- maked all class properties protected and added setters
-
-- make `addUrlParam()` and `getLink()` methods final
-
-- maked `data` property private and renamed to `_data`
-
-* Move all drivers to `ymaker\social\share\drivers` namespace.
+    - added `buildLink()`, `getMetaTags()`, `appendToData()` methods
+    
+    - maked all class properties protected and added setters
+    
+    - make `addUrlParam()` and `getLink()` methods final
+    
+    - maked `data` property private and renamed to `_data`
 
 * Updates API of `SocialShare` widget:
 
-- maked `enableDefaultIcons()` and `isSeoEnabled()` method protected and final
-
-- renamed `processSocialNetworks()` method to `getLinkList()` and maked this method private
-
-- renamed `buildLabel()` method to `getLinkLabel()`
-
-- removed `_configurator` property
-
-- renamed `configuratorId` property to `configurator`
-
-- created `$containerOptions` property instead of `$wrapperTag` and `$wrapperTagOptions`
-
-- created `$linkContainerOptions` property instead of `$linkWrapperTag` and `$linkWrapperOptions`
+    - maked `enableDefaultIcons()` and `isSeoEnabled()` method protected and final
+    
+    - renamed `processSocialNetworks()` method to `getLinkList()` and maked this method private
+    
+    - renamed `buildLabel()` method to `getLinkLabel()`
+    
+    - removed `_configurator` property
+    
+    - renamed `configuratorId` property to `configurator`
+    
+    - created `$containerOptions` property instead of `$wrapperTag` and `$wrapperTagOptions`
+    
+    - created `$linkContainerOptions` property instead of `$linkWrapperTag` and `$linkWrapperOptions`

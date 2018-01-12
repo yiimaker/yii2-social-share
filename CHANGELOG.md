@@ -4,6 +4,7 @@ Social Share Change Log
 2.0.0 Under development
 -----------------------
 * Enh: Refactored base driver class and improved creating of custom drivers
+* Enh: Refactored social share widget for improve configuration
 * Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13`
 
 1.4.1 December 25, 2017
