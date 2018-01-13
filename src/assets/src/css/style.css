@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'social-icons';
   src:
-    url('fonts/social-icons.ttf?k34fv') format('truetype'),
-    url('fonts/social-icons.woff?k34fv') format('woff'),
-    url('fonts/social-icons.svg?k34fv#social-icons') format('svg');
+    url('../fonts/social-icons.ttf?k34fv') format('truetype'),
+    url('../fonts/social-icons.woff?k34fv') format('woff'),
+    url('../fonts/social-icons.svg?k34fv#social-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
