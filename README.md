@@ -88,6 +88,10 @@ or using following command
 $ codecept build && codecept run
 ```
 
+Contributing
+------------
+For information about contributing please read [CONTRIBUTING.md](CONTRIBUTING.md).
+
 License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-social-share/license)](https://packagist.org/packages/yiimaker/yii2-social-share)
