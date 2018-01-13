@@ -3,51 +3,52 @@ Social Share Change Log
 
 2.0.0 Under development
 -----------------------
-* Enh: Refactored base driver class and improved creating of custom drivers
-* Enh: Refactored social share widget for improve configuration
-* Chg: Changed minimum Yii version from `^2.0.0` to `^2.0.13`
+* Enh: Refactored base driver class and improved creating of custom drivers (greeflas)
+* Enh: Refactored social share widget for improve configuration (greeflas)
+* Chg #4: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
+* Fix #7: Wrong path to icon-font files in CSS files (greeflas, sokolnikov911)
 
 1.4.1 December 25, 2017
 -----------------------
-* Fix #5: Fixes vulnerability of `target="_blank"`
-* Chg: Using '<!--noindex-->' comment instead of 'rel="nofollow"' attribute
+* Fix #5: Fixes vulnerability of `target="_blank"` (greeflas)
+* Chg: Using '<!--noindex-->' comment instead of 'rel="nofollow"' attribute (greeflas)
 
 1.4.0 December 12, 2017 
 -----------------------
-* Enh: Created driver for Tumblr
+* Enh #2: Created driver for Tumblr (greeflas)
 * Enh: Added `driverProperties` property to widget for adding of
-custom properties to drivers
+custom properties to drivers (greeflas)
 * Enh: Creates unit tests for `Tumblr`, `Twitter`, `LinkedIn`, `Telegram`,
- `Facebook`, `Gmail` drivers
-* Enh: Using minified version of CSS file for social icons on production
-* Fix: Using `Html::tag()` instead of `Html::a()` in widget
-* Fix: Call parent implementation of method `init()` in widget
-* Fix: Encode `body` param in Gmail driver
+ `Facebook`, `Gmail` drivers (greeflas)
+* Enh: Using minified version of CSS file for social icons on production (greeflas)
+* Fix: Using `Html::tag()` instead of `Html::a()` in widget (greeflas)
+* Fix: Call parent implementation of method `init()` in widget (greeflas)
+* Fix: Encode `body` param in Gmail driver (greeflas)
 
 1.3.0 October 02, 2017
 ----------------------
-* Enh: Code style
-* Enh: Refactored widget
-* Enh: Use Inflector in widget for default link labels
-* Fix: Bug with configurator in widget
+* Enh: Code style (greeflas)
+* Enh: Refactored widget (greeflas)
+* Enh: Use Inflector in widget for default link labels (greeflas)
+* Fix: Bug with configurator in widget (greeflas)
 
 1.2.0 August 29, 2017
 ---------------------
-* Enh: Improved PHPDoc blocks
-* Enh: Refactored widget
-* Enh: Adds more tests
-* Fix: Code style
+* Enh: Improved PHPDoc blocks (greeflas)
+* Enh: Refactored widget (greeflas)
+* Enh: Adds more tests (greeflas)
+* Fix: Code style (greeflas)
 
 1.1.0 June 14, 2017
 -------------------
-* Fix: Docs
-* Fix: Issue with wrapper tag in widget
-* Chg: Updates min Yii version to 2.0.0
-* Chg: Updates min codeception version to ~2.2
+* Fix: Docs (greeflas)
+* Fix: Issue with wrapper tag in widget (greeflas)
+* Chg: Updates min Yii version to 2.0.0 (greeflas)
+* Chg: Updates min codeception version to ~2.2 (greeflas)
 
 1.0.0 March 29, 2017
 --------------------
-* Initial release
+* Initial release (greeflas)
 
 Development started March 19, 2017
 ----------------------------------
