@@ -19,7 +19,7 @@ Configurator
 ```php
 'icons' => [
     \ymaker\social\share\drivers\Twitter::class => 'icon-twitter', // CSS class
-    \ymaker\social\share\drivers\Facebook::class => 'icon-facebook,  // CSS class
+    \ymaker\social\share\drivers\Facebook::class => 'icon-facebook',  // CSS class
 ],
 ```
 
