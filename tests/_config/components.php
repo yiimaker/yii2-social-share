@@ -34,6 +34,9 @@ $drivers = [
     'tumblr' => [
         'class' => \ymaker\social\share\drivers\Tumblr::class,
     ],
+    'yahoo' => [
+        'class' => \ymaker\social\share\drivers\Yahoo::class,
+    ],
 ];
 
 return [

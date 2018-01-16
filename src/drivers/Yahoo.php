@@ -10,20 +10,20 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\AbstractMailDriver;
 
 /**
- * Driver for Gmail.
+ * Driver for Yahoo.
  *
- * @link https://gmail.google.com
+ * @link https://www.yahoo.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 1.0
+ * @since 2.0
  */
-class Gmail extends AbstractMailDriver
+class Yahoo extends AbstractMailDriver
 {
     /**
      * @inheritdoc
      */
     protected function buildLink()
     {
-        return 'https://mail.google.com/mail/?view=cm&fs=1&su={title}&body={body}';
+        return 'https://compose.mail.yahoo.com/?subject={title}&body={body}';
     }
 }

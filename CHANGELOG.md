@@ -5,6 +5,7 @@ Social Share Change Log
 -----------------------
 * Enh: Refactored base driver class and improved creating of custom drivers (greeflas)
 * Enh: Refactored social share widget for improve configuration (greeflas)
+* Enh #8: Created driver for Yahoo (greeflas)
 * Chg #4: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
 * Fix #7: Wrong path to icon-font files in CSS files (greeflas, sokolnikov911)
 

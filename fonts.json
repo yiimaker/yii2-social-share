@@ -4,6 +4,36 @@
     {
       "icon": {
         "paths": [
+          "M490.857 546.857l7.429 404c-19.429-3.429-39.429-6.286-60-6.286-20 0-40 2.857-60 6.286l7.429-404c-106.286-183.429-206.286-370.286-323.429-546.857 20 5.143 40.571 8.571 61.714 8.571s42.857-4 63.429-8.571c80 141.714 166.857 279.429 250.857 418.857 84.571-138.286 174.286-276 250.857-418.857 20 5.143 40.571 8 61.143 8 21.714 0 44-2.857 65.143-8v0 0c-45.714 62.857-83.429 131.429-122.857 198.286-68 116-134.857 232-201.714 348.571z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "width": 878,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "yahoo"
+        ],
+        "grid": 14
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 1,
+        "id": 0,
+        "prevSize": 28,
+        "code": 59648,
+        "name": "yahoo"
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
           "M539.429 759.429l45.714 135.429c-17.143 25.714-94.857 54.857-164.571 56-207.429 3.429-285.714-147.429-285.714-253.714v-310.857h-96v-122.857c144-52 178.857-182.286 186.857-256.571 0.571-4.571 4.571-6.857 6.857-6.857h139.429v242.286h190.286v144h-190.857v296c0 40 14.857 95.429 91.429 93.714 25.143-0.571 58.857-8 76.571-16.571z"
         ],
         "width": 623.9817142857142,
@@ -24,9 +54,9 @@
         "prevSize": 28,
         "code": 61811
       },
-      "setIdx": 0,
-      "setId": 2,
-      "iconIdx": 334
+      "setIdx": 1,
+      "setId": 1,
+      "iconIdx": 0
     },
     {
       "icon": {
@@ -57,7 +87,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 0
+      "iconIdx": 1
     },
     {
       "icon": {
@@ -86,7 +116,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 1
+      "iconIdx": 2
     },
     {
       "icon": {
@@ -116,7 +146,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 2
+      "iconIdx": 3
     },
     {
       "icon": {
@@ -146,7 +176,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 3
+      "iconIdx": 4
     },
     {
       "icon": {
@@ -176,7 +206,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 4
+      "iconIdx": 5
     },
     {
       "icon": {
@@ -203,7 +233,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 5
+      "iconIdx": 6
     },
     {
       "icon": {
@@ -230,7 +260,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 6
+      "iconIdx": 7
     },
     {
       "icon": {
@@ -258,7 +288,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 7
+      "iconIdx": 8
     },
     {
       "icon": {
@@ -287,7 +317,7 @@
       },
       "setIdx": 1,
       "setId": 1,
-      "iconIdx": 8
+      "iconIdx": 9
     }
   ],
   "height": 1024,
@@ -305,7 +335,7 @@
       "metadata": {
         "fontFamily": "social-icons",
         "majorVersion": 1,
-        "minorVersion": 1,
+        "minorVersion": 2,
         "fontURL": "https://github.com/yiimaker/yii2-social-share",
         "description": "Icons for Yii2 extension",
         "copyright": ""

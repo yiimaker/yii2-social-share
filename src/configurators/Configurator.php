@@ -19,6 +19,7 @@ use ymaker\social\share\drivers\Pinterest;
 use ymaker\social\share\drivers\Tumblr;
 use ymaker\social\share\drivers\Twitter;
 use ymaker\social\share\drivers\Vkontakte;
+use ymaker\social\share\drivers\Yahoo;
 
 /**
  * Configurator for social network drivers.
@@ -79,6 +80,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
         WhatsApp::class     => 'si si-whatsapp',
         Gmail::class        => 'si si-gmail',
         Tumblr::class       => 'si si-tumblr',
+        Yahoo::class        => 'si si-yahoo',
     ];
 
 
