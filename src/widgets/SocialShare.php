@@ -167,7 +167,7 @@ class SocialShare extends Widget
      *
      * @param array $config Configuration for driver.
      *
-     * @return \ymaker\social\share\base\DriverAbstract
+     * @return \ymaker\social\share\base\AbstractDriver
      *
      * @throws \yii\base\InvalidConfigException
      */

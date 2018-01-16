@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Pinterest.
+ * Driver for Pinterest.
  *
  * @link https://pinterest.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Pinterest extends DriverAbstract
+class Pinterest extends AbstractDriver
 {
     /**
      * @inheritdoc

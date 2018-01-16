@@ -8,17 +8,17 @@
 namespace ymaker\social\share\drivers;
 
 use yii\base\InvalidConfigException;
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Tumblr.
+ * Driver for Tumblr.
  *
  * @link https://www.tumblr.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class Tumblr extends DriverAbstract
+class Tumblr extends AbstractDriver
 {
     const POST_TYPE_LINK    = 'link';
     const POST_TYPE_TEXT    = 'text';

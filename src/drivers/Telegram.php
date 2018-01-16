@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Telegram messenger.
+ * Driver for Telegram messenger.
  *
  * @link https://telegram.org
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Telegram extends DriverAbstract
+class Telegram extends AbstractDriver
 {
     /**
      * @var bool|string

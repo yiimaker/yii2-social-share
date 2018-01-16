@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-abstract class DriverAbstract extends BaseObject
+abstract class AbstractDriver extends BaseObject
 {
     /**
      * Absolute URL to the page.

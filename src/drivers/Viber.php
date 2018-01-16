@@ -7,10 +7,10 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Viber messenger.
+ * Driver for Viber messenger.
  *
  * @link https://viber.com
  *
@@ -20,7 +20,7 @@ use ymaker\social\share\base\DriverAbstract;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Viber extends DriverAbstract
+class Viber extends AbstractDriver
 {
     /**
      * @inheritdoc

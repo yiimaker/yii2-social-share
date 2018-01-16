@@ -7,10 +7,10 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for LinkedIn.
+ * Driver for LinkedIn.
  *
  * @link https://linkedin.com
  *
@@ -19,7 +19,7 @@ use ymaker\social\share\base\DriverAbstract;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class LinkedIn extends DriverAbstract
+class LinkedIn extends AbstractDriver
 {
     /**
      * @var bool|string

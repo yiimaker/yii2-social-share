@@ -7,10 +7,10 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for WhatsApp messenger.
+ * Driver for WhatsApp messenger.
  *
  * @link https://www.whatsapp.com
  *
@@ -20,7 +20,7 @@ use ymaker\social\share\base\DriverAbstract;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class WhatsApp extends DriverAbstract
+class WhatsApp extends AbstractDriver
 {
     /**
      * @inheritdoc

@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Google Plus.
+ * Driver for Google Plus.
  *
  * @link https://plus.google.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class GooglePlus extends DriverAbstract
+class GooglePlus extends AbstractDriver
 {
     /**
      * @inheritdoc

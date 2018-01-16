@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Twitter.
+ * Driver for Twitter.
  *
  * @link https://twitter.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Twitter extends DriverAbstract
+class Twitter extends AbstractDriver
 {
     /**
      * @var bool|string

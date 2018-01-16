@@ -7,7 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\LinkedIn;
 
 /**
@@ -28,10 +28,10 @@ class LinkedInTest extends \Codeception\Test\Unit
         $driver = new LinkedIn(compact('siteName', 'url', 'title', 'description'));
 
         $expected = 'https://www.linkedin.com/shareArticle?mini=true'
-            . '&url=' . DriverAbstract::encodeData($url)
-            . '&title=' . DriverAbstract::encodeData($title)
-            . '&summary=' . DriverAbstract::encodeData($description)
-            . '&source=' . DriverAbstract::encodeData($siteName);
+            . '&url=' . AbstractDriver::encodeData($url)
+            . '&title=' . AbstractDriver::encodeData($title)
+            . '&summary=' . AbstractDriver::encodeData($description)
+            . '&source=' . AbstractDriver::encodeData($siteName);
 
         $this->assertEquals($expected, $driver->getLink());
     }

@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Facebook.
+ * Driver for Facebook.
  *
  * @link https://facebook.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Facebook extends DriverAbstract
+class Facebook extends AbstractDriver
 {
     /**
      * @inheritdoc

@@ -7,17 +7,17 @@
 
 namespace ymaker\social\share\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 
 /**
- * DriverAbstract for Vkontakte.
+ * Driver for Vkontakte.
  *
  * @link https://vk.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Vkontakte extends DriverAbstract
+class Vkontakte extends AbstractDriver
 {
     /**
      * @inheritdoc

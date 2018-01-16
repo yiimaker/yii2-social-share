@@ -7,7 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Gmail;
 
 /**
@@ -31,8 +31,8 @@ class GmailTest extends \Codeception\Test\Unit
             '{url}' => $url,
         ]);
         $expected = 'https://mail.google.com/mail/?view=cm&fs=1'
-            . '&su=' . DriverAbstract::encodeData($title)
-            . '&body=' . DriverAbstract::encodeData($body);
+            . '&su=' . AbstractDriver::encodeData($title)
+            . '&body=' . AbstractDriver::encodeData($body);
 
         $this->assertEquals($expected, $driver->getLink());
     }

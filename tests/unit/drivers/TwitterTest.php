@@ -8,7 +8,7 @@
 namespace ymaker\social\share\tests\unit\drivers;
 
 use Yii;
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Twitter;
 
 /**
@@ -30,9 +30,9 @@ class TwitterTest extends \Codeception\Test\Unit
         $driver = new Twitter(compact('account', 'url', 'description'));
 
         $expected = 'http://twitter.com/share'
-            . '?url=' . DriverAbstract::encodeData($url)
-            . '&text=' . DriverAbstract::encodeData($description)
-            . '&via=' . DriverAbstract::encodeData($account);
+            . '?url=' . AbstractDriver::encodeData($url)
+            . '&text=' . AbstractDriver::encodeData($description)
+            . '&via=' . AbstractDriver::encodeData($account);
 
         $this->assertEquals($expected, $driver->getLink());
     }

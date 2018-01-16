@@ -9,11 +9,11 @@ Upgrade from 1.x to 2.x
 
 * Changed minimum Yii version from `^2.0.0` to `^2.0.13`
 
-* Base class for drivers `Driver` renamed to `DriveAbstract`
+* Base class for drivers `Driver` renamed to `AbstractDriver`
 
 * Move all drivers to `ymaker\social\share\drivers` namespace.
 
-* Updates API of `DriverAbstract` class:
+* Updates API of `AbstractDriver` class:
 
     - added `buildLink()`, `getMetaTags()`, `appendToData()` methods
     

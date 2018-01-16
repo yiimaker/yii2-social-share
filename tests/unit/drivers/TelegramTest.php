@@ -7,7 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
-use ymaker\social\share\base\DriverAbstract;
+use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Telegram;
 
 /**
@@ -26,8 +26,8 @@ class TelegramTest extends \Codeception\Test\Unit
         $driver = new Telegram(compact('message', 'url'));
 
         $expected = 'https://telegram.me/share/url'
-            . '?url=' . DriverAbstract::encodeData($url)
-            . '&text=' . DriverAbstract::encodeData($message);
+            . '?url=' . AbstractDriver::encodeData($url)
+            . '&text=' . AbstractDriver::encodeData($message);
 
         $this->assertEquals($expected, $driver->getLink());
     }
