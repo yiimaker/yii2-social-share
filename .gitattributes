@@ -7,3 +7,7 @@
 /tests              export-ignore
 /docs               export-ignore
 /fonts.json         export-ignore
+
+# Binary files
+/fonts.json             binary
+/src/assets/src/fonts/* binary
