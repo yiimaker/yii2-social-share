@@ -38,3 +38,5 @@ Upgrade from 1.x to 2.x
     - created `$containerOptions` property instead of `$wrapperTag` and `$wrapperTagOptions`
     
     - created `$linkContainerOptions` property instead of `$linkWrapperTag` and `$linkWrapperOptions`
+    
+* Removed unused dev packages `codeception/verify` and `codeception/specify`

@@ -7,6 +7,7 @@ Social Share Change Log
 * Enh: Refactored social share widget for improve configuration (greeflas)
 * Enh #8: Created driver for Yahoo (greeflas)
 * Chg #4: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
+* Chg: Removed unused dev packages `codeception/verify` and `codeception/specify`
 * Fix #7: Wrong path to icon-font files in CSS files (greeflas, sokolnikov911)
 
 1.4.1 December 25, 2017

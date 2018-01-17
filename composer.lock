@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4b91842ec07644c006525b3266c61541",
-    "content-hash": "cd6f836dbb5a1e108d7f30578d428915",
+    "hash": "caf39ac83f91a2f6e1676dbc96fbaaa0",
+    "content-hash": "2c9a7989a9c15645b9c7ede0da2c444f",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -69,7 +69,7 @@
             "version": "2.0.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/yiisoft/jquery-pjax.git",
+                "url": "git@github.com:yiisoft/jquery-pjax.git",
                 "reference": "aef7b953107264f00234902a3880eb50dafc48be"
             },
             "dist": {
@@ -501,84 +501,6 @@
             "time": "2017-12-12 04:22:17"
         },
         {
-            "name": "codeception/specify",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Codeception/Specify.git",
-                "reference": "1b1fe23f887aac647d0f7f5be3867b240690449d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Specify/zipball/1b1fe23f887aac647d0f7f5be3867b240690449d",
-                "reference": "1b1fe23f887aac647d0f7f5be3867b240690449d",
-                "shasum": ""
-            },
-            "require": {
-                "myclabs/deep-copy": "~1.1",
-                "php": ">=7.0.0",
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Codeception\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Bodnarchuk",
-                    "email": "davert@codeception.com"
-                }
-            ],
-            "description": "BDD code blocks for PHPUnit and Codeception",
-            "time": "2017-11-20 23:40:31"
-        },
-        {
-            "name": "codeception/verify",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Codeception/Verify.git",
-                "reference": "f45b39025b3f5cfd9a9d8fb992432885ff5380c1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Verify/zipball/f45b39025b3f5cfd9a9d8fb992432885ff5380c1",
-                "reference": "f45b39025b3f5cfd9a9d8fb992432885ff5380c1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">= 7.0",
-                "phpunit/phpunit": "> 6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/Codeception/function.php"
-                ],
-                "psr-4": {
-                    "Codeception\\": "src\\Codeception"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Bodnarchuk",
-                    "email": "davert@codeception.com"
-                }
-            ],
-            "description": "BDD assertion library for PHPUnit",
-            "time": "2017-11-12 01:51:59"
-        },
-        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -634,34 +556,40 @@
         },
         {
             "name": "facebook/webdriver",
-            "version": "1.3.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-webdriver.git",
-                "reference": "77300c4ab2025d4316635f592ec849ca7323bd8c"
+                "reference": "86b5ca2f67173c9d34340845dd690149c886a605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/77300c4ab2025d4316635f592ec849ca7323bd8c",
-                "reference": "77300c4ab2025d4316635f592ec849ca7323bd8c",
+                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/86b5ca2f67173c9d34340845dd690149c886a605",
+                "reference": "86b5ca2f67173c9d34340845dd690149c886a605",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": "^5.5 || ~7.0",
-                "symfony/process": "^2.8 || ^3.1"
+                "ext-zip": "*",
+                "php": "^5.6 || ~7.0",
+                "symfony/process": "^2.8 || ^3.1 || ^4.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.11",
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "guzzle/guzzle": "^3.4.1",
+                "php-coveralls/php-coveralls": "^1.0.2",
                 "php-mock/php-mock-phpunit": "^1.1",
-                "phpunit/phpunit": "4.6.* || ~5.0",
-                "satooshi/php-coveralls": "^1.0",
-                "squizlabs/php_codesniffer": "^2.6"
-            },
-            "suggest": {
-                "phpdocumentor/phpdocumentor": "2.*"
+                "phpunit/phpunit": "^5.7",
+                "sebastian/environment": "^1.3.4 || ^2.0 || ^3.0",
+                "squizlabs/php_codesniffer": "^2.6",
+                "symfony/var-dumper": "^3.3 || ^4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-community": "1.5-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Facebook\\WebDriver\\": "lib/"
@@ -671,7 +599,7 @@
             "license": [
                 "Apache-2.0"
             ],
-            "description": "A PHP client for WebDriver",
+            "description": "A PHP client for Selenium WebDriver",
             "homepage": "https://github.com/facebook/php-webdriver",
             "keywords": [
                 "facebook",
@@ -679,7 +607,7 @@
                 "selenium",
                 "webdriver"
             ],
-            "time": "2017-01-13 15:48:08"
+            "time": "2017-11-15 11:08:09"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1760,16 +1688,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f"
+                "reference": "11c07feade1d65453e06df3b3b90171d6d982087"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
-                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/11c07feade1d65453e06df3b3b90171d6d982087",
+                "reference": "11c07feade1d65453e06df3b3b90171d6d982087",
                 "shasum": ""
             },
             "require": {
@@ -1820,7 +1748,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-12-22 14:50:35"
+            "time": "2018-01-12 06:34:42"
         },
         {
             "name": "sebastian/diff",
