@@ -9,6 +9,7 @@ Social Share Change Log
 * Chg #4: Changed minimum Yii version from `^2.0.0` to `^2.0.13` (greeflas)
 * Chg: Removed unused dev packages `codeception/verify` and `codeception/specify`
 * Fix #7: Wrong path to icon-font files in CSS files (greeflas, sokolnikov911)
+* Fix: Some fixes in files for unit tests
 
 1.4.1 December 25, 2017
 -----------------------
