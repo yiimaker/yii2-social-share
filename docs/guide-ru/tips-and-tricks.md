@@ -106,11 +106,11 @@
 // blog-article.php файл представления
 
 <?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShareBlog', // ID нужного компонента
-    'url'            => \yii\helpers\Url::to('/blog', true),
-    'title'          => 'Blog page',
-    'description'    => 'This is blog page',
-    'imageUrl'       => \yii\helpers\Url::to('/images/blog.png', true),
+    'configurator'  => 'socialShareBlog', // ID нужного компонента
+    'url'           => \yii\helpers\Url::to('/blog', true),
+    'title'         => 'Blog page',
+    'description'   => 'This is blog page',
+    'imageUrl'      => \yii\helpers\Url::to('/images/blog.png', true),
 ]); ?>
 ```
 
@@ -118,10 +118,10 @@
 // main.php лэйаут файл
 
 <?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShareMessangers', // ID нужного компонента
-    'url'            => \yii\helpers\Url::to('/', true),
-    'title'          => 'Site name',
-    'description'    => 'Welcome to my site!',
-    'imageUrl'       => \yii\helpers\Url::to('/images/hello.png', true),
+    'configurator'  => 'socialShareMessangers', // ID нужного компонента
+    'url'           => \yii\helpers\Url::to('/', true),
+    'title'         => 'Site name',
+    'description'   => 'Welcome to my site!',
+    'imageUrl'      => \yii\helpers\Url::to('/images/hello.png', true),
 ]); ?>
 ```

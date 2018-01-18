@@ -3,29 +3,27 @@ Social share widget
 
 ## Configuration options
 
-| Option            | Description                                   | Type          | Default                       |
-|-------------------|-----------------------------------------------|---------------|-------------------------------|
-|configuratorId     |ID of configurator component from app config   |string         |-                              |
-|url                |Absolute URL to share page                     |string         |Result of `Url::to('', true)`  |
-|title              |Title of share page                            |string         |-                              |
-|description        |Description of share page                      |string         |-                              |
-|imageUrl           |Absolute URL to image for share page           |string         |-                              |
-|driverProperties   |Special properties for specific driver         |array          |-                              |
-|wrapperTag         |Wrapper HTML tag name for all share links      |string         |ul                             |
-|wrapperOptions     |HTML options for wrapper tag                   |array          |`['class' => 'social-share']`  |
-|linkWrapperTag     |Wrapper HTML tag name for one share link       |bool/string    |li                             |
-|linkWrapperOptions |HTML options for link wrapper tag              |array          |-                              |
+| Option                | Description                                                                               | Type                                                                  | Default                                       |
+|-----------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|-----------------------------------------------|
+|configurator           |ID of component from app config, configuration array or object of configurator             |string|array|ymaker\social\share\configurators\ConfiguratorInterface   |-                                              |
+|url                    |Absolute URL to share page                                                                 |string                                                                 |Result of `Url::to('', true)`                  |
+|title                  |Title of share page                                                                        |string                                                                 |-                                              |
+|description            |Description of share page                                                                  |string                                                                 |-                                              |
+|imageUrl               |Absolute URL to image for share page                                                       |string                                                                 |-                                              |
+|driverProperties       |Special properties for specific driver                                                     |array                                                                  |-                                              |
+|containerOptions       |HTML options for links container tag. If you won't use it - set `tag` option to `false`.   |array                                                                  |`['tag' => 'ul', 'class' => 'social-share']`   |
+|linkContainerOptions   |HTML options for link container tag. If you won't use it - set `tag` option to `false`.    |array                                                                  |`['tag' => 'li']`                              |
 
 ## Configuration examples
 
-### configuratorId
+### configurator
 
 ```php
-'configuratorId' => 'socialShare', // ID of component from application config
+'configurator' => 'socialShare', // ID of component from application config
 ```
 
 ```php
-'configuratorId' => \Yii::$app->get('socailShare'), // component instance
+'configurator' => \Yii::$app->get('socailShare'), // component instance
 ```
 
 ### driverProperties

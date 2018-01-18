@@ -28,15 +28,16 @@ Extension supports from the box next social network drivers:
 * [Pinterest](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Pinterest.php)
 * [Tumblr](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Tumblr.php)
 
-and drivers for messengers:
+drivers for messengers:
 
-* [Telegram](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/Telegram.php)
-* [Viber](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/mobile/Viber.php)
-* [WhatsApp](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/mobile/WhatsApp.php)
+* [Telegram](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Telegram.php)
+* [Viber](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Viber.php)
+* [WhatsApp](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/WhatsApp.php)
 
-other drivers:
+and other drivers:
 
-* [Gmail](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/other/Gmail.php)
+* [Gmail](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Gmail.php)
+* [Yahoo](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Yahoo.php)
 
 also you can [create](docs/guide/create-driver.md) your driver, it's very simple!
 
@@ -66,11 +67,11 @@ Call widget in view file
 
 ```php
 <?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShare',
-    'url'            => \yii\helpers\Url::to('absolute/route/to/page', true),
-    'title'          => 'Title of the page',
-    'description'    => 'Description of the page...',
-    'imageUrl'       => \yii\helpers\Url::to('absolute/route/to/image.png', true),
+    'configurator'  => 'socialShare',
+    'url'           => \yii\helpers\Url::to('absolute/route/to/page', true),
+    'title'         => 'Title of the page',
+    'description'   => 'Description of the page...',
+    'imageUrl'      => \yii\helpers\Url::to('absolute/route/to/image.png', true),
 ]); ?>
 ```
 

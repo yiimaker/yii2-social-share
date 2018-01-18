@@ -105,11 +105,11 @@ Appelez le widget avec le composant exigé dans  le fichier affiché
 // blog-article.php view file
 
 <?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShareBlog', // Social share component ID
-    'url'            => \yii\helpers\Url::to('/blog', true),
-    'title'          => 'Blog page',
-    'description'    => 'This is blog page',
-    'imageUrl'       => \yii\helpers\Url::to('/images/blog.png', true),
+    'configurator'  => 'socialShareBlog', // Social share component ID
+    'url'           => \yii\helpers\Url::to('/blog', true),
+    'title'         => 'Blog page',
+    'description'   => 'This is blog page',
+    'imageUrl'      => \yii\helpers\Url::to('/images/blog.png', true),
 ]); ?>
 ```
 
@@ -117,10 +117,10 @@ Appelez le widget avec le composant exigé dans  le fichier affiché
 // main.php layout file
 
 <?= \ymaker\social\share\widgets\SocialShare::widget([
-    'configuratorId' => 'socialShareMessangers', // Social share component ID
-    'url'            => \yii\helpers\Url::to('/', true),
-    'title'          => 'Site name',
-    'description'    => 'Welcome to my site!',
-    'imageUrl'       => \yii\helpers\Url::to('/images/hello.png', true),
+    'configurator'  => 'socialShareMessangers', // Social share component ID
+    'url'           => \yii\helpers\Url::to('/', true),
+    'title'         => 'Site name',
+    'description'   => 'Welcome to my site!',
+    'imageUrl'      => \yii\helpers\Url::to('/images/hello.png', true),
 ]); ?>
 ```

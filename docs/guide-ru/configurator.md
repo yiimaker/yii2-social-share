@@ -19,7 +19,7 @@
 ```php
 'icons' => [
     \ymaker\social\share\drivers\Twitter::class => 'icon-twitter', // CSS класс
-    \ymaker\social\share\drivers\Facebook::class => 'icon-facebook,  // CSS класс
+    \ymaker\social\share\drivers\Facebook::class => 'icon-facebook',  // CSS класс
 ],
 ```
 
@@ -27,6 +27,6 @@
 
 Если вы хотите создать свой конфигуратор, вам нужно:
 
-1. Создать класс и унаследовать его от `\yii\base\Object` или `\yii\base\Component` 
+1. Создать класс и унаследовать его от `\yii\base\BaseObject` или `\yii\base\Component` 
 2. Реализовать интерфейс [ConfiguratorInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/ConfiguratorInterface.php)
 3. Реализовать методы этого интерфейса

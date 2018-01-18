@@ -3,12 +3,12 @@ Create my social network driver
 
 For creating driver for social network you should:
 
-1. Create class and inherit it from `\ymaker\social\share\base\Driver`
+1. Create class and inherit it from `\ymaker\social\share\base\AbstractDriver`
 
 ```php
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\AbstractDriver;
 
-class LinkedIn extends Driver
+class LinkedIn extends AbstractDriver
 {
 }
 ```
@@ -16,67 +16,27 @@ class LinkedIn extends Driver
 2. And implement two methods
 
 ```php
-use ymaker\social\share\base\Driver;
+use ymaker\social\share\base\AbstractDriver;
 
-class LinkedIn extends Driver
+class LinkedIn extends AbstractDriver
 {
-    /**
-     * @inheritdoc
-     */
-    public function getLink()
-    {
-    }
-    
     /**
      * @inheritdoc
      */
     protected function processShareData()
     {
     }
+
+    /**
+     * @inheritdoc
+     */
+    protected function buildLink()
+    {
+    }
 }
 ```
 
-In `getLink()` method you should assign a string with share-link of social network to `_link` variable and return parent `getLink()` method result.
-
-```php
-/**
- * @inheritdoc
- */
-public function getLink()
-{
-    $this->_link = 'https://www.linkedin.com/shareArticle?mini=true'
-                    . '&url={url}'
-                    . '&title={title}'
-                    . '&summary={description}';
-                    
-    return parent::getLink();
-}
-```
-
-In this string you can use four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
-In result this keys will be replaced by data from widget config.
-
-If you need to register some meta tags you should add this tags to `_metaTags` array
-
-```php
-/**
- * @inheritdoc
- */
-public function getLink()
-{
-    $this->_metaTags = [
-        ['property' => 'og:url',         'content' => '{url}'],
-        ['property' => 'og:type',        'content' => 'website'],
-        ['property' => 'og:title',       'content' => '{title}'],
-        ['property' => 'og:description', 'content' => '{description}'],
-        ['property' => 'og:image',       'content' => '{imageUrl}'],
-    ];
-                    
-    return parent::getLink();
-}
-```
-
-In second method, you should process your data.
+In `processShareData()` method you should process data
 
 ```php
 /**
@@ -91,7 +51,43 @@ protected function processShareData()
 ```
 
 If data is using in url - you should encode this data for correct work of sharing.
-Base Driver class has a static method for this.
+Base `AbstractDriver` class has a static method for this.
+
+In `buildLink()` return a share link pattern
+
+```php
+/**
+ * @inheritdoc
+ */
+protected function buildLink()
+{
+    return 'https://www.linkedin.com/shareArticle?mini=true'
+        . '&url={url}'
+        . '&title={title}'
+        . '&summary={description}';
+}
+```
+
+In this string you can use four keys - `{url}`, `{title}`, `{description}` and `{imageUrl}`.
+In result this keys will be replaced by data from widget config.
+
+If you need to register some meta tags you should override `getMetaTags()` method
+
+```php
+/**
+ * @return array
+ */
+protected function getMetaTags()
+{
+    return [
+        ['property' => 'og:url',         'content' => '{url}'],
+        ['property' => 'og:type',        'content' => 'website'],
+        ['property' => 'og:title',       'content' => '{title}'],
+        ['property' => 'og:description', 'content' => '{description}'],
+        ['property' => 'og:image',       'content' => '{imageUrl}'],
+    ];
+}
+```
 
 Now you can use this driver in configurator
 
