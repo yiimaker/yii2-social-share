@@ -373,7 +373,7 @@
       "metadata": {
         "fontFamily": "social-icons",
         "majorVersion": 1,
-        "minorVersion": 2,
+        "minorVersion": 3,
         "fontURL": "https://github.com/yiimaker/yii2-social-share",
         "description": "Icons for Yii2 extension",
         "copyright": ""

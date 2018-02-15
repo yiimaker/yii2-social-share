@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+2.1.0 Under development
+-----------------------
+* Enh: Created driver for Odnoklassniki (sokolnikov911)
+
 2.0.0 January 18, 2018
 ----------------------
 * Enh: Refactored base driver class and improved creating of custom drivers (greeflas)

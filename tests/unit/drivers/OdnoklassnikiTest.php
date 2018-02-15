@@ -14,7 +14,7 @@ use ymaker\social\share\drivers\Odnoklassniki;
  * Test case for [[Odnoklassniki]] driver.
  *
  * @author Petro Sokolnykov <info@xyz.net.ua>
- * @since 2.0
+ * @since 2.1
  */
 class OdnoklassnikiTest extends \Codeception\Test\Unit
 {

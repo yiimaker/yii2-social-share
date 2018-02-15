@@ -10,12 +10,12 @@ namespace ymaker\social\share\drivers;
 use ymaker\social\share\base\AbstractDriver;
 
 /**
- * Driver for Ok.ru
+ * Driver for Ok.ru.
  *
  * @link https://ok.ru
  *
  * @author Petro Sokolnykov <info@xyz.net.ua>
- * @since 2.0
+ * @since 2.1
  */
 class Odnoklassniki extends AbstractDriver
 {
