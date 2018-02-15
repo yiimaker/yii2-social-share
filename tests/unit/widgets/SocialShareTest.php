@@ -33,6 +33,7 @@ class SocialShareTest extends \Codeception\Test\Unit
     private $gmail = 'https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=test+title&amp;body=test+description+-+test+url';
     private $tumblr = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=test+url&amp;posttype=link&amp;caption=test+title&amp;content=test+url';
     private $yahoo = 'https://compose.mail.yahoo.com/?subject=test+title&amp;body=test+description+-+test+url';
+    private $odnoklassniki = 'https://connect.ok.ru/offer?url=test+url&amp;title=test+title&amp;description=test+description&amp;imageUrl=test+image+url';
 
 
     /**
@@ -76,6 +77,7 @@ class SocialShareTest extends \Codeception\Test\Unit
                         . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\">Gmail</a></li>"
                         . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\">Tumblr</a></li>"
                         . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\">Yahoo</a></li>"
+                        . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\">Odnoklassniki</a></li>"
                     . "</ul>"
                     . "<!--/noindex-->";
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
@@ -100,6 +102,7 @@ class SocialShareTest extends \Codeception\Test\Unit
                 . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-gmail\"></i></a></li>"
                 . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-tumblr\"></i></a></li>"
                 . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-yahoo\"></i></a></li>"
+                . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-odnoklassniki\"></i></a></li>"
             . "</ul>"
             . "<!--/noindex-->";
 

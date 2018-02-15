@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'social-icons';
   src:
-    url('../fonts/social-icons.ttf?vntshu') format('truetype'),
-    url('../fonts/social-icons.woff?vntshu') format('woff'),
-    url('../fonts/social-icons.svg?vntshu#social-icons') format('svg');
+    url('../fonts/social-icons.ttf?jhsy7d') format('truetype'),
+    url('../fonts/social-icons.woff?jhsy7d') format('woff'),
+    url('../fonts/social-icons.svg?jhsy7d#social-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -55,4 +55,7 @@
 }
 .si-linkedin:before {
   content: "\eaca";
+}
+.si-odnoklassniki:before {
+  content: "\e906";
 }
