@@ -37,6 +37,9 @@ $drivers = [
     'yahoo' => [
         'class' => \ymaker\social\share\drivers\Yahoo::class,
     ],
+    'odnoklassniki' => [
+        'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
+    ],
 ];
 
 return [
