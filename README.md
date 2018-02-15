@@ -27,6 +27,7 @@ Extension supports from the box next social network drivers:
 * [LinkedIn](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/LinkedIn.php)
 * [Pinterest](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Pinterest.php)
 * [Tumblr](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Tumblr.php)
+* [Odnoklassniki](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Odnoklassniki.php)
 
 drivers for messengers:
 
