@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractDriver;
 class Pinterest extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -30,7 +30,7 @@ class Pinterest extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

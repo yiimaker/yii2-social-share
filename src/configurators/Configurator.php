@@ -111,7 +111,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getSocialNetworks()
     {
@@ -119,7 +119,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getOptions()
     {

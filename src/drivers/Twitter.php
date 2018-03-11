@@ -26,7 +26,7 @@ class Twitter extends AbstractDriver
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -39,7 +39,7 @@ class Twitter extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {
@@ -53,7 +53,7 @@ class Twitter extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function getMetaTags()
     {

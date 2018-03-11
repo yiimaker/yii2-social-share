@@ -97,7 +97,7 @@ class SocialShare extends Widget
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function run()
     {

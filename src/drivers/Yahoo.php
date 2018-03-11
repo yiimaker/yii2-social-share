@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractMailDriver;
 class Yahoo extends AbstractMailDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

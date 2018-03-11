@@ -55,7 +55,7 @@ class Tumblr extends AbstractDriver
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function init()
     {
@@ -81,7 +81,7 @@ class Tumblr extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -114,7 +114,7 @@ class Tumblr extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

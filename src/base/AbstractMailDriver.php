@@ -22,7 +22,7 @@ abstract class AbstractMailDriver extends AbstractDriver
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {

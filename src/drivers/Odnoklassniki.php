@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractDriver;
 class Odnoklassniki extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -31,7 +31,7 @@ class Odnoklassniki extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

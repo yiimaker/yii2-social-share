@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractMailDriver;
 class Gmail extends AbstractMailDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

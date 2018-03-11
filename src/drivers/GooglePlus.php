@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractDriver;
 class GooglePlus extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -28,7 +28,7 @@ class GooglePlus extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

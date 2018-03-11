@@ -20,7 +20,7 @@ use ymaker\social\share\base\AbstractDriver;
 class Vkontakte extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -31,7 +31,7 @@ class Vkontakte extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

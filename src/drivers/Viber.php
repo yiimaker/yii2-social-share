@@ -23,7 +23,7 @@ use ymaker\social\share\base\AbstractDriver;
 class Viber extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -31,7 +31,7 @@ class Viber extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

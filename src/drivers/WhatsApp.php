@@ -23,7 +23,7 @@ use ymaker\social\share\base\AbstractDriver;
 class WhatsApp extends AbstractDriver
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -31,7 +31,7 @@ class WhatsApp extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

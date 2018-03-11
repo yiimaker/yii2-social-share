@@ -18,11 +18,11 @@ use yii\web\AssetBundle;
 class SocialIconsAsset extends AssetBundle
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $sourcePath = '@vendor/yiimaker/yii2-social-share/src/assets/src';
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public $css = [YII_ENV_PROD ? 'css/style.min.css' : 'css/style.css'];
 }

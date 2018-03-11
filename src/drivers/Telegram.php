@@ -26,7 +26,7 @@ class Telegram extends AbstractDriver
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -37,7 +37,7 @@ class Telegram extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {

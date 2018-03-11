@@ -28,7 +28,7 @@ class LinkedIn extends AbstractDriver
 
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function processShareData()
     {
@@ -42,7 +42,7 @@ class LinkedIn extends AbstractDriver
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     protected function buildLink()
     {
