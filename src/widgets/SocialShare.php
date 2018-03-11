@@ -9,6 +9,7 @@ namespace ymaker\social\share\widgets;
 
 use Yii;
 use yii\base\Widget;
+use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -148,6 +149,17 @@ class SocialShare extends Widget
     }
 
     /**
+     * @return bool
+     *
+     * @since 2.1
+     */
+    final protected function registerMetaTags()
+    {
+        return $this->configurator instanceof Configurator &&
+            $this->configurator->registerMetaTags;
+    }
+
+    /**
      * Build label for driver.
      *
      * @param array     $driverConfig
@@ -175,11 +187,12 @@ class SocialShare extends Widget
     {
         $fullConfig = ArrayHelper::merge(
             [
-                'class'       => $config['class'],
-                'url'         => $this->url,
-                'title'       => $this->title,
+                'class' => $config['class'],
+                'url' => $this->url,
+                'title' => $this->title,
                 'description' => $this->description,
-                'imageUrl'    => $this->imageUrl
+                'imageUrl' => $this->imageUrl,
+                'registerMetaTags' => $this->registerMetaTags(),
             ],
             isset($config['config']) ? $config['config'] : [],
             isset($this->driverProperties[$config['class']]) ? $this->driverProperties[$config['class']] : []

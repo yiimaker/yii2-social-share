@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\LinkedIn;
 
@@ -16,7 +17,7 @@ use ymaker\social\share\drivers\LinkedIn;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class LinkedInTest extends \Codeception\Test\Unit
+class LinkedInTest extends Unit
 {
     public function testGetLinkWithSiteName()
     {

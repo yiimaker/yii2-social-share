@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Gmail;
 
@@ -16,7 +17,7 @@ use ymaker\social\share\drivers\Gmail;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class GmailTest extends \Codeception\Test\Unit
+class GmailTest extends Unit
 {
     public function testGetLink()
     {

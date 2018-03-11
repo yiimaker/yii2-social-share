@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Tumblr;
 
@@ -16,7 +17,7 @@ use ymaker\social\share\drivers\Tumblr;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class TumblrTest extends \Codeception\Test\Unit
+class TumblrTest extends Unit
 {
     /**
      * @expectedException \yii\base\InvalidConfigException

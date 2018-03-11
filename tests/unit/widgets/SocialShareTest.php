@@ -7,16 +7,20 @@
 
 namespace ymaker\social\share\tests\unit\widgets;
 
+use Codeception\Test\Unit;
+use Yii;
 use yii\base\InvalidConfigException;
 use ymaker\social\share\widgets\SocialShare;
 
 /**
  * Test case for  [[ymaker\social\share\widgets\SocialShare]].
  *
+ * @property-read \UnitTester $tester
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class SocialShareTest extends \Codeception\Test\Unit
+class SocialShareTest extends Unit
 {
     const DEFAULT_CONFIG_CONFIGURATOR_ID = 'defaultConfig';
     const DEFAULT_ICONS_CONFIGURATOR_ID = 'defaultIcons';
@@ -35,29 +39,12 @@ class SocialShareTest extends \Codeception\Test\Unit
     private $yahoo = 'https://compose.mail.yahoo.com/?subject=test+title&amp;body=test+description+-+test+url';
     private $odnoklassniki = 'https://connect.ok.ru/offer?url=test+url&amp;title=test+title&amp;description=test+description&amp;imageUrl=test+image+url';
 
-
-    /**
-     * Returns actual HTML code.
-     *
-     * @param string $configurator
-     *
-     * @return string
-     */
-    private function getActualHTML($configurator)
+    
+    public function testInvalidConfigException()
     {
-        $widget = new SocialShare([
-            'configurator'  => $configurator,
-            'url'           => 'test url',
-            'title'         => 'test title',
-            'description'   => 'test description',
-            'imageUrl'      => 'test image url',
-        ]);
-        ob_start();
-        $widget->run();
-        $actualHTML = ob_get_contents();
-        ob_end_clean();
+        $this->expectException(InvalidConfigException::class);
 
-        return $actualHTML;
+        SocialShare::widget(['configurator' => 'not exists ID']);
     }
 
     public function testDefaultConfig()
@@ -83,6 +70,20 @@ class SocialShareTest extends \Codeception\Test\Unit
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
         $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
+
+        $expectedMetaTags = [
+            $this->tester->openGraphMetaTag('og:url', 'test url'),
+            $this->tester->openGraphMetaTag('og:type', 'website'),
+            $this->tester->openGraphMetaTag('og:title', 'test title'),
+            $this->tester->openGraphMetaTag('og:description', 'test description'),
+            $this->tester->openGraphMetaTag('og:image', 'test image url'),
+            $this->tester->metaTag('twitter:card', 'summary_large_image'),
+            $this->tester->metaTag('twitter:title', 'test title'),
+            $this->tester->metaTag('twitter:description', 'test description'),
+            $this->tester->metaTag('twitter:image', 'test image url'),
+        ];
+
+        $this->assertEquals($expectedMetaTags, Yii::$app->getView()->metaTags);
     }
 
     public function testDefaultIcons()
@@ -111,17 +112,37 @@ class SocialShareTest extends \Codeception\Test\Unit
         $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
     }
 
-    public function testInvalidConfigExceptionNotString()
+    public function testDisableMetaTags()
     {
-        $this->expectException(InvalidConfigException::class);
+        SocialShare::widget([
+            'configurator' => 'disableMetaTags',
+            'url' => 'test',
+        ]);
 
-        SocialShare::widget(['configurator' => 123]);
+        $this->assertSame([], Yii::$app->getView()->metaTags);
     }
 
-    public function testInvalidConfigException()
+    /**
+     * Returns actual HTML code.
+     *
+     * @param string $configurator
+     *
+     * @return string
+     */
+    private function getActualHTML($configurator)
     {
-        $this->expectException(InvalidConfigException::class);
+        $widget = new SocialShare([
+            'configurator'  => $configurator,
+            'url'           => 'test url',
+            'title'         => 'test title',
+            'description'   => 'test description',
+            'imageUrl'      => 'test image url',
+        ]);
+        ob_start();
+        $widget->run();
+        $actualHTML = ob_get_contents();
+        ob_end_clean();
 
-        SocialShare::widget(['configurator' => 'not exists ID']);
+        return $actualHTML;
     }
 }

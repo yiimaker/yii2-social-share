@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use Yii;
 use ymaker\social\share\drivers\Facebook;
 
@@ -18,7 +19,7 @@ use ymaker\social\share\drivers\Facebook;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class FacebookTest extends \Codeception\Test\Unit
+class FacebookTest extends Unit
 {
     public function testRegisteredMetaTags()
     {
@@ -27,7 +28,13 @@ class FacebookTest extends \Codeception\Test\Unit
         $description = 'this is description';
         $imageUrl = 'http://example.com/image.jpg';
 
-        (new Facebook(compact('url', 'title', 'description', 'imageUrl')))->getLink();
+        (new Facebook([
+            'url' => $url,
+            'title' => $title,
+            'description' => $description,
+            'imageUrl' => $imageUrl,
+            'registerMetaTags' => true,
+        ]))->getLink();
 
         $expected = [
             $this->tester->openGraphMetaTag('og:url', $url),

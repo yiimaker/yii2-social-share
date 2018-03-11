@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Yahoo;
 
@@ -16,7 +17,7 @@ use ymaker\social\share\drivers\Yahoo;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 2.0
  */
-class YahooTest extends \Codeception\Test\Unit
+class YahooTest extends Unit
 {
     public function testGetLink()
     {

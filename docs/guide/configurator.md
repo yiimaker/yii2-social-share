@@ -11,6 +11,7 @@ Configurator
 |seoOptions         |SEO options for share-links                            |array  |`['target' => '_blank', 'rel' => 'noopener']`  |
 |enableDefaultIcons |Enable/disable default icons instead of text labels    |bool   |false                                          |
 |icons              |Array with drivers names and icons selectors           |array  |Default icons set will be used                 |
+|registerMetaTags   |Enable/disable registering of drivers meta tags.       |bool   |true                                           |
 
 ## Configuration examples
 

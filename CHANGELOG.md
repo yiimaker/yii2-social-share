@@ -4,6 +4,7 @@ Social Share Change Log
 2.1.0 Under development
 -----------------------
 * Enh: Created driver for Odnoklassniki (sokolnikov911)
+* Enh #12: Option for enable/disable registering of drivers meta tags (greeflas)
 
 2.0.0 January 18, 2018
 ----------------------

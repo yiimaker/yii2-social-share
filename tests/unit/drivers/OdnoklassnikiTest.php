@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Odnoklassniki;
 
@@ -16,7 +17,7 @@ use ymaker\social\share\drivers\Odnoklassniki;
  * @author Petro Sokolnykov <info@xyz.net.ua>
  * @since 2.1
  */
-class OdnoklassnikiTest extends \Codeception\Test\Unit
+class OdnoklassnikiTest extends Unit
 {
     public function testGetLinkWithSiteName()
     {

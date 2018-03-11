@@ -1,5 +1,7 @@
 <?php
 
+use ymaker\social\share\configurators\Configurator;
+
 $drivers = [
     'vkontakte' => [
         'class' => \ymaker\social\share\drivers\Vkontakte::class,
@@ -44,12 +46,16 @@ $drivers = [
 
 return [
     'defaultConfig' => [
-        'class' => \ymaker\social\share\configurators\Configurator::class,
+        'class' => Configurator::class,
         'socialNetworks' => $drivers,
     ],
     'defaultIcons' => [
-        'class' => \ymaker\social\share\configurators\Configurator::class,
+        'class' => Configurator::class,
         'enableDefaultIcons' => true,
         'socialNetworks' => $drivers
+    ],
+    'disableMetaTags' => [
+        'class' => Configurator::class,
+        'registerMetaTags' => false,
     ],
 ];

@@ -18,6 +18,7 @@ use yii\helpers\ArrayHelper;
  * @property-write $title
  * @property-write $description
  * @property-write $imageUrl
+ * @property-write $registerMetaTags
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -48,6 +49,14 @@ abstract class AbstractDriver extends BaseObject
      * @var string
      */
     protected $imageUrl;
+    /**
+     * Enable registering of drivers meta tags.
+     *
+     * @var bool
+     *
+     * @since 2.1
+     */
+    protected $registerMetaTags;
 
     /**
      * Contains data for URL.
@@ -58,95 +67,18 @@ abstract class AbstractDriver extends BaseObject
 
 
     /**
-     * @param string $url
-     *
-     * @since 2.0
+     * Method should process the share data for current driver.
      */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-    }
+    abstract protected function processShareData();
 
     /**
-     * @param string $title
-     *
-     * @since 2.0
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @since 2.0
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @param string $imageUrl
-     *
-     * @since 2.0
-     */
-    public function setImageUrl($imageUrl)
-    {
-        $this->imageUrl = $imageUrl;
-    }
-
-    /**
-     * Append value to data array.
-     *
-     * @param string    $key
-     * @param string    $value
-     * @param bool      $urlEncode
-     *
-     * @since 2.0
-     */
-    public function appendToData($key, $value, $urlEncode = true)
-    {
-        $key = '{' . $key . '}';
-        $this->_data[$key] = $urlEncode ? static::encodeData($value) : $value;
-    }
-
-    /**
-     * Prepare data data to insert into the link.
-     */
-    public function init()
-    {
-        $this->processShareData();
-
-        $this->_data = ArrayHelper::merge([
-            '{url}'         => $this->url,
-            '{title}'       => $this->title,
-            '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl
-        ], $this->_data);
-
-        $metaTags = $this->getMetaTags();
-        if (!empty($metaTags)) {
-            $rawData = static::decodeData($this->_data);
-            $view = Yii::$app->getView();
-
-            foreach ($metaTags as $metaTag) {
-                $metaTag['content'] = strtr($metaTag['content'], $rawData);
-                $view->registerMetaTag($metaTag);
-            }
-        }
-    }
-
-    /**
-     * Generates share link.
+     * Method should build template of share link.
      *
      * @return string
+     *
+     * @since 2.0
      */
-    final public function getLink()
-    {
-        return strtr($this->buildLink(), $this->_data);
-    }
+    abstract protected function buildLink();
 
     /**
      * Encode data for URL.
@@ -189,6 +121,108 @@ abstract class AbstractDriver extends BaseObject
     }
 
     /**
+     * @param string $url
+     *
+     * @since 2.0
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @param string $title
+     *
+     * @since 2.0
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @since 2.0
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @param string $imageUrl
+     *
+     * @since 2.0
+     */
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl = $imageUrl;
+    }
+
+    /**
+     * @param bool $register
+     *
+     * @since 2.1
+     */
+    public function setRegisterMetaTags($register)
+    {
+        $this->registerMetaTags = $register;
+    }
+
+    /**
+     * Append value to data array.
+     *
+     * @param string    $key
+     * @param string    $value
+     * @param bool      $urlEncode
+     *
+     * @since 2.0
+     */
+    public function appendToData($key, $value, $urlEncode = true)
+    {
+        $key = '{' . $key . '}';
+        $this->_data[$key] = $urlEncode ? static::encodeData($value) : $value;
+    }
+
+    /**
+     * Prepare data data to insert into the link.
+     */
+    public function init()
+    {
+        $this->processShareData();
+
+        $this->_data = ArrayHelper::merge([
+            '{url}'         => $this->url,
+            '{title}'       => $this->title,
+            '{description}' => $this->description,
+            '{imageUrl}'    => $this->imageUrl
+        ], $this->_data);
+
+        $metaTags = $this->getMetaTags();
+
+        if ($this->registerMetaTags && !empty($metaTags)) {
+            $rawData = static::decodeData($this->_data);
+            $view = Yii::$app->getView();
+
+            foreach ($metaTags as $metaTag) {
+                $metaTag['content'] = strtr($metaTag['content'], $rawData);
+                $view->registerMetaTag($metaTag);
+            }
+        }
+    }
+
+    /**
+     * Generates share link.
+     *
+     * @return string
+     */
+    final public function getLink()
+    {
+        return strtr($this->buildLink(), $this->_data);
+    }
+
+    /**
      * Adds URL param to link.
      *
      * @param string $link
@@ -224,18 +258,4 @@ abstract class AbstractDriver extends BaseObject
     {
         return [];
     }
-
-    /**
-     * Method should process the share data for current driver.
-     */
-    abstract protected function processShareData();
-
-    /**
-     * Method should build template of share link.
-     *
-     * @return string
-     *
-     * @since 2.0
-     */
-    abstract protected function buildLink();
 }

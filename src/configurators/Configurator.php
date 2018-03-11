@@ -66,6 +66,14 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      * @var array
      */
     public $icons = [];
+    /**
+     * Enable registering of drivers meta tags.
+     *
+     * @var bool
+     *
+     * @since 2.1
+     */
+    public $registerMetaTags = true;
 
     /**
      * @var array

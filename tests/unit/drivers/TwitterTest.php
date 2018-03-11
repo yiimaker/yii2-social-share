@@ -7,6 +7,7 @@
 
 namespace ymaker\social\share\tests\unit\drivers;
 
+use Codeception\Test\Unit;
 use Yii;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Twitter;
@@ -19,7 +20,7 @@ use ymaker\social\share\drivers\Twitter;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.4.0
  */
-class TwitterTest extends \Codeception\Test\Unit
+class TwitterTest extends Unit
 {
     public function testGetLinkWithAccount()
     {
@@ -43,7 +44,12 @@ class TwitterTest extends \Codeception\Test\Unit
         $description = 'this is description';
         $imageUrl = 'this is image url';
 
-        (new Twitter(compact('title', 'description', 'imageUrl')))->getLink();
+        (new Twitter([
+            'title' => $title,
+            'description' => $description,
+            'imageUrl' => $imageUrl,
+            'registerMetaTags' => true,
+        ]))->getLink();
 
         $expected = [
             $this->tester->metaTag('twitter:card', 'summary_large_image'),

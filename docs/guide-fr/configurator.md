@@ -11,6 +11,7 @@ Le configurateur
 |seoOptions         |Les attributs SEO pour le lien                                                     |array  |`['target' => '_blank', 'rel' => 'noopener']`  |
 |enableDefaultIcons |L’utilisation des icônes marche/arrêt à lieu des étiquettes de texte               |bool   |false                                          |
 |icons              |Le tableau associatif avec le nom de classe de pilote et le secteur pour l’icône   |array  |Des icônes par défaut                          |
+|registerMetaTags   |Activer l’enregistrement des meta tags des pilotes.                                |bool   |true                                           |
 
 ## L’exemple de configuration
 
