@@ -4,7 +4,7 @@ Social Share Change Log
 2.1.0 Under development
 -----------------------
 * Enh: Created driver for Odnoklassniki (sokolnikov911)
-* Enh #12: Option for enable/disable registering of drivers meta tags (greeflas)
+* Enh #12: Added option for enable/disable registering of drivers meta tags (greeflas)
 
 2.0.0 January 18, 2018
 ----------------------
@@ -19,7 +19,7 @@ Social Share Change Log
 1.4.1 December 25, 2017
 -----------------------
 * Fix #5: Fixes vulnerability of `target="_blank"` (greeflas)
-* Chg: Using '<!--noindex-->' comment instead of 'rel="nofollow"' attribute (greeflas)
+* Chg: Using `<!--noindex-->` comment instead of `rel="nofollow"` attribute (greeflas)
 
 1.4.0 December 12, 2017 
 -----------------------
