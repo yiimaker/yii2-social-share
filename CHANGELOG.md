@@ -1,8 +1,8 @@
 Social Share Change Log
 =======================
 
-2.2.0 Under development
------------------------
+2.2.0 April 22, 2018
+--------------------
 * Enh #13: Created driver for Trello (greeflas)
 * Fix: Fixed bug with duplicates of registered meta tags (greeflas)
 
