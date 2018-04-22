@@ -44,6 +44,6 @@ class FacebookTest extends Unit
             $this->tester->openGraphMetaTag('og:image', $imageUrl),
         ];
 
-        $this->assertEquals($expected, Yii::$app->getView()->metaTags);
+        $this->assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
     }
 }

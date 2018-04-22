@@ -1,6 +1,11 @@
 Social Share Change Log
 =======================
 
+2.2.0 Under development
+-----------------------
+* Enh #13: Created driver for Trello (greeflas)
+* Fix: Fixed bug with duplicates of registered meta tags (greeflas)
+
 2.1.0 March 18, 2018
 --------------------
 * Enh: Created driver for Odnoklassniki (sokolnikov911)

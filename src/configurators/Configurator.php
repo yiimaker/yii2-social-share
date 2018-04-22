@@ -13,6 +13,7 @@ use ymaker\social\share\drivers\Facebook;
 use ymaker\social\share\drivers\GooglePlus;
 use ymaker\social\share\drivers\LinkedIn;
 use ymaker\social\share\drivers\Gmail;
+use ymaker\social\share\drivers\Trello;
 use ymaker\social\share\drivers\WhatsApp;
 use ymaker\social\share\drivers\Telegram;
 use ymaker\social\share\drivers\Pinterest;
@@ -91,6 +92,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
         Tumblr::class        => 'si si-tumblr',
         Yahoo::class         => 'si si-yahoo',
         Odnoklassniki::class => 'si si-odnoklassniki',
+        Trello::class        => 'si si-trello',
     ];
 
 

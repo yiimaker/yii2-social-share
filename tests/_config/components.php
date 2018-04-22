@@ -42,6 +42,9 @@ $drivers = [
     'odnoklassniki' => [
         'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
     ],
+    'trello' => [
+        'class' => \ymaker\social\share\drivers\Trello::class,
+    ],
 ];
 
 return [

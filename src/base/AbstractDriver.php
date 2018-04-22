@@ -207,7 +207,7 @@ abstract class AbstractDriver extends BaseObject
 
             foreach ($metaTags as $metaTag) {
                 $metaTag['content'] = strtr($metaTag['content'], $rawData);
-                $view->registerMetaTag($metaTag);
+                $view->registerMetaTag($metaTag, md5(implode(';', $metaTag)));
             }
         }
     }
@@ -237,6 +237,7 @@ abstract class AbstractDriver extends BaseObject
 
         if (strpos($link, '?') !== false) {
             $last = substr($link, -1);
+
             if ('?' === $last || '&' === $last) {
                 $link .= $base;
             } else {
