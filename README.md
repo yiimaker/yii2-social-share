@@ -28,6 +28,7 @@ Extension supports from the box next social network drivers:
 * [Pinterest](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Pinterest.php)
 * [Tumblr](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Tumblr.php)
 * [Odnoklassniki](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Odnoklassniki.php)
+* [Trello](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Trello.php)
 
 drivers for messengers:
 
@@ -56,7 +57,7 @@ $ composer require yiimaker/yii2-social-share
 or add
 
 ```
-"yiimaker/yii2-social-share": "~2.1"
+"yiimaker/yii2-social-share": "~2.2"
 ```
 
 to the `require` section of your `composer.json`.
@@ -78,6 +79,7 @@ Call widget in view file
 
 Tests
 -----
+
 You can run tests with composer command
 
 ```
@@ -92,10 +94,12 @@ $ codecept build && codecept run
 
 Contributing
 ------------
+
 For information about contributing please read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 License
 -------
+
 [![License](https://poser.pugx.org/yiimaker/yii2-social-share/license)](https://packagist.org/packages/yiimaker/yii2-social-share)
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
