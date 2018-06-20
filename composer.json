@@ -22,7 +22,7 @@
     }
   ],
   "require": {
-    "php": ">=5.6.0",
+    "php": ">=7.1.0",
     "yiisoft/yii2": "^2.0.13"
   },
   "require-dev": {
@@ -40,7 +40,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.2.x-dev"
+      "dev-master": "3.0.x-dev"
     }
   },
   "scripts": {
