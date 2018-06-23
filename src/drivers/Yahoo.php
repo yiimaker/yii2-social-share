@@ -22,7 +22,7 @@ class Yahoo extends AbstractMailDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'https://compose.mail.yahoo.com/?subject={title}&body={body}';
     }

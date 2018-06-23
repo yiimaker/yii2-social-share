@@ -24,7 +24,7 @@ abstract class AbstractMailDriver extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->title = static::encodeData($this->title);
 

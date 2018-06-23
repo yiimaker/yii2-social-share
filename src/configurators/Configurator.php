@@ -9,19 +9,21 @@ namespace ymaker\social\share\configurators;
 
 use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
-use ymaker\social\share\drivers\Facebook;
-use ymaker\social\share\drivers\GooglePlus;
-use ymaker\social\share\drivers\LinkedIn;
-use ymaker\social\share\drivers\Gmail;
-use ymaker\social\share\drivers\Trello;
-use ymaker\social\share\drivers\WhatsApp;
-use ymaker\social\share\drivers\Telegram;
-use ymaker\social\share\drivers\Pinterest;
-use ymaker\social\share\drivers\Tumblr;
-use ymaker\social\share\drivers\Twitter;
-use ymaker\social\share\drivers\Vkontakte;
-use ymaker\social\share\drivers\Yahoo;
-use ymaker\social\share\drivers\Odnoklassniki;
+use ymaker\social\share\drivers\{
+    Facebook,
+    GooglePlus,
+    LinkedIn,
+    Gmail,
+    Trello,
+    WhatsApp,
+    Telegram,
+    Pinterest,
+    Tumblr,
+    Twitter,
+    Vkontakte,
+    Yahoo,
+    Odnoklassniki
+};
 
 /**
  * Configurator for social network drivers.
@@ -99,7 +101,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     /**
      * Set default values for special link options.
      */
-    public function init()
+    public function init(): void
     {
         if (empty($this->seoOptions)) {
             $this->seoOptions = [
@@ -115,7 +117,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function getSocialNetworks()
+    public function getSocialNetworks(): array
     {
         return $this->socialNetworks;
     }
@@ -123,7 +125,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->enableSeoOptions
             ? ArrayHelper::merge($this->options, $this->seoOptions)
@@ -137,8 +139,8 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      *
      * @return string
      */
-    public function getIconSelector($driverName)
+    public function getIconSelector($driverName): string
     {
-        return isset($this->icons[$driverName]) ? $this->icons[$driverName] : '';
+        return $this->icons[$driverName] ?? '';
     }
 }

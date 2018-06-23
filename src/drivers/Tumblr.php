@@ -57,7 +57,7 @@ class Tumblr extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         $types = [
             self::POST_TYPE_LINK,
@@ -70,9 +70,11 @@ class Tumblr extends AbstractDriver
         if (!in_array($this->postType, $types)) {
             throw new InvalidConfigException('Invalid post type: "' . $this->postType . '"');
         }
+
         if ($this->postType === self::POST_TYPE_PHOTO && empty($this->sharePhotos)) {
             throw new InvalidConfigException('Photos list cannot be blank!');
         }
+
         if ($this->postType === self::POST_TYPE_VIDEO && $this->shareVideoUrl === null) {
             throw new InvalidConfigException('You should to set share video URL or embed code!');
         }
@@ -83,7 +85,7 @@ class Tumblr extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         $this->title = static::encodeData($this->title);
@@ -93,7 +95,7 @@ class Tumblr extends AbstractDriver
             case self::POST_TYPE_LINK:
                 $this->appendToData(
                     'content',
-                    null === $this->shareUrl ? $this->url : $this->shareUrl,
+                    $this->shareUrl ?? $this->url,
                     null !== $this->shareUrl
                 );
                 break;
@@ -116,7 +118,7 @@ class Tumblr extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         $link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}';
 

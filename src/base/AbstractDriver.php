@@ -69,7 +69,7 @@ abstract class AbstractDriver extends BaseObject
     /**
      * Method should process the share data for current driver.
      */
-    abstract protected function processShareData();
+    abstract protected function processShareData(): void;
 
     /**
      * Method should build template of share link.
@@ -78,7 +78,7 @@ abstract class AbstractDriver extends BaseObject
      *
      * @since 2.0
      */
-    abstract protected function buildLink();
+    abstract protected function buildLink(): string;
 
     /**
      * Encode data for URL.
@@ -120,52 +120,27 @@ abstract class AbstractDriver extends BaseObject
         return urldecode($data);
     }
 
-    /**
-     * @param string $url
-     *
-     * @since 2.0
-     */
-    public function setUrl($url)
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }
 
-    /**
-     * @param string $title
-     *
-     * @since 2.0
-     */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @param string $description
-     *
-     * @since 2.0
-     */
-    public function setDescription($description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
 
-    /**
-     * @param string $imageUrl
-     *
-     * @since 2.0
-     */
-    public function setImageUrl($imageUrl)
+    public function setImageUrl(string $imageUrl): void
     {
         $this->imageUrl = $imageUrl;
     }
 
-    /**
-     * @param bool $register
-     *
-     * @since 2.1
-     */
-    public function setRegisterMetaTags($register)
+    public function setRegisterMetaTags(bool $register): void
     {
         $this->registerMetaTags = $register;
     }
@@ -179,7 +154,7 @@ abstract class AbstractDriver extends BaseObject
      *
      * @since 2.0
      */
-    public function appendToData($key, $value, $urlEncode = true)
+    public function appendToData(string $key, string $value, bool $urlEncode = true): void
     {
         $key = '{' . $key . '}';
         $this->_data[$key] = $urlEncode ? static::encodeData($value) : $value;
@@ -188,7 +163,7 @@ abstract class AbstractDriver extends BaseObject
     /**
      * Prepare data data to insert into the link.
      */
-    public function init()
+    public function init(): void
     {
         $this->processShareData();
 
@@ -217,7 +192,7 @@ abstract class AbstractDriver extends BaseObject
      *
      * @return string
      */
-    final public function getLink()
+    final public function getLink(): string
     {
         return strtr($this->buildLink(), $this->_data);
     }
@@ -231,7 +206,7 @@ abstract class AbstractDriver extends BaseObject
      *
      * @since 1.4.0
      */
-    final protected function addUrlParam(&$link, $name, $value)
+    final protected function addUrlParam(string &$link, string $name, string $value): void
     {
         $base = $name . '=' . $value;
 
@@ -255,7 +230,7 @@ abstract class AbstractDriver extends BaseObject
      *
      * @since 2.0
      */
-    protected function getMetaTags()
+    protected function getMetaTags(): array
     {
         return [];
     }

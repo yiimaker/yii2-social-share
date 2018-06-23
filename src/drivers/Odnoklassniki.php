@@ -22,7 +22,7 @@ class Odnoklassniki extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         $this->title = static::encodeData($this->title);
@@ -33,7 +33,7 @@ class Odnoklassniki extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'https://connect.ok.ru/offer'
             . '?url={url}'

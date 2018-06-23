@@ -28,7 +28,7 @@ class Twitter extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         $this->description = static::encodeData($this->description);
@@ -41,7 +41,7 @@ class Twitter extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         $link = 'http://twitter.com/share?url={url}&text={description}';
 
@@ -55,7 +55,7 @@ class Twitter extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function getMetaTags()
+    protected function getMetaTags(): array
     {
         return [
             ['name' => 'twitter:card',         'content' => 'summary_large_image'],

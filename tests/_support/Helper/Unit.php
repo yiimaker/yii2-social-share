@@ -22,7 +22,7 @@ class Unit extends \Codeception\Module
      *
      * @return string
      */
-    public function metaTag($name, $content)
+    public function metaTag(string $name, string $content): string
     {
         return "<meta name=\"$name\" content=\"$content\">";
     }
@@ -35,7 +35,7 @@ class Unit extends \Codeception\Module
      *
      * @return string
      */
-    public function openGraphMetaTag($property, $content)
+    public function openGraphMetaTag(string $property, string $content): string
     {
         return "<meta property=\"$property\" content=\"$content\">";
     }

@@ -22,7 +22,7 @@ class Pinterest extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         $this->imageUrl = static::encodeData($this->imageUrl);
@@ -32,7 +32,7 @@ class Pinterest extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'https://www.pinterest.com/pin/create/link/?'
             . 'url={url}'

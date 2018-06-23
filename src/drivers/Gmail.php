@@ -22,7 +22,7 @@ class Gmail extends AbstractMailDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'https://mail.google.com/mail/?view=cm&fs=1&su={title}&body={body}';
     }

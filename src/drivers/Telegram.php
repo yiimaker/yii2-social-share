@@ -28,7 +28,7 @@ class Telegram extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         if (is_string($this->message)) {
@@ -39,7 +39,7 @@ class Telegram extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         $link = 'https://telegram.me/share/url?url={url}';
 

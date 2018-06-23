@@ -132,7 +132,7 @@ class SocialShareTest extends Unit
      *
      * @return string
      */
-    private function getActualHTML($configurator)
+    private function getActualHTML(string $configurator): string
     {
         $widget = new SocialShare([
             'configurator'  => $configurator,

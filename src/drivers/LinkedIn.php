@@ -30,7 +30,7 @@ class LinkedIn extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
         $this->title = static::encodeData($this->title);
@@ -44,7 +44,7 @@ class LinkedIn extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         $link = 'https://www.linkedin.com/shareArticle?mini=true'
                     . '&url={url}'

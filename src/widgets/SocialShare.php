@@ -9,15 +9,14 @@ namespace ymaker\social\share\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\db\Connection;
 use yii\di\Instance;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
-use yii\helpers\Inflector;
-use yii\helpers\Url;
+use yii\helpers\{
+    ArrayHelper, Html, Inflector, Url
+};
 use ymaker\social\share\assets\SocialIconsAsset;
-use ymaker\social\share\configurators\Configurator;
-use ymaker\social\share\configurators\ConfiguratorInterface;
+use ymaker\social\share\configurators\{
+    Configurator, ConfiguratorInterface
+};
 
 /**
  * Widget for rendering the share links.
@@ -85,7 +84,7 @@ class SocialShare extends Widget
      *
      * @throws \yii\base\InvalidConfigException
      */
-    public function init()
+    public function init(): void
     {
         $this->configurator = Instance::ensure($this->configurator, ConfiguratorInterface::class);
 
@@ -99,7 +98,7 @@ class SocialShare extends Widget
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function run(): void
     {
         if ($this->enableDefaultIcons()) {
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
@@ -110,11 +109,13 @@ class SocialShare extends Widget
         }
 
         $containerTag = ArrayHelper::remove($this->containerOptions, 'tag', false);
+
         if ($containerTag) {
             echo Html::beginTag($containerTag, $this->containerOptions);
         }
 
         $wrapTag = ArrayHelper::remove($this->linkContainerOptions, 'tag', false);
+
         foreach ($this->getLinkList() as $link) {
             echo $wrapTag ? Html::tag($wrapTag, $link, $this->linkContainerOptions) : $link;
         }
@@ -131,10 +132,9 @@ class SocialShare extends Widget
     /**
      * @return bool
      */
-    final protected function enableDefaultIcons()
+    final protected function enableDefaultIcons(): bool
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableDefaultIcons;
+        return $this->configurator instanceof Configurator && $this->configurator->enableDefaultIcons;
     }
 
     /**
@@ -142,10 +142,9 @@ class SocialShare extends Widget
      *
      * @since 1.4.1
      */
-    final protected function isSeoEnabled()
+    final protected function isSeoEnabled(): bool
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableSeoOptions;
+        return $this->configurator instanceof Configurator && $this->configurator->enableSeoOptions;
     }
 
     /**
@@ -153,10 +152,9 @@ class SocialShare extends Widget
      *
      * @since 2.1
      */
-    final protected function registerMetaTags()
+    final protected function registerMetaTags(): bool
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->registerMetaTags;
+        return $this->configurator instanceof Configurator && $this->configurator->registerMetaTags;
     }
 
     /**
@@ -167,11 +165,11 @@ class SocialShare extends Widget
      *
      * @return string
      */
-    protected function getLinkLabel($driverConfig, $defaultLabel)
+    protected function getLinkLabel(array $driverConfig, string $defaultLabel): string
     {
         return $this->enableDefaultIcons()
             ? Html::tag('i', '', ['class' => $this->configurator->getIconSelector($driverConfig['class'])])
-            : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
+            : $driverConfig['label'] ?? $defaultLabel;
     }
 
     /**
@@ -183,7 +181,7 @@ class SocialShare extends Widget
      *
      * @throws \yii\base\InvalidConfigException
      */
-    private function createDriver($config)
+    private function createDriver(array $config)
     {
         $fullConfig = ArrayHelper::merge(
             [
@@ -194,8 +192,8 @@ class SocialShare extends Widget
                 'imageUrl' => $this->imageUrl,
                 'registerMetaTags' => $this->registerMetaTags(),
             ],
-            isset($config['config']) ? $config['config'] : [],
-            isset($this->driverProperties[$config['class']]) ? $this->driverProperties[$config['class']] : []
+            $config['config'] ?? [],
+           $this->driverProperties[$config['class']] ?? []
         );
 
         return Yii::createObject($fullConfig);
@@ -208,11 +206,11 @@ class SocialShare extends Widget
      *
      * @return array
      */
-    private function combineOptions($driverConfig)
+    private function combineOptions(array $driverConfig): array
     {
-        $options = isset($driverConfig['options']) ? $driverConfig['options'] : [];
-
+        $options = $driverConfig['options'] ?? [];
         $globalOptions = $this->configurator->getOptions();
+
         if (empty($globalOptions)) {
             return $options;
         }
@@ -232,7 +230,7 @@ class SocialShare extends Widget
      *
      * @throws \yii\base\InvalidConfigException
      */
-    private function getLinkList()
+    private function getLinkList(): array
     {
         $linkList = [];
 

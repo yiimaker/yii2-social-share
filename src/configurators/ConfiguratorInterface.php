@@ -21,7 +21,7 @@ interface ConfiguratorInterface
      *
      * @return array
      */
-    public function getSocialNetworks();
+    public function getSocialNetworks(): array;
 
     /**
      * This method should returns a array with HTML
@@ -29,5 +29,5 @@ interface ConfiguratorInterface
      *
      * @return array
      */
-    public function getOptions();
+    public function getOptions(): array;
 }

@@ -25,7 +25,7 @@ class WhatsApp extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
     }
@@ -33,7 +33,7 @@ class WhatsApp extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'whatsapp://send?text={url}';
     }

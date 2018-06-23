@@ -22,7 +22,7 @@ class GooglePlus extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
     }
@@ -30,7 +30,7 @@ class GooglePlus extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'https://plusone.google.com/_/+1/confirm?hl=en&url={url}';
     }

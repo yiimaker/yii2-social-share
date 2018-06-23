@@ -25,7 +25,7 @@ class Viber extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
     }
@@ -33,7 +33,7 @@ class Viber extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'viber://forward?text={url}';
     }

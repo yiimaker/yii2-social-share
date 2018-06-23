@@ -22,7 +22,7 @@ class Facebook extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function processShareData()
+    protected function processShareData(): void
     {
         $this->url = static::encodeData($this->url);
     }
@@ -30,15 +30,15 @@ class Facebook extends AbstractDriver
     /**
      * {@inheritdoc}
      */
-    protected function buildLink()
+    protected function buildLink(): string
     {
         return 'http://www.facebook.com/sharer.php?u={url}';
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
-    protected function getMetaTags()
+    protected function getMetaTags(): array
     {
         return [
             ['property' => 'og:url',         'content' => '{url}'],
