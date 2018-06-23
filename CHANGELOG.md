@@ -4,6 +4,7 @@ Social Share Change Log
 3.0.0 Under development
 -----------------------
 * Enh #15: Use PHP 7 syntax
+* Fix: Code style fixes
 
 2.2.0 April 22, 2018
 --------------------

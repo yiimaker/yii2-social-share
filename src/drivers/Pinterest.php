@@ -37,6 +37,7 @@ class Pinterest extends AbstractDriver
         return 'https://www.pinterest.com/pin/create/link/?'
             . 'url={url}'
             . '&media={imageUrl}'
-            . '&description={description}';
+            . '&description={description}'
+        ;
     }
 }

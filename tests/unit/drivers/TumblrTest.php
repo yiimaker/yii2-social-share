@@ -62,7 +62,7 @@ class TumblrTest extends Unit
             . '&posttype=' . Tumblr::POST_TYPE_LINK
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($url)
-            . '&tags=' . AbstractDriver::encodeData(implode(',', $tags));
+            . '&tags=' . AbstractDriver::encodeData(\implode(',', $tags));
 
         $this->assertEquals($expected, $driver->getLink());
     }
@@ -150,7 +150,7 @@ class TumblrTest extends Unit
             . '?canonicalUrl=' . AbstractDriver::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_PHOTO
             . '&caption=' . AbstractDriver::encodeData($title)
-            . '&content=' . implode(',', $sharePhotos);
+            . '&content=' . \implode(',', $sharePhotos);
 
         $this->assertEquals($expected, $driver->getLink());
     }

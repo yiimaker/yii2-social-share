@@ -22,8 +22,8 @@ use ymaker\social\share\widgets\SocialShare;
  */
 class SocialShareTest extends Unit
 {
-    const DEFAULT_CONFIG_CONFIGURATOR_ID = 'defaultConfig';
-    const DEFAULT_ICONS_CONFIGURATOR_ID = 'defaultIcons';
+    private const DEFAULT_CONFIG_CONFIGURATOR_ID = 'defaultConfig';
+    private const DEFAULT_ICONS_CONFIGURATOR_ID = 'defaultIcons';
 
     private $vk = 'http://vk.com/share.php?url=test+url&amp;title=test+title&amp;description=test+description&amp;image=test+image+url';
     private $facebook = 'http://www.facebook.com/sharer.php?u=test+url';
@@ -141,10 +141,10 @@ class SocialShareTest extends Unit
             'description'   => 'test description',
             'imageUrl'      => 'test image url',
         ]);
-        ob_start();
+        \ob_start();
         $widget->run();
-        $actualHTML = ob_get_contents();
-        ob_end_clean();
+        $actualHTML = \ob_get_contents();
+        \ob_end_clean();
 
         return $actualHTML;
     }

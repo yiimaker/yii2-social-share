@@ -36,7 +36,7 @@ class LinkedIn extends AbstractDriver
         $this->title = static::encodeData($this->title);
         $this->description = static::encodeData($this->description);
 
-        if (is_string($this->siteName)) {
+        if (\is_string($this->siteName)) {
             $this->appendToData('siteName', $this->siteName);
         }
     }
@@ -49,7 +49,8 @@ class LinkedIn extends AbstractDriver
         $link = 'https://www.linkedin.com/shareArticle?mini=true'
                     . '&url={url}'
                     . '&title={title}'
-                    . '&summary={description}';
+                    . '&summary={description}'
+        ;
 
         if ($this->siteName) {
             $this->addUrlParam($link, 'source', '{siteName}');

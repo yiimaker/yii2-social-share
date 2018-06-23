@@ -33,7 +33,7 @@ class Twitter extends AbstractDriver
         $this->url = static::encodeData($this->url);
         $this->description = static::encodeData($this->description);
 
-        if (is_string($this->account)) {
+        if (\is_string($this->account)) {
             $this->appendToData('account', $this->account);
         }
     }

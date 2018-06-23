@@ -58,6 +58,6 @@ class TwitterTest extends Unit
             $this->tester->metaTag('twitter:image', $imageUrl),
         ];
 
-        $this->assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
+        $this->assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
     }
 }

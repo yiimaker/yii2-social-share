@@ -39,6 +39,7 @@ class Odnoklassniki extends AbstractDriver
             . '?url={url}'
             . '&title={title}'
             . '&description={description}'
-            . '&imageUrl={imageUrl}';
+            . '&imageUrl={imageUrl}'
+        ;
     }
 }

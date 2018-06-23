@@ -89,15 +89,15 @@ abstract class AbstractDriver extends BaseObject
      */
     public static function encodeData($data)
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             foreach ($data as $key => $value) {
-                $data[$key] = urlencode($value);
+                $data[$key] = \urlencode($value);
             }
 
             return $data;
         }
 
-        return urlencode($data);
+        return \urlencode($data);
     }
 
     /**
@@ -109,9 +109,9 @@ abstract class AbstractDriver extends BaseObject
      */
     public static function decodeData($data)
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             foreach ($data as $key => $value) {
-                $data[$key] = urldecode($value);
+                $data[$key] = \urldecode($value);
             }
 
             return $data;
@@ -156,7 +156,7 @@ abstract class AbstractDriver extends BaseObject
      */
     public function appendToData(string $key, string $value, bool $urlEncode = true): void
     {
-        $key = '{' . $key . '}';
+        $key = \sprintf('{%s}', $key);
         $this->_data[$key] = $urlEncode ? static::encodeData($value) : $value;
     }
 
@@ -181,8 +181,8 @@ abstract class AbstractDriver extends BaseObject
             $view = Yii::$app->getView();
 
             foreach ($metaTags as $metaTag) {
-                $metaTag['content'] = strtr($metaTag['content'], $rawData);
-                $view->registerMetaTag($metaTag, md5(implode(';', $metaTag)));
+                $metaTag['content'] = \strtr($metaTag['content'], $rawData);
+                $view->registerMetaTag($metaTag, \md5(\implode(';', $metaTag)));
             }
         }
     }
@@ -194,7 +194,7 @@ abstract class AbstractDriver extends BaseObject
      */
     final public function getLink(): string
     {
-        return strtr($this->buildLink(), $this->_data);
+        return \strtr($this->buildLink(), $this->_data);
     }
 
     /**
@@ -210,8 +210,8 @@ abstract class AbstractDriver extends BaseObject
     {
         $base = $name . '=' . $value;
 
-        if (strpos($link, '?') !== false) {
-            $last = substr($link, -1);
+        if (\strpos($link, '?') !== false) {
+            $last = \substr($link, -1);
 
             if ('?' === $last || '&' === $last) {
                 $link .= $base;

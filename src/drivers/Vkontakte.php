@@ -39,6 +39,7 @@ class Vkontakte extends AbstractDriver
             . 'url={url}'
             . '&title={title}'
             . '&description={description}'
-            . '&image={imageUrl}';
+            . '&image={imageUrl}'
+        ;
     }
 }
