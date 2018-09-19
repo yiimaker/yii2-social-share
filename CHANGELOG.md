@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+2.3.0 Under development
+-----------------------
+* No changes
+
 2.2.0 April 22, 2018
 --------------------
 * Enh #13: Created driver for Trello (greeflas)
