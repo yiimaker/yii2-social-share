@@ -1,14 +1,11 @@
-# Codeception is not needed
-codecept.phar
+# Windows thumbnail cache
+Thumbs.db
 
-# Composer itself is not needed
-composer.phar
-
-# Composer vendor dir
-/vendor
+# Mac DS_Store Files
+.DS_Store
 
 # PHPStorm project files
-.idea
+.idea/
 
 # Netbeans project files
 nbproject
@@ -18,8 +15,14 @@ nbproject
 .project
 .settings
 
-# Windows thumbnail cache
-Thumbs.db
+# Codeception is not needed
+codecept.phar
 
-# Mac DS_Store Files
-.DS_Store
+# Composer itself is not needed
+composer.phar
+
+# Composer vendor dir
+/vendor/
+
+# PHP CS Fixer cache
+php_cs.cache

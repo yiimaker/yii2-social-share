@@ -9,7 +9,6 @@ namespace ymaker\social\share\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -28,7 +27,7 @@ use ymaker\social\share\configurators\ConfiguratorInterface;
 class SocialShare extends Widget
 {
     /**
-     * @var string|array|ConfiguratorInterface
+     * @var array|ConfiguratorInterface|string
      */
     public $configurator;
     /**
@@ -110,11 +109,13 @@ class SocialShare extends Widget
         }
 
         $containerTag = ArrayHelper::remove($this->containerOptions, 'tag', false);
+
         if ($containerTag) {
             echo Html::beginTag($containerTag, $this->containerOptions);
         }
 
         $wrapTag = ArrayHelper::remove($this->linkContainerOptions, 'tag', false);
+
         foreach ($this->getLinkList() as $link) {
             echo $wrapTag ? Html::tag($wrapTag, $link, $this->linkContainerOptions) : $link;
         }
@@ -222,6 +223,7 @@ class SocialShare extends Widget
         $options = isset($driverConfig['options']) ? $driverConfig['options'] : [];
 
         $globalOptions = $this->configurator->getOptions();
+
         if (empty($globalOptions)) {
             return $options;
         }

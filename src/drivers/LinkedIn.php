@@ -36,7 +36,7 @@ class LinkedIn extends AbstractDriver
         $this->title = static::encodeData($this->title);
         $this->description = static::encodeData($this->description);
 
-        if (is_string($this->siteName)) {
+        if (\is_string($this->siteName)) {
             $this->appendToData('siteName', $this->siteName);
         }
     }

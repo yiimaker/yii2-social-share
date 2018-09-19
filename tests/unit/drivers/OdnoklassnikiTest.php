@@ -26,7 +26,7 @@ class OdnoklassnikiTest extends Unit
         $description = 'this is description';
         $imageUrl = 'http://example.com/image.jpg';
 
-        $driver = new Odnoklassniki(compact('url', 'title', 'description', 'imageUrl'));
+        $driver = new Odnoklassniki(\compact('url', 'title', 'description', 'imageUrl'));
 
         $expected = 'https://connect.ok.ru/offer'
             . '?url=' . AbstractDriver::encodeData($url)

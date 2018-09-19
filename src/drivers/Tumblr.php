@@ -67,13 +67,15 @@ class Tumblr extends AbstractDriver
             self::POST_TYPE_VIDEO,
         ];
 
-        if (!in_array($this->postType, $types)) {
+        if (!\in_array($this->postType, $types)) {
             throw new InvalidConfigException('Invalid post type: "' . $this->postType . '"');
         }
-        if ($this->postType === self::POST_TYPE_PHOTO && empty($this->sharePhotos)) {
+
+        if (self::POST_TYPE_PHOTO === $this->postType && empty($this->sharePhotos)) {
             throw new InvalidConfigException('Photos list cannot be blank!');
         }
-        if ($this->postType === self::POST_TYPE_VIDEO && $this->shareVideoUrl === null) {
+
+        if (self::POST_TYPE_VIDEO === $this->postType && null === $this->shareVideoUrl) {
             throw new InvalidConfigException('You should to set share video URL or embed code!');
         }
 
@@ -98,7 +100,7 @@ class Tumblr extends AbstractDriver
                 );
                 break;
             case self::POST_TYPE_PHOTO:
-                $this->appendToData('content', implode(',', $this->sharePhotos));
+                $this->appendToData('content', \implode(',', $this->sharePhotos));
                 break;
             case self::POST_TYPE_VIDEO:
                 $this->appendToData('content', $this->shareVideoUrl);
@@ -109,7 +111,7 @@ class Tumblr extends AbstractDriver
         }
 
         if (!empty($this->tags)) {
-            $this->appendToData('tags', implode(',', $this->tags));
+            $this->appendToData('tags', \implode(',', $this->tags));
         }
     }
 
@@ -122,7 +124,7 @@ class Tumblr extends AbstractDriver
 
         $this->addUrlParam($link, 'posttype', $this->postType);
 
-        if ($this->postType === self::POST_TYPE_TEXT) {
+        if (self::POST_TYPE_TEXT === $this->postType) {
             $this->addUrlParam($link, 'title', '{title}');
         } else {
             $this->addUrlParam($link, 'caption', '{title}');

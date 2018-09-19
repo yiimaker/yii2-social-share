@@ -28,7 +28,7 @@ class TwitterTest extends Unit
         $url = 'http://example.com';
         $description = 'this is description';
 
-        $driver = new Twitter(compact('account', 'url', 'description'));
+        $driver = new Twitter(\compact('account', 'url', 'description'));
 
         $expected = 'http://twitter.com/share'
             . '?url=' . AbstractDriver::encodeData($url)
@@ -58,6 +58,6 @@ class TwitterTest extends Unit
             $this->tester->metaTag('twitter:image', $imageUrl),
         ];
 
-        self::assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
+        self::assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
     }
 }

@@ -28,7 +28,7 @@ abstract class AbstractMailDriver extends AbstractDriver
     {
         $this->title = static::encodeData($this->title);
 
-        $this->appendToData('body', strtr($this->bodyPattern, [
+        $this->appendToData('body', \strtr($this->bodyPattern, [
             '{url}'         => $this->url,
             '{description}' => $this->description,
             '{imageUrl}'    => $this->imageUrl,

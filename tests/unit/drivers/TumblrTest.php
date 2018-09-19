@@ -55,14 +55,14 @@ class TumblrTest extends Unit
         $url = 'http://example.com';
         $title = 'test title';
 
-        $driver = new Tumblr(compact('tags', 'url', 'title'));
+        $driver = new Tumblr(\compact('tags', 'url', 'title'));
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
             . '?canonicalUrl=' . AbstractDriver::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_LINK
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($url)
-            . '&tags=' . AbstractDriver::encodeData(implode(',', $tags));
+            . '&tags=' . AbstractDriver::encodeData(\implode(',', $tags));
 
         self::assertEquals($expected, $driver->getLink());
     }
@@ -150,7 +150,7 @@ class TumblrTest extends Unit
             . '?canonicalUrl=' . AbstractDriver::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_PHOTO
             . '&caption=' . AbstractDriver::encodeData($title)
-            . '&content=' . implode(',', $sharePhotos);
+            . '&content=' . \implode(',', $sharePhotos);
 
         self::assertEquals($expected, $driver->getLink());
     }

@@ -26,7 +26,7 @@ class LinkedInTest extends Unit
         $title = 'this is title';
         $description = 'this is description';
 
-        $driver = new LinkedIn(compact('siteName', 'url', 'title', 'description'));
+        $driver = new LinkedIn(\compact('siteName', 'url', 'title', 'description'));
 
         $expected = 'https://www.linkedin.com/shareArticle?mini=true'
             . '&url=' . AbstractDriver::encodeData($url)

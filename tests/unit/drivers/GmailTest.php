@@ -25,9 +25,9 @@ class GmailTest extends Unit
         $description = 'this is description';
         $url = 'http://example.com';
 
-        $driver = new Gmail(compact('title', 'description', 'url'));
+        $driver = new Gmail(\compact('title', 'description', 'url'));
 
-        $body = strtr('{description} - {url}', [
+        $body = \strtr('{description} - {url}', [
             '{description}' => $description,
             '{url}' => $url,
         ]);

@@ -24,7 +24,7 @@ class TelegramTest extends Unit
         $message = 'this is message';
         $url = 'http://example.com';
 
-        $driver = new Telegram(compact('message', 'url'));
+        $driver = new Telegram(\compact('message', 'url'));
 
         $expected = 'https://telegram.me/share/url'
             . '?url=' . AbstractDriver::encodeData($url)
