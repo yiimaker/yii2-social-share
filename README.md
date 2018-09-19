@@ -88,7 +88,7 @@ $ composer test
 or using following command
 
 ```
-$ codecept build && codecept run
+$ ./vendor/bin/codecept build && ./vendor/bin/codecept run
 ```
 
 Contributing

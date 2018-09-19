@@ -64,7 +64,8 @@ protected function buildLink()
     return 'https://www.linkedin.com/shareArticle?mini=true'
         . '&url={url}'
         . '&title={title}'
-        . '&summary={description}';
+        . '&summary={description}'
+    ;
 }
 ```
 

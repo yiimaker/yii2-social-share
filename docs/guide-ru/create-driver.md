@@ -20,15 +20,15 @@ use ymaker\social\share\base\AbstractDriver;
 
 class LinkedIn extends AbstractDriver
 {
-    /**
-         * @inheritdoc
+        /**
+         * {@inheritdoc}
          */
         protected function processShareData()
         {
         }
     
         /**
-         * @inheritdoc
+         * {@inheritdoc}
          */
         protected function buildLink()
         {
@@ -40,7 +40,7 @@ class LinkedIn extends AbstractDriver
 
 ```php
 /**
- * @inheritdoc
+ * {@inheritdoc}
  */
 protected function processShareData()
 {
@@ -57,14 +57,15 @@ protected function processShareData()
 
 ```php
 /**
- * @inheritdoc
+ * {@inheritdoc}
  */
 protected function buildLink()
 {
     return 'https://www.linkedin.com/shareArticle?mini=true'
         . '&url={url}'
         . '&title={title}'
-        . '&summary={description}';
+        . '&summary={description}'
+    ;
 }
 ```
 
