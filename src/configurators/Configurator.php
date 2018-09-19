@@ -31,6 +31,22 @@ use ymaker\social\share\drivers\Odnoklassniki;
  */
 class Configurator extends BaseObject implements ConfiguratorInterface
 {
+    const DEFAULT_ICONS_MAP = [
+        Vkontakte::class     => 'si si-vk',
+        Facebook::class      => 'si si-facebook',
+        Twitter::class       => 'si si-twitter',
+        GooglePlus::class    => 'si si-google-plus',
+        LinkedIn::class      => 'si si-linkedin',
+        Pinterest::class     => 'si si-pinterest',
+        Telegram::class      => 'si si-telegram',
+        WhatsApp::class      => 'si si-whatsapp',
+        Gmail::class         => 'si si-gmail',
+        Tumblr::class        => 'si si-tumblr',
+        Yahoo::class         => 'si si-yahoo',
+        Odnoklassniki::class => 'si si-odnoklassniki',
+        Trello::class        => 'si si-trello',
+    ];
+
     /**
      * Configuration of social network drivers.
      *
@@ -56,11 +72,21 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      */
     public $seoOptions = [];
     /**
-     * Enable default icons instead labels for social networks.
+     * Enable icons instead of text labels.
      *
      * @var bool
+     *
+     * @since 2.3
      */
-    public $enableDefaultIcons = false;
+    public $enableIcons = false;
+    /**
+     * Enable default icons asset.
+     *
+     * @var bool
+     *
+     * @since 2.3
+     */
+    public $enableDefaultAsset = true;
     /**
      * Configuration of icons for social network drivers.
      *
@@ -76,25 +102,6 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      */
     public $registerMetaTags = true;
 
-    /**
-     * @var array
-     */
-    private $_defaultIconsMap = [
-        Vkontakte::class     => 'si si-vk',
-        Facebook::class      => 'si si-facebook',
-        Twitter::class       => 'si si-twitter',
-        GooglePlus::class    => 'si si-google-plus',
-        LinkedIn::class      => 'si si-linkedin',
-        Pinterest::class     => 'si si-pinterest',
-        Telegram::class      => 'si si-telegram',
-        WhatsApp::class      => 'si si-whatsapp',
-        Gmail::class         => 'si si-gmail',
-        Tumblr::class        => 'si si-tumblr',
-        Yahoo::class         => 'si si-yahoo',
-        Odnoklassniki::class => 'si si-odnoklassniki',
-        Trello::class        => 'si si-trello',
-    ];
-
 
     /**
      * Set default values for special link options.
@@ -107,8 +114,9 @@ class Configurator extends BaseObject implements ConfiguratorInterface
                 'rel'    => 'noopener',
             ];
         }
-        if ($this->enableDefaultIcons) {
-            $this->icons = ArrayHelper::merge($this->_defaultIconsMap, $this->icons);
+
+        if ($this->enableIcons) {
+            $this->icons = ArrayHelper::merge(self::DEFAULT_ICONS_MAP, $this->icons);
         }
     }
 

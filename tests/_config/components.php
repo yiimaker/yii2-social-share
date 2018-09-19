@@ -54,7 +54,7 @@ return [
     ],
     'defaultIcons' => [
         'class' => Configurator::class,
-        'enableDefaultIcons' => true,
+        'enableIcons' => true,
         'socialNetworks' => $drivers
     ],
     'disableMetaTags' => [

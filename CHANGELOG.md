@@ -3,7 +3,7 @@ Social Share Change Log
 
 2.3.0 Under development
 -----------------------
-* No changes
+* Enh #16: Adds `enableIcons` and `enableDefaultAsset` option to the default configurator instead of `enableDefaultIcons` (greeflas, dimmitri)
 
 2.2.0 April 22, 2018
 --------------------

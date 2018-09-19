@@ -101,7 +101,7 @@ class SocialShare extends Widget
      */
     public function run()
     {
-        if ($this->enableDefaultIcons()) {
+        if ($this->isDefaultIconsAssetEnabled()) {
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
         }
 
@@ -131,10 +131,19 @@ class SocialShare extends Widget
     /**
      * @return bool
      */
-    final protected function enableDefaultIcons()
+    final protected function isDefaultIconsAssetEnabled()
     {
         return $this->configurator instanceof Configurator &&
-            $this->configurator->enableDefaultIcons;
+            $this->configurator->enableDefaultAsset;
+    }
+
+    /**
+     * @return bool
+     */
+    final protected function isIconsEnabled()
+    {
+        return $this->configurator instanceof Configurator &&
+            $this->configurator->enableIcons;
     }
 
     /**
@@ -169,7 +178,7 @@ class SocialShare extends Widget
      */
     protected function getLinkLabel($driverConfig, $defaultLabel)
     {
-        return $this->enableDefaultIcons()
+        return $this->isIconsEnabled()
             ? Html::tag('i', '', ['class' => $this->configurator->getIconSelector($driverConfig['class'])])
             : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
     }
