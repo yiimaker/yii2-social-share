@@ -71,7 +71,7 @@ class SocialShareTest extends Unit
                     . "<!--/noindex-->";
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
-        $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
+        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
 
         $expectedMetaTags = [
             $this->tester->openGraphMetaTag('og:url', 'test url'),
@@ -85,7 +85,7 @@ class SocialShareTest extends Unit
             $this->tester->metaTag('twitter:image', 'test image url'),
         ];
 
-        $this->assertEquals($expectedMetaTags, array_values(Yii::$app->getView()->metaTags));
+        self::assertEquals($expectedMetaTags, array_values(Yii::$app->getView()->metaTags));
     }
 
     public function testDefaultIcons()
@@ -112,7 +112,7 @@ class SocialShareTest extends Unit
 
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);
 
-        $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
+        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
     }
 
     public function testDisableMetaTags()
@@ -122,7 +122,7 @@ class SocialShareTest extends Unit
             'url' => 'test',
         ]);
 
-        $this->assertSame([], Yii::$app->getView()->metaTags);
+        self::assertSame([], Yii::$app->getView()->metaTags);
     }
 
     /**

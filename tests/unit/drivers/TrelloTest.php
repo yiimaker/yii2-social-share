@@ -31,6 +31,6 @@ class TrelloTest extends Unit
             $this->tester->openGraphMetaTag('og:description', $description),
         ];
 
-        $this->assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
+        self::assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
     }
 }

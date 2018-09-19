@@ -30,6 +30,6 @@ class TelegramTest extends Unit
             . '?url=' . AbstractDriver::encodeData($url)
             . '&text=' . AbstractDriver::encodeData($message);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

@@ -35,7 +35,7 @@ class TwitterTest extends Unit
             . '&text=' . AbstractDriver::encodeData($description)
             . '&via=' . AbstractDriver::encodeData($account);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testRegisteredMetaTags()
@@ -58,6 +58,6 @@ class TwitterTest extends Unit
             $this->tester->metaTag('twitter:image', $imageUrl),
         ];
 
-        $this->assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
+        self::assertEquals($expected, array_values(Yii::$app->getView()->metaTags));
     }
 }

@@ -34,6 +34,6 @@ class LinkedInTest extends Unit
             . '&summary=' . AbstractDriver::encodeData($description)
             . '&source=' . AbstractDriver::encodeData($siteName);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

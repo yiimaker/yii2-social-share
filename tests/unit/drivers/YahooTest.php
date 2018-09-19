@@ -35,6 +35,6 @@ class YahooTest extends Unit
             . '?subject=' . AbstractDriver::encodeData($title)
             . '&body=' . AbstractDriver::encodeData($body);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

@@ -34,6 +34,6 @@ class OdnoklassnikiTest extends Unit
             . '&description=' . AbstractDriver::encodeData($description)
             . '&imageUrl=' . AbstractDriver::encodeData($imageUrl);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }
