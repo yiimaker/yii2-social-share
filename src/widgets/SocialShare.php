@@ -15,9 +15,9 @@ use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\helpers\Url;
 use ymaker\social\share\assets\SocialIconsAsset;
-use ymaker\social\share\configurators\Configurator;
 use ymaker\social\share\configurators\ConfiguratorInterface;
 use ymaker\social\share\configurators\IconsConfigInterface;
+use ymaker\social\share\configurators\SeoConfigInterface;
 
 /**
  * Widget for rendering the share links.
@@ -28,7 +28,7 @@ use ymaker\social\share\configurators\IconsConfigInterface;
 class SocialShare extends Widget
 {
     /**
-     * @var array|ConfiguratorInterface|IconsConfigInterface|string
+     * @var array|ConfiguratorInterface|IconsConfigInterface|SeoConfigInterface|string
      */
     public $configurator;
     /**
@@ -135,8 +135,7 @@ class SocialShare extends Widget
      */
     final protected function isDefaultIconsAssetEnabled()
     {
-        return $this->configurator instanceof IconsConfigInterface &&
-            $this->configurator->isDefaultAssetEnabled();
+        return $this->configurator instanceof IconsConfigInterface && $this->configurator->isDefaultAssetEnabled();
     }
 
     /**
@@ -144,8 +143,7 @@ class SocialShare extends Widget
      */
     final protected function isIconsEnabled()
     {
-        return $this->configurator instanceof IconsConfigInterface &&
-            $this->configurator->isIconsEnabled();
+        return $this->configurator instanceof IconsConfigInterface && $this->configurator->isIconsEnabled();
     }
 
     /**
@@ -155,8 +153,7 @@ class SocialShare extends Widget
      */
     final protected function isSeoEnabled()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableSeoOptions;
+        return $this->configurator instanceof SeoConfigInterface && $this->configurator->isSeoEnabled();
     }
 
     /**
@@ -166,8 +163,7 @@ class SocialShare extends Widget
      */
     final protected function registerMetaTags()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->registerMetaTags;
+        return $this->configurator instanceof ConfiguratorInterface && $this->configurator->canRegisterMetaTags();
     }
 
     /**

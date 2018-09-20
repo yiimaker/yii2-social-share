@@ -29,7 +29,7 @@ use ymaker\social\share\drivers\Odnoklassniki;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Configurator extends BaseObject implements ConfiguratorInterface, IconsConfigInterface
+class Configurator extends BaseObject implements ConfiguratorInterface, IconsConfigInterface, SeoConfigInterface
 {
     const DEFAULT_ICONS_MAP = [
         Vkontakte::class     => 'si si-vk',
@@ -116,7 +116,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
      */
     public function init()
     {
-        if (empty($this->seoOptions)) {
+        if ($this->isSeoEnabled() && empty($this->seoOptions)) {
             $this->seoOptions = [
                 'target' => '_blank',
                 'rel'    => 'noopener',
@@ -141,9 +141,17 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
      */
     public function getOptions()
     {
-        return $this->enableSeoOptions
+        return $this->isSeoEnabled()
             ? ArrayHelper::merge($this->options, $this->seoOptions)
             : $this->options;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function canRegisterMetaTags()
+    {
+        return $this->registerMetaTags;
     }
 
     /**
@@ -170,5 +178,13 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
     public function getIconSelector($driverName)
     {
         return isset($this->icons[$driverName]) ? $this->icons[$driverName] : '';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isSeoEnabled()
+    {
+        return $this->enableSeoOptions;
     }
 }

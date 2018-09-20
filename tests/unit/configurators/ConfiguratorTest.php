@@ -9,7 +9,9 @@ namespace ymaker\social\share\tests\unit\configurators;
 
 use Codeception\Test\Unit;
 use ymaker\social\share\configurators\Configurator;
+use ymaker\social\share\configurators\ConfiguratorInterface;
 use ymaker\social\share\configurators\IconsConfigInterface;
+use ymaker\social\share\configurators\SeoConfigInterface;
 use ymaker\social\share\drivers\Telegram;
 
 /**
@@ -36,8 +38,16 @@ class ConfiguratorTest extends Unit
         $this->configurator = new Configurator();
     }
 
+    public function testInstanceOfConfigurator()
+    {
+        self::assertInstanceOf(ConfiguratorInterface::class, $this->configurator);
+    }
+
     public function testDefaultSeoOptions()
     {
+        self::assertInstanceOf(SeoConfigInterface::class, $this->configurator);
+        self::assertTrue($this->configurator->isSeoEnabled());
+
         $options = $this->configurator->getOptions();
 
         self::assertArrayHasKey(

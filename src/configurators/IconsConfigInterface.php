@@ -9,7 +9,7 @@
 namespace ymaker\social\share\configurators;
 
 /**
- * Interface icons configuration.
+ * Icons configuration interface.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *

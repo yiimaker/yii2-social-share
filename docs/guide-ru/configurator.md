@@ -33,4 +33,6 @@
 
 1. Создать класс и унаследовать его от `\yii\base\BaseObject` или `\yii\base\Component` 
 2. Реализовать интерфейс [ConfiguratorInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/ConfiguratorInterface.php)
-3. Реализовать методы этого интерфейса
+3. Для поддержки иконок и СЕО вы можете реализовать интерфейсы:
+[IconsConfigInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/IconsConfigInterface.php),
+[SeoConfigInterface](https://github.com/yiimaker/yii2-social-share/blob/master/src/configurators/SeoConfigInterface.php)
