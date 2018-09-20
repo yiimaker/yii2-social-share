@@ -17,6 +17,7 @@ use yii\helpers\Url;
 use ymaker\social\share\assets\SocialIconsAsset;
 use ymaker\social\share\configurators\Configurator;
 use ymaker\social\share\configurators\ConfiguratorInterface;
+use ymaker\social\share\configurators\IconsConfigInterface;
 
 /**
  * Widget for rendering the share links.
@@ -27,7 +28,7 @@ use ymaker\social\share\configurators\ConfiguratorInterface;
 class SocialShare extends Widget
 {
     /**
-     * @var array|ConfiguratorInterface|string
+     * @var array|ConfiguratorInterface|IconsConfigInterface|string
      */
     public $configurator;
     /**
@@ -134,8 +135,8 @@ class SocialShare extends Widget
      */
     final protected function isDefaultIconsAssetEnabled()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableDefaultAsset;
+        return $this->configurator instanceof IconsConfigInterface &&
+            $this->configurator->isDefaultAssetEnabled();
     }
 
     /**
@@ -143,8 +144,8 @@ class SocialShare extends Widget
      */
     final protected function isIconsEnabled()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableIcons;
+        return $this->configurator instanceof IconsConfigInterface &&
+            $this->configurator->isIconsEnabled();
     }
 
     /**

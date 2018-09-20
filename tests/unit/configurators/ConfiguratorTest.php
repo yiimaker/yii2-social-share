@@ -9,6 +9,7 @@ namespace ymaker\social\share\tests\unit\configurators;
 
 use Codeception\Test\Unit;
 use ymaker\social\share\configurators\Configurator;
+use ymaker\social\share\configurators\IconsConfigInterface;
 use ymaker\social\share\drivers\Telegram;
 
 /**
@@ -69,14 +70,31 @@ class ConfiguratorTest extends Unit
 
     public function testIconsConfig()
     {
-        self::assertEmpty($this->configurator->icons);
+        self::assertInstanceOf(IconsConfigInterface::class, $this->configurator);
+        self::assertFalse($this->configurator->isIconsEnabled());
+        self::assertTrue($this->configurator->isDefaultAssetEnabled());
 
         $this->configurator = new Configurator(['enableIcons' => true]);
 
+        self::assertTrue($this->configurator->isIconsEnabled());
         self::assertEquals(
             Configurator::DEFAULT_ICONS_MAP,
             $this->configurator->icons,
             'If "enableIcons" option is enabled, configurator should have default icons map'
+        );
+    }
+
+    public function testDeprecatedIconsConfig()
+    {
+        self::assertFalse($this->configurator->isIconsEnabled());
+
+        $this->configurator = new Configurator(['enableDefaultIcons' => true]);
+
+        self::assertTrue($this->configurator->isIconsEnabled());
+        self::assertEquals(
+            Configurator::DEFAULT_ICONS_MAP,
+            $this->configurator->icons,
+            'If "enableDefaultIcons" option is enabled, configurator should have default icons map'
         );
     }
 

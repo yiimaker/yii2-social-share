@@ -29,7 +29,7 @@ use ymaker\social\share\drivers\Odnoklassniki;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class Configurator extends BaseObject implements ConfiguratorInterface
+class Configurator extends BaseObject implements ConfiguratorInterface, IconsConfigInterface
 {
     const DEFAULT_ICONS_MAP = [
         Vkontakte::class     => 'si si-vk',
@@ -71,6 +71,14 @@ class Configurator extends BaseObject implements ConfiguratorInterface
      * @var array
      */
     public $seoOptions = [];
+    /**
+     * Enable default icons instead labels for social networks.
+     *
+     * @var bool
+     *
+     * @deprecated since 2.3
+     */
+    public $enableDefaultIcons = false;
     /**
      * Enable icons instead of text labels.
      *
@@ -115,7 +123,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface
             ];
         }
 
-        if ($this->enableIcons) {
+        if ($this->enableIcons || $this->enableDefaultIcons) {
             $this->icons = ArrayHelper::merge(self::DEFAULT_ICONS_MAP, $this->icons);
         }
     }
@@ -139,11 +147,25 @@ class Configurator extends BaseObject implements ConfiguratorInterface
     }
 
     /**
-     * Returns icon selector by driver name.
+     * {@inheritdoc}
+     */
+    public function isIconsEnabled()
+    {
+        return $this->enableIcons || $this->enableDefaultIcons;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isDefaultAssetEnabled()
+    {
+        return $this->enableDefaultAsset || $this->enableDefaultIcons;
+    }
+
+    /**
+     * {@inheritdoc}
      *
-     * @param string $driverName
-     *
-     * @return string
+     * @param string $driverName Class name of the needed driver.
      */
     public function getIconSelector($driverName)
     {
