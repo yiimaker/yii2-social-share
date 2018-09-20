@@ -57,7 +57,7 @@ In `buildLink()` return a share link pattern
 
 ```php
 /**
- * {{@inheritdoc}}
+ * {@inheritdoc}
  */
 protected function buildLink()
 {

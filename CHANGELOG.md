@@ -1,8 +1,8 @@
 Social Share Change Log
 =======================
 
-2.3.0 Under development
------------------------
+2.3.0 September 20, 2018
+------------------------
 * Enh #16: Adds `enableIcons` and `enableDefaultAsset` option to the default configurator instead of `enableDefaultIcons` (greeflas, dimmitri)
 * Enh: Improves architecture of configurator, adds more abstraction to reduce dependency to the default implementation in widget (greeflas)
 * Chg: Deprecate `enableDefaultIcons` option of the default configurator (greeflas)
