@@ -47,7 +47,7 @@ Default icons will be used for other social networks.
     // ...
     'socialShare' => [
         'class' => \ymaker\social\share\configurators\Configurator::class,
-        'enableDefaultIcons' => true,
+        'enableIcons' => true,
         'icons' => [
             \ymaker\social\share\drivers\Facebook::class => 'my-facebook-icon',
         ],

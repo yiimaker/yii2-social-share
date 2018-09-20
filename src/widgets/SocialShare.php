@@ -9,15 +9,15 @@ namespace ymaker\social\share\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\db\Connection;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\helpers\Url;
 use ymaker\social\share\assets\SocialIconsAsset;
-use ymaker\social\share\configurators\Configurator;
 use ymaker\social\share\configurators\ConfiguratorInterface;
+use ymaker\social\share\configurators\IconsConfigInterface;
+use ymaker\social\share\configurators\SeoConfigInterface;
 
 /**
  * Widget for rendering the share links.
@@ -28,7 +28,7 @@ use ymaker\social\share\configurators\ConfiguratorInterface;
 class SocialShare extends Widget
 {
     /**
-     * @var string|array|ConfiguratorInterface
+     * @var array|ConfiguratorInterface|IconsConfigInterface|SeoConfigInterface|string
      */
     public $configurator;
     /**
@@ -101,7 +101,7 @@ class SocialShare extends Widget
      */
     public function run()
     {
-        if ($this->enableDefaultIcons()) {
+        if ($this->isDefaultIconsAssetEnabled()) {
             $this->getView()->registerAssetBundle(SocialIconsAsset::class);
         }
 
@@ -110,11 +110,13 @@ class SocialShare extends Widget
         }
 
         $containerTag = ArrayHelper::remove($this->containerOptions, 'tag', false);
+
         if ($containerTag) {
             echo Html::beginTag($containerTag, $this->containerOptions);
         }
 
         $wrapTag = ArrayHelper::remove($this->linkContainerOptions, 'tag', false);
+
         foreach ($this->getLinkList() as $link) {
             echo $wrapTag ? Html::tag($wrapTag, $link, $this->linkContainerOptions) : $link;
         }
@@ -131,10 +133,17 @@ class SocialShare extends Widget
     /**
      * @return bool
      */
-    final protected function enableDefaultIcons()
+    final protected function isDefaultIconsAssetEnabled()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableDefaultIcons;
+        return $this->configurator instanceof IconsConfigInterface && $this->configurator->isDefaultAssetEnabled();
+    }
+
+    /**
+     * @return bool
+     */
+    final protected function isIconsEnabled()
+    {
+        return $this->configurator instanceof IconsConfigInterface && $this->configurator->isIconsEnabled();
     }
 
     /**
@@ -144,8 +153,7 @@ class SocialShare extends Widget
      */
     final protected function isSeoEnabled()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->enableSeoOptions;
+        return $this->configurator instanceof SeoConfigInterface && $this->configurator->isSeoEnabled();
     }
 
     /**
@@ -155,8 +163,7 @@ class SocialShare extends Widget
      */
     final protected function registerMetaTags()
     {
-        return $this->configurator instanceof Configurator &&
-            $this->configurator->registerMetaTags;
+        return $this->configurator instanceof ConfiguratorInterface && $this->configurator->canRegisterMetaTags();
     }
 
     /**
@@ -169,7 +176,7 @@ class SocialShare extends Widget
      */
     protected function getLinkLabel($driverConfig, $defaultLabel)
     {
-        return $this->enableDefaultIcons()
+        return $this->isIconsEnabled()
             ? Html::tag('i', '', ['class' => $this->configurator->getIconSelector($driverConfig['class'])])
             : (isset($driverConfig['label']) ? $driverConfig['label'] : $defaultLabel);
     }
@@ -213,6 +220,7 @@ class SocialShare extends Widget
         $options = isset($driverConfig['options']) ? $driverConfig['options'] : [];
 
         $globalOptions = $this->configurator->getOptions();
+
         if (empty($globalOptions)) {
             return $options;
         }

@@ -25,9 +25,9 @@ class YahooTest extends Unit
         $description = 'this is description';
         $url = 'http://example.com';
 
-        $driver = new Yahoo(compact('title', 'description', 'url'));
+        $driver = new Yahoo(\compact('title', 'description', 'url'));
 
-        $body = strtr('{description} - {url}', [
+        $body = \strtr('{description} - {url}', [
             '{description}' => $description,
             '{url}' => $url,
         ]);
@@ -35,6 +35,6 @@ class YahooTest extends Unit
             . '?subject=' . AbstractDriver::encodeData($title)
             . '&body=' . AbstractDriver::encodeData($body);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

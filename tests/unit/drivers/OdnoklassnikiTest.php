@@ -26,7 +26,7 @@ class OdnoklassnikiTest extends Unit
         $description = 'this is description';
         $imageUrl = 'http://example.com/image.jpg';
 
-        $driver = new Odnoklassniki(compact('url', 'title', 'description', 'imageUrl'));
+        $driver = new Odnoklassniki(\compact('url', 'title', 'description', 'imageUrl'));
 
         $expected = 'https://connect.ok.ru/offer'
             . '?url=' . AbstractDriver::encodeData($url)
@@ -34,6 +34,6 @@ class OdnoklassnikiTest extends Unit
             . '&description=' . AbstractDriver::encodeData($description)
             . '&imageUrl=' . AbstractDriver::encodeData($imageUrl);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

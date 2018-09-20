@@ -51,8 +51,8 @@ class SocialShareTest extends Unit
     public function testDefaultConfig()
     {
         $expectedHTML =
-                    "<!--noindex-->"
-                    . "<ul class=\"social-share\">"
+                    '<!--noindex-->'
+                    . '<ul class="social-share">'
                         . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\">Vkontakte</a></li>"
                         . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\">Facebook</a></li>"
                         . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\">Twitter</a></li>"
@@ -67,11 +67,11 @@ class SocialShareTest extends Unit
                         . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\">Yahoo</a></li>"
                         . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\">Odnoklassniki</a></li>"
                         . "<li><a href=\"$this->trello\" rel=\"noopener\" target=\"_blank\">Trello</a></li>"
-                    . "</ul>"
-                    . "<!--/noindex-->";
+                    . '</ul>'
+                    . '<!--/noindex-->';
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
-        $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
+        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
 
         $expectedMetaTags = [
             $this->tester->openGraphMetaTag('og:url', 'test url'),
@@ -85,14 +85,14 @@ class SocialShareTest extends Unit
             $this->tester->metaTag('twitter:image', 'test image url'),
         ];
 
-        $this->assertEquals($expectedMetaTags, array_values(Yii::$app->getView()->metaTags));
+        self::assertEquals($expectedMetaTags, \array_values(Yii::$app->getView()->metaTags));
     }
 
     public function testDefaultIcons()
     {
         $expectedHTML =
-            "<!--noindex-->"
-            . "<ul class=\"social-share\">"
+            '<!--noindex-->'
+            . '<ul class="social-share">'
                 . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-vk\"></i></a></li>"
                 . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-facebook\"></i></a></li>"
                 . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-twitter\"></i></a></li>"
@@ -107,12 +107,12 @@ class SocialShareTest extends Unit
                 . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-yahoo\"></i></a></li>"
                 . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-odnoklassniki\"></i></a></li>"
                 . "<li><a href=\"$this->trello\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-trello\"></i></a></li>"
-            . "</ul>"
-            . "<!--/noindex-->";
+            . '</ul>'
+            . '<!--/noindex-->';
 
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);
 
-        $this->assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
+        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
     }
 
     public function testDisableMetaTags()
@@ -122,7 +122,7 @@ class SocialShareTest extends Unit
             'url' => 'test',
         ]);
 
-        $this->assertSame([], Yii::$app->getView()->metaTags);
+        self::assertSame([], Yii::$app->getView()->metaTags);
     }
 
     /**
@@ -141,10 +141,10 @@ class SocialShareTest extends Unit
             'description'   => 'test description',
             'imageUrl'      => 'test image url',
         ]);
-        ob_start();
+        \ob_start();
         $widget->run();
-        $actualHTML = ob_get_contents();
-        ob_end_clean();
+        $actualHTML = \ob_get_contents();
+        \ob_end_clean();
 
         return $actualHTML;
     }

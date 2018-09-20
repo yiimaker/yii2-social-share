@@ -12,6 +12,8 @@ You must follow the next rules to contribute to this project:
 
 - **One pull request per feature** - If you want to do more than one thing, send multiple pull requests.
 
+- **Only English** - Please use English language in pull requests.
+
 Tests
 -----
 
@@ -24,7 +26,22 @@ $ composer test
 or using following command
 
 ```
-$ codecept build && codecept run
+$ ./vendor/bin/codecept build && ./vendor/bin/codecept run
+```
+
+Code style
+----------
+
+To fix the code style just run the following command
+
+```
+$ composer cs-fix
+```
+
+or
+
+```
+$ ./vendor/bin/php-cs-fixer fix --allow-risky=yes
 ```
 
 Happy coding :)

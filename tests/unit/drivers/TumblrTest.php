@@ -55,16 +55,16 @@ class TumblrTest extends Unit
         $url = 'http://example.com';
         $title = 'test title';
 
-        $driver = new Tumblr(compact('tags', 'url', 'title'));
+        $driver = new Tumblr(\compact('tags', 'url', 'title'));
 
         $expected = 'https://www.tumblr.com/widgets/share/tool'
             . '?canonicalUrl=' . AbstractDriver::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_LINK
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($url)
-            . '&tags=' . AbstractDriver::encodeData(implode(',', $tags));
+            . '&tags=' . AbstractDriver::encodeData(\implode(',', $tags));
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeLink()
@@ -86,7 +86,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareUrl);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeText()
@@ -108,7 +108,7 @@ class TumblrTest extends Unit
             . '&title=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeQuote()
@@ -130,7 +130,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypePhoto()
@@ -150,9 +150,9 @@ class TumblrTest extends Unit
             . '?canonicalUrl=' . AbstractDriver::encodeData($url)
             . '&posttype=' . Tumblr::POST_TYPE_PHOTO
             . '&caption=' . AbstractDriver::encodeData($title)
-            . '&content=' . implode(',', $sharePhotos);
+            . '&content=' . \implode(',', $sharePhotos);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeVideo()
@@ -174,6 +174,6 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareVideoUrl);
 
-        $this->assertEquals($expected, $driver->getLink());
+        self::assertEquals($expected, $driver->getLink());
     }
 }

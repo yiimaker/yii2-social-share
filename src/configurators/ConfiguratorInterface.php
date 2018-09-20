@@ -8,7 +8,7 @@
 namespace ymaker\social\share\configurators;
 
 /**
- * Interface for configurators of social network drivers.
+ * Interface of configurators of social network drivers.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -16,18 +16,25 @@ namespace ymaker\social\share\configurators;
 interface ConfiguratorInterface
 {
     /**
-     * This method should returns a array with config
-     * for social network drivers.
+     * Returns array with config for social network drivers.
      *
      * @return array
      */
     public function getSocialNetworks();
 
     /**
-     * This method should returns a array with HTML
-     * options for share links.
+     * Returns array with HTML options for share links.
      *
      * @return array
      */
     public function getOptions();
+
+    /**
+     * Checks whether driver can register own meta tags in the view.
+     *
+     * @return bool
+     *
+     * @since 2.3
+     */
+    public function canRegisterMetaTags();
 }

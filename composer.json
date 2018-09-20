@@ -26,7 +26,8 @@
     "yiisoft/yii2": "^2.0.13"
   },
   "require-dev": {
-    "codeception/codeception": "~2.3"
+    "codeception/codeception": "~2.3",
+    "friendsofphp/php-cs-fixer": "^2.13"
   },
   "autoload": {
     "psr-4": {
@@ -40,13 +41,14 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.2.x-dev"
+      "dev-master": "2.3.x-dev"
     }
   },
   "scripts": {
     "test": [
       "codecept build",
       "codecept run"
-    ]
+    ],
+    "cs-fix": "php-cs-fixer fix --allow-risky=yes"
   }
 }

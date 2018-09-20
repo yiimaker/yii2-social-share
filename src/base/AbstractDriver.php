@@ -83,41 +83,41 @@ abstract class AbstractDriver extends BaseObject
     /**
      * Encode data for URL.
      *
-     * @param string|array $data
+     * @param array|string $data
      *
-     * @return string|array
+     * @return array|string
      */
     public static function encodeData($data)
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             foreach ($data as $key => $value) {
-                $data[$key] = urlencode($value);
+                $data[$key] = \urlencode($value);
             }
 
             return $data;
         }
 
-        return urlencode($data);
+        return \urlencode($data);
     }
 
     /**
      * Decode the encoded data.
      *
-     * @param string|array $data
+     * @param array|string $data
      *
-     * @return string|array
+     * @return array|string
      */
     public static function decodeData($data)
     {
-        if (is_array($data)) {
+        if (\is_array($data)) {
             foreach ($data as $key => $value) {
-                $data[$key] = urldecode($value);
+                $data[$key] = \urldecode($value);
             }
 
             return $data;
         }
 
-        return urldecode($data);
+        return \urldecode($data);
     }
 
     /**
@@ -196,7 +196,7 @@ abstract class AbstractDriver extends BaseObject
             '{url}'         => $this->url,
             '{title}'       => $this->title,
             '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl
+            '{imageUrl}'    => $this->imageUrl,
         ], $this->_data);
 
         $metaTags = $this->getMetaTags();
@@ -206,8 +206,8 @@ abstract class AbstractDriver extends BaseObject
             $view = Yii::$app->getView();
 
             foreach ($metaTags as $metaTag) {
-                $metaTag['content'] = strtr($metaTag['content'], $rawData);
-                $view->registerMetaTag($metaTag, md5(implode(';', $metaTag)));
+                $metaTag['content'] = \strtr($metaTag['content'], $rawData);
+                $view->registerMetaTag($metaTag, \md5(\implode(';', $metaTag)));
             }
         }
     }
@@ -219,7 +219,7 @@ abstract class AbstractDriver extends BaseObject
      */
     final public function getLink()
     {
-        return strtr($this->buildLink(), $this->_data);
+        return \strtr($this->buildLink(), $this->_data);
     }
 
     /**
@@ -235,8 +235,8 @@ abstract class AbstractDriver extends BaseObject
     {
         $base = $name . '=' . $value;
 
-        if (strpos($link, '?') !== false) {
-            $last = substr($link, -1);
+        if (false !== \strpos($link, '?')) {
+            $last = \substr($link, -1);
 
             if ('?' === $last || '&' === $last) {
                 $link .= $base;

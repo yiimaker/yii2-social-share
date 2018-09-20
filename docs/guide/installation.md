@@ -14,7 +14,7 @@ $ composer require yiimaker/yii2-social-share
 or add
 
 ```
-"yiimaker/yii2-social-share": "~2.1"
+"yiimaker/yii2-social-share": "~2.3"
 ````
 
 to the `require` section of your `composer.json`.
