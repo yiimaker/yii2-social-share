@@ -7,9 +7,6 @@ php:
   - 7.2
   - 7.3
 
-# environment variable used in test suite
-env: TEST_ENVIRONMENT=travis
-
 # faster builds on new travis setup not using sudo
 sudo: false
 
@@ -17,15 +14,18 @@ sudo: false
 cache:
   directories:
     - vendor
-    - $HOME/.composer/cache
+    - $HOME/.composer
 
-# install dependencies
+env: DEFAULT_COMPOSER_FLAGS="--optimize-autoloader --no-interaction"
+
+before_install:
+  # Composer: boost installation
+  - composer global show hirak/prestissimo -q || travis_retry composer global require $DEFAULT_COMPOSER_FLAGS hirak/prestissimo
+
 install:
+  # install dependencies
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --prefer-dist --no-interaction
-
-before_script:
-  - vendor/bin/codecept build
+  - travis_retry composer update --prefer-dist $DEFAULT_COMPOSER_FLAGS
 
 script:
   - composer validate --no-check-lock
