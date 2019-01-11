@@ -25,4 +25,4 @@ composer.phar
 /vendor/
 
 # PHP CS Fixer cache
-php_cs.cache
+.php_cs.cache
