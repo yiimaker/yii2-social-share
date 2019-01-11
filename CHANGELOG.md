@@ -1,6 +1,11 @@
 Social Share Change Log
 =======================
 
+2.3.1 January 11, 2019
+----------------------
+* Chg: Updated dev dependencies for PHP 7.3 supporting
+* Fix: PHP-CS-Fixer config file name
+
 2.3.0 September 20, 2018
 ------------------------
 * Enh #16: Adds `enableIcons` and `enableDefaultAsset` option to the default configurator instead of `enableDefaultIcons` (greeflas, dimmitri)
@@ -32,7 +37,7 @@ Social Share Change Log
 * Fix #5: Fixes vulnerability of `target="_blank"` (greeflas)
 * Chg: Using `<!--noindex-->` comment instead of `rel="nofollow"` attribute (greeflas)
 
-1.4.0 December 12, 2017 
+1.4.0 December 12, 2017
 -----------------------
 * Enh #2: Created driver for Tumblr (greeflas)
 * Enh: Added `driverProperties` property to widget for adding of
