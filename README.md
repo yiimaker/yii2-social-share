@@ -64,6 +64,29 @@ to the `require` section of your `composer.json`.
 Usage
 -----
 
+Configure socialNetworks in config file
+
+```php
+    'components' => [
+        // ...
+        'socialShare' => [
+            'class' => \ymaker\social\share\configurators\Configurator::class,
+            'socialNetworks' => [
+                'vkontakte' => [
+                    'class' => \ymaker\social\share\drivers\Vkontakte::class,
+                ],
+                'facebook' => [
+                    'class' => \ymaker\social\share\drivers\Facebook::class,
+                ],
+                'odnoklasniki' => [
+                    'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
+                ],
+            ],
+        ],
+    ],
+```
+
+
 Call widget in view file
 
 ```php
