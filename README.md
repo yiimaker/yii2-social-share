@@ -68,7 +68,7 @@ Configure socialNetworks in config file
 
 ```php
     'components' => [
-    // ...
+        // ...
         'socialShare' => [
             'class' => \ymaker\social\share\configurators\Configurator::class,
             'socialNetworks' => [
@@ -80,12 +80,6 @@ Configure socialNetworks in config file
                 ],
                 'odnoklasniki' => [
                     'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
-                ],
-                'viber' => [
-                    'class' => \ymaker\social\share\drivers\Viber::class,
-                ],
-                'whatsapp' => [
-                    'class' => \ymaker\social\share\drivers\WhatsApp::class,
                 ],
             ],
         ],
