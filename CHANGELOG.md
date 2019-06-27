@@ -1,10 +1,14 @@
 Social Share Change Log
 =======================
 
+2.3.2 June 27, 2019
+-------------------
+* Chg: Updated dependencies in composer.lock file (greeflas)
+
 2.3.1 January 11, 2019
 ----------------------
-* Chg: Updated dev dependencies for PHP 7.3 supporting
-* Fix: PHP-CS-Fixer config file name
+* Chg: Updated dev dependencies for PHP 7.3 supporting (greeflas)
+* Fix: PHP-CS-Fixer config file name (greeflas)
 
 2.3.0 September 20, 2018
 ------------------------
