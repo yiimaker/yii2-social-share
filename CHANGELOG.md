@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+2.3.3 July 26, 2019
+-------------------
+* Enh: Updates codeception version to 3.0 (greeflas)
+
 2.3.2 June 27, 2019
 -------------------
 * Chg: Updated dependencies in composer.lock file (greeflas)
