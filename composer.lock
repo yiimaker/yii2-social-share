@@ -125,9 +125,9 @@
             "authors": [
                 {
                     "name": "Carsten Brandt",
+                    "role": "Creator",
                     "email": "mail@cebe.cc",
-                    "homepage": "http://cebe.cc/",
-                    "role": "Creator"
+                    "homepage": "http://cebe.cc/"
                 }
             ],
             "description": "A super fast, highly extensible markdown parser for PHP",
@@ -190,16 +190,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.24",
+            "version": "2.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "4c9e05f7411bfe4d6ba9b38a2feea6e4353f1457"
+                "reference": "c6148db8519b221d2485aa372267c063b2e198e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/4c9e05f7411bfe4d6ba9b38a2feea6e4353f1457",
-                "reference": "4c9e05f7411bfe4d6ba9b38a2feea6e4353f1457",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c6148db8519b221d2485aa372267c063b2e198e9",
+                "reference": "c6148db8519b221d2485aa372267c063b2e198e9",
                 "shasum": ""
             },
             "require": {
@@ -286,7 +286,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2019-07-30T15:17:45+00:00"
+            "time": "2019-08-13T20:04:44+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -1877,18 +1877,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -2308,8 +2308,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -2350,8 +2350,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -2399,8 +2399,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -3292,8 +3292,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Collection of value objects that represent the types of the PHP type system",
@@ -3335,8 +3335,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
