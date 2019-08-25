@@ -8,6 +8,7 @@
 namespace ymaker\social\share\tests\unit\drivers;
 
 use Codeception\Test\Unit;
+use yii\base\InvalidConfigException;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Tumblr;
 
@@ -19,30 +20,27 @@ use ymaker\social\share\drivers\Tumblr;
  */
 class TumblrTest extends Unit
 {
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionInvalidPostType()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr(['postType' => 'not exist']);
     }
 
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionEmptyPhotosList()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr([
             'postType' => Tumblr::POST_TYPE_PHOTO,
             'sharePhotos' => [],
         ]);
     }
 
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionEmptyVideoShareUrl()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr([
             'postType' => Tumblr::POST_TYPE_VIDEO,
             'shareVideoUrl' => null,

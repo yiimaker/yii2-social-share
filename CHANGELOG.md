@@ -1,6 +1,10 @@
 Social Share Change Log
 =======================
 
+Under development
+-----------------
+* Fix: Deprecation warnings in unit tests for Tumblr driver (greeflas)
+
 2.3.3 July 26, 2019
 -------------------
 * Enh: Updates codeception version to 3.0 (greeflas)
