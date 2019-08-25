@@ -5,11 +5,11 @@
     <h1 align="center">Extension for sharing on social networks</h1>
 </p>
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
-[![Monthly Downloads](https://img.shields.io/packagist/dm/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Build Status](https://travis-ci.org/yiimaker/yii2-social-share.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-social-share)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-social-share/?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
+[![Monthly Downloads](https://img.shields.io/packagist/dm/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
+[![Latest Stable Version](https://img.shields.io/packagist/v/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
 
 With this extension you can share data from your web pages to any social network!
 Features: SEO support, default icons for social networks, easy creation of custom drivers
