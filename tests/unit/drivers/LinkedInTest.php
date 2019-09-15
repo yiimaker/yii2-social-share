@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -15,6 +16,7 @@ use ymaker\social\share\drivers\LinkedIn;
  * Test case for [[LinkedIn]] driver.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class LinkedInTest extends Unit
@@ -34,6 +36,6 @@ class LinkedInTest extends Unit
             . '&summary=' . AbstractDriver::encodeData($description)
             . '&source=' . AbstractDriver::encodeData($siteName);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

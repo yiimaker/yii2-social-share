@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -12,9 +13,10 @@ use ymaker\social\share\base\AbstractDriver;
 /**
  * Driver for Telegram messenger.
  *
- * @link https://telegram.org
+ * @see https://telegram.org
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 class Telegram extends AbstractDriver
@@ -23,7 +25,6 @@ class Telegram extends AbstractDriver
      * @var bool|string
      */
     public $message = false;
-
 
     /**
      * {@inheritdoc}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -12,9 +13,10 @@ use ymaker\social\share\base\AbstractDriver;
 /**
  * Driver for Ok.ru.
  *
- * @link https://ok.ru
+ * @see https://ok.ru
  *
  * @author Petro Sokolnykov <info@xyz.net.ua>
+ *
  * @since 2.1
  */
 class Odnoklassniki extends AbstractDriver

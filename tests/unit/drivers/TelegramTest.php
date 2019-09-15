@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -15,6 +16,7 @@ use ymaker\social\share\drivers\Telegram;
  * Test case for [[Telegram]] driver.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class TelegramTest extends Unit
@@ -30,6 +32,6 @@ class TelegramTest extends Unit
             . '?url=' . AbstractDriver::encodeData($url)
             . '&text=' . AbstractDriver::encodeData($message);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

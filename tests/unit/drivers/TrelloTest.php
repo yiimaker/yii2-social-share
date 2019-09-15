@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -14,9 +15,10 @@ use ymaker\social\share\drivers\Trello;
 /**
  * Test case for [[Trello]] driver.
  *
- * @property-read \UnitTester $tester
+ * @property \UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 2.2
  */
 class TrelloTest extends Unit
@@ -31,6 +33,6 @@ class TrelloTest extends Unit
             $this->tester->openGraphMetaTag('og:description', $description),
         ];
 
-        self::assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
+        static::assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
     }
 }

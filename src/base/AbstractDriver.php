@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -14,13 +15,14 @@ use yii\helpers\ArrayHelper;
 /**
  * Base driver for social network definition classes.
  *
- * @property-write $url
- * @property-write $title
- * @property-write $description
- * @property-write $imageUrl
- * @property-write $registerMetaTags
+ * @property $url
+ * @property $title
+ * @property $description
+ * @property $imageUrl
+ * @property $registerMetaTags
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 abstract class AbstractDriver extends BaseObject
@@ -64,7 +66,6 @@ abstract class AbstractDriver extends BaseObject
      * @var array
      */
     private $_data = [];
-
 
     /**
      * Method should process the share data for current driver.
@@ -173,9 +174,9 @@ abstract class AbstractDriver extends BaseObject
     /**
      * Append value to data array.
      *
-     * @param string    $key
-     * @param string    $value
-     * @param bool      $urlEncode
+     * @param string $key
+     * @param string $value
+     * @param bool   $urlEncode
      *
      * @since 2.0
      */
@@ -193,10 +194,10 @@ abstract class AbstractDriver extends BaseObject
         $this->processShareData();
 
         $this->_data = ArrayHelper::merge([
-            '{url}'         => $this->url,
-            '{title}'       => $this->title,
+            '{url}' => $this->url,
+            '{title}' => $this->title,
             '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl,
+            '{imageUrl}' => $this->imageUrl,
         ], $this->_data);
 
         $metaTags = $this->getMetaTags();
@@ -226,8 +227,8 @@ abstract class AbstractDriver extends BaseObject
      * Adds URL param to link.
      *
      * @param string $link
-     * @param string $name  Param name.
-     * @param string $value Param value.
+     * @param string $name  param name
+     * @param string $value param value
      *
      * @since 1.4.0
      */

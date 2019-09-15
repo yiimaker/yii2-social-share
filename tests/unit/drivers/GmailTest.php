@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -15,6 +16,7 @@ use ymaker\social\share\drivers\Gmail;
  * Test case for [[Gmail]] driver.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class GmailTest extends Unit
@@ -35,6 +37,6 @@ class GmailTest extends Unit
             . '&su=' . AbstractDriver::encodeData($title)
             . '&body=' . AbstractDriver::encodeData($body);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

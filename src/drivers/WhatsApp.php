@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -12,12 +13,13 @@ use ymaker\social\share\base\AbstractDriver;
 /**
  * Driver for WhatsApp messenger.
  *
- * @link https://www.whatsapp.com
+ * @see https://www.whatsapp.com
  *
  * WARNING: This driver works only in mobile devices
  * with installed WhatsApp client.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 class WhatsApp extends AbstractDriver

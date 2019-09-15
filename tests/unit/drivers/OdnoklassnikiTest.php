@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -15,6 +16,7 @@ use ymaker\social\share\drivers\Odnoklassniki;
  * Test case for [[Odnoklassniki]] driver.
  *
  * @author Petro Sokolnykov <info@xyz.net.ua>
+ *
  * @since 2.1
  */
 class OdnoklassnikiTest extends Unit
@@ -34,6 +36,6 @@ class OdnoklassnikiTest extends Unit
             . '&description=' . AbstractDriver::encodeData($description)
             . '&imageUrl=' . AbstractDriver::encodeData($imageUrl);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -17,7 +18,7 @@ use ymaker\social\share\drivers\Telegram;
 /**
  * Test case for default configurator.
  *
- * @property-read \UnitTester $tester
+ * @property \UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *
@@ -40,32 +41,32 @@ class ConfiguratorTest extends Unit
 
     public function testInstanceOfConfigurator()
     {
-        self::assertInstanceOf(ConfiguratorInterface::class, $this->configurator);
+        static::assertInstanceOf(ConfiguratorInterface::class, $this->configurator);
     }
 
     public function testDefaultSeoOptions()
     {
-        self::assertInstanceOf(SeoConfigInterface::class, $this->configurator);
-        self::assertTrue($this->configurator->isSeoEnabled());
+        static::assertInstanceOf(SeoConfigInterface::class, $this->configurator);
+        static::assertTrue($this->configurator->isSeoEnabled());
 
         $options = $this->configurator->getOptions();
 
-        self::assertArrayHasKey(
+        static::assertArrayHasKey(
             'target',
             $options,
             'By default configurator should add "target=_blank" SEO option'
         );
-        self::assertArrayHasKey(
+        static::assertArrayHasKey(
             'rel',
             $options,
             'By default configurator should add "rel=noopener" SEO option'
         );
-        self::assertEquals(
+        static::assertEquals(
             '_blank',
             $options['target'],
             'By default configurator should add "target=_blank" SEO option'
         );
-        self::assertEquals(
+        static::assertEquals(
             'noopener',
             $options['rel'],
             'By default configurator should add "rel=noopener" SEO option'
@@ -74,20 +75,20 @@ class ConfiguratorTest extends Unit
         $this->configurator->enableSeoOptions = false;
         $options = $this->configurator->getOptions();
 
-        self::assertArrayNotHasKey('target', $options);
-        self::assertArrayNotHasKey('rel', $options);
+        static::assertArrayNotHasKey('target', $options);
+        static::assertArrayNotHasKey('rel', $options);
     }
 
     public function testIconsConfig()
     {
-        self::assertInstanceOf(IconsConfigInterface::class, $this->configurator);
-        self::assertFalse($this->configurator->isIconsEnabled());
-        self::assertTrue($this->configurator->isDefaultAssetEnabled());
+        static::assertInstanceOf(IconsConfigInterface::class, $this->configurator);
+        static::assertFalse($this->configurator->isIconsEnabled());
+        static::assertTrue($this->configurator->isDefaultAssetEnabled());
 
         $this->configurator = new Configurator(['enableIcons' => true]);
 
-        self::assertTrue($this->configurator->isIconsEnabled());
-        self::assertEquals(
+        static::assertTrue($this->configurator->isIconsEnabled());
+        static::assertEquals(
             Configurator::DEFAULT_ICONS_MAP,
             $this->configurator->icons,
             'If "enableIcons" option is enabled, configurator should have default icons map'
@@ -96,12 +97,12 @@ class ConfiguratorTest extends Unit
 
     public function testDeprecatedIconsConfig()
     {
-        self::assertFalse($this->configurator->isIconsEnabled());
+        static::assertFalse($this->configurator->isIconsEnabled());
 
         $this->configurator = new Configurator(['enableDefaultIcons' => true]);
 
-        self::assertTrue($this->configurator->isIconsEnabled());
-        self::assertEquals(
+        static::assertTrue($this->configurator->isIconsEnabled());
+        static::assertEquals(
             Configurator::DEFAULT_ICONS_MAP,
             $this->configurator->icons,
             'If "enableDefaultIcons" option is enabled, configurator should have default icons map'
@@ -110,11 +111,11 @@ class ConfiguratorTest extends Unit
 
     public function testGetIconSelector()
     {
-        self::assertEquals('', $this->configurator->getIconSelector('test'));
+        static::assertEquals('', $this->configurator->getIconSelector('test'));
 
         $this->configurator = new Configurator(['enableIcons' => true]);
 
-        self::assertEquals(
+        static::assertEquals(
             Configurator::DEFAULT_ICONS_MAP[Telegram::class],
             $this->configurator->getIconSelector(Telegram::class)
         );

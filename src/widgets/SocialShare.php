@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -23,6 +24,7 @@ use ymaker\social\share\configurators\SeoConfigInterface;
  * Widget for rendering the share links.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 class SocialShare extends Widget
@@ -77,7 +79,6 @@ class SocialShare extends Widget
      * @var array
      */
     public $linkContainerOptions = ['tag' => 'li'];
-
 
     /**
      * Initialize the widget: gets configurator instance,
@@ -169,8 +170,8 @@ class SocialShare extends Widget
     /**
      * Build label for driver.
      *
-     * @param array     $driverConfig
-     * @param string    $defaultLabel
+     * @param array  $driverConfig
+     * @param string $defaultLabel
      *
      * @return string
      */
@@ -184,7 +185,7 @@ class SocialShare extends Widget
     /**
      * Creates driver instance.
      *
-     * @param array $config Configuration for driver.
+     * @param array $config configuration for driver
      *
      * @return \ymaker\social\share\base\AbstractDriver
      *

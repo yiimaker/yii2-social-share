@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -15,9 +16,10 @@ use ymaker\social\share\widgets\SocialShare;
 /**
  * Test case for  [[ymaker\social\share\widgets\SocialShare]].
  *
- * @property-read \UnitTester $tester
+ * @property \UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 class SocialShareTest extends Unit
@@ -40,7 +42,6 @@ class SocialShareTest extends Unit
     private $odnoklassniki = 'https://connect.ok.ru/offer?url=test+url&amp;title=test+title&amp;description=test+description&amp;imageUrl=test+image+url';
     private $trello = 'https://trello.com/add-card?url=test+url&amp;name=test+title';
 
-    
     public function testInvalidConfigException()
     {
         $this->expectException(InvalidConfigException::class);
@@ -71,7 +72,7 @@ class SocialShareTest extends Unit
                     . '<!--/noindex-->';
         $actualHTML = $this->getActualHTML(self::DEFAULT_CONFIG_CONFIGURATOR_ID);
 
-        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
+        static::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links');
 
         $expectedMetaTags = [
             $this->tester->openGraphMetaTag('og:url', 'test url'),
@@ -85,7 +86,7 @@ class SocialShareTest extends Unit
             $this->tester->metaTag('twitter:image', 'test image url'),
         ];
 
-        self::assertEquals($expectedMetaTags, \array_values(Yii::$app->getView()->metaTags));
+        static::assertEquals($expectedMetaTags, \array_values(Yii::$app->getView()->metaTags));
     }
 
     public function testDefaultIcons()
@@ -112,7 +113,7 @@ class SocialShareTest extends Unit
 
         $actualHTML = $this->getActualHTML(self::DEFAULT_ICONS_CONFIGURATOR_ID);
 
-        self::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
+        static::assertEquals($expectedHTML, $actualHTML, 'Widget should render share links with default icons');
     }
 
     public function testDisableMetaTags()
@@ -122,7 +123,7 @@ class SocialShareTest extends Unit
             'url' => 'test',
         ]);
 
-        self::assertSame([], Yii::$app->getView()->metaTags);
+        static::assertSame([], Yii::$app->getView()->metaTags);
     }
 
     /**
@@ -135,11 +136,11 @@ class SocialShareTest extends Unit
     private function getActualHTML($configurator)
     {
         $widget = new SocialShare([
-            'configurator'  => $configurator,
-            'url'           => 'test url',
-            'title'         => 'test title',
-            'description'   => 'test description',
-            'imageUrl'      => 'test image url',
+            'configurator' => $configurator,
+            'url' => 'test url',
+            'title' => 'test title',
+            'description' => 'test description',
+            'imageUrl' => 'test image url',
         ]);
         \ob_start();
         $widget->run();

@@ -3,6 +3,7 @@ Social Share Change Log
 
 Under development
 -----------------
+* Enh: Updated code style (greeflas)
 * Fix: Deprecation warnings in unit tests for Tumblr driver (greeflas)
 
 2.3.3 July 26, 2019

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
  * @copyright Copyright (c) 2017-2019 Yii Maker
@@ -16,6 +17,7 @@ use ymaker\social\share\drivers\Tumblr;
  * Test case for [[Tumblr]] driver.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class TumblrTest extends Unit
@@ -62,7 +64,7 @@ class TumblrTest extends Unit
             . '&content=' . AbstractDriver::encodeData($url)
             . '&tags=' . AbstractDriver::encodeData(\implode(',', $tags));
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeLink()
@@ -84,7 +86,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareUrl);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeText()
@@ -106,7 +108,7 @@ class TumblrTest extends Unit
             . '&title=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeQuote()
@@ -128,7 +130,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypePhoto()
@@ -150,7 +152,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . \implode(',', $sharePhotos);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeVideo()
@@ -172,6 +174,6 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareVideoUrl);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

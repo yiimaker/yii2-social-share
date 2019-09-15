@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @link https://github.com/yiimaker/yii2-social-share
+ * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @license BSD 3-Clause License
+ */
+
 use ymaker\social\share\configurators\Configurator;
 
 $drivers = [
@@ -55,7 +61,7 @@ return [
     'defaultIcons' => [
         'class' => Configurator::class,
         'enableIcons' => true,
-        'socialNetworks' => $drivers
+        'socialNetworks' => $drivers,
     ],
     'disableMetaTags' => [
         'class' => Configurator::class,
