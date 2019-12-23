@@ -26,7 +26,7 @@
     "yiisoft/yii2": "^2.0.13"
   },
   "require-dev": {
-    "codeception/codeception": "~3.0",
+    "codeception/codeception": "~4.0",
     "friendsofphp/php-cs-fixer": "^2.13"
   },
   "autoload": {
