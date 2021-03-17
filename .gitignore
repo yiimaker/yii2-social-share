@@ -20,6 +20,7 @@ codecept.phar
 
 # Composer itself is not needed
 composer.phar
+composer.lock
 
 # Composer vendor dir
 /vendor/
