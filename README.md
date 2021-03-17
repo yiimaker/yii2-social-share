@@ -126,4 +126,4 @@ License
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 
-Copyright (c) 2017-2019, Yii Maker
+Copyright (c) 2017-2021, Volodymyr Kupriienko
