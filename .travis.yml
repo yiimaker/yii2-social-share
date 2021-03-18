@@ -30,4 +30,4 @@ install:
 
 script:
   - composer validate --no-check-lock
-  - composer test
+  - composer tests
