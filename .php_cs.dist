@@ -17,7 +17,9 @@ $finder = \PhpCsFixer\Finder::create()
     ->notPath('tests/_support/UnitTester.php')
 ;
 
-return \PhpCsFixer\Config::create()
+$config = new \PhpCsFixer\Config();
+
+return $config
     ->setCacheFile(__DIR__ . '/.php_cs.cache')
     ->setFinder($finder)
     ->setRules([
