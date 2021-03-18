@@ -4,7 +4,8 @@ Social Share Change Log
 Under development
 -----------------
 * Enh: Updated code style (greeflas)
-* Enh: Add PHP 8 to CI (greeflas)
+* Enh: Added PHP 8 to CI (greeflas)
+* Enh: Codeception updated to 4.0 (greeflas)
 * Fix: Deprecation warnings in unit tests for Tumblr driver (greeflas)
 * Fix: Codeception config deprecations (greeflas)
 
