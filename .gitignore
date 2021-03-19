@@ -11,3 +11,6 @@
 # PHP CS Fixer files
 /.php_cs
 /.php_cs.cache
+
+# Codeception files
+/codeception.yml

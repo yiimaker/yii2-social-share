@@ -6,7 +6,7 @@
  * @license BSD 3-Clause License
  */
 
-namespace Helper;
+namespace ymaker\social\share\tests\Helper;
 
 /**
  * Helper for unit tests.

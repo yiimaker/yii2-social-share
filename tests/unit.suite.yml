@@ -1,9 +1,0 @@
-class_name: UnitTester
-
-bootstrap: false
-
-modules:
-  enabled:
-    - Asserts
-    - Yii2
-    - \Helper\Unit

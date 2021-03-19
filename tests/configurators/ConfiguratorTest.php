@@ -6,7 +6,7 @@
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\configurators;
+namespace ymaker\social\share\tests\configurators;
 
 use Codeception\Test\Unit;
 use ymaker\social\share\configurators\Configurator;
