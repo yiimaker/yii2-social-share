@@ -6,7 +6,7 @@
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\widgets;
+namespace ymaker\social\share\tests\widgets;
 
 use Codeception\Test\Unit;
 use Yii;
@@ -16,7 +16,7 @@ use ymaker\social\share\widgets\SocialShare;
 /**
  * Test case for  [[ymaker\social\share\widgets\SocialShare]].
  *
- * @property \UnitTester $tester
+ * @property \ymaker\social\share\tests\UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  *
