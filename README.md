@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://stand-with-ukraine.pp.ua)
+
 <p align="center">
     <a href="https://github.com/yiimaker" target="_blank">
         <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
@@ -10,6 +12,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Monthly Downloads](https://img.shields.io/packagist/dm/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiimaker/yii2-social-share.svg)](https://packagist.org/packages/yiimaker/yii2-social-share)
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 With this extension you can share data from your web pages to any social network!
 Features: SEO support, default icons for social networks, easy creation of custom drivers
