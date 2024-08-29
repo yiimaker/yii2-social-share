@@ -1,7 +1,7 @@
 Social Share Change Log
 =======================
 
-Under development
+2.3.4 August 30, 2024
 -----------------
 * Enh: Updated code style (greeflas)
 * Enh: Added PHP 8 to CI (greeflas)
