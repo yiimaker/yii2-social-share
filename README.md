@@ -22,14 +22,12 @@ Documentation is at [docs/guide/README.md](docs/guide/README.md).
 
 Extension supports from the box next social network drivers:
 
-* [Vkontakte](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Vkontakte.php)
 * [Facebook](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Facebook.php)
 * [Twitter](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Twitter.php)
 * [+Google](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/GooglePlus.php)
 * [LinkedIn](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/LinkedIn.php)
 * [Pinterest](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Pinterest.php)
 * [Tumblr](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Tumblr.php)
-* [Odnoklassniki](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Odnoklassniki.php)
 * [Trello](https://github.com/yiimaker/yii2-social-share/blob/master/src/drivers/Trello.php)
 
 drivers for messengers:
@@ -75,14 +73,8 @@ Configure social networks in config file
         'socialShare' => [
             'class' => \ymaker\social\share\configurators\Configurator::class,
             'socialNetworks' => [
-                'vkontakte' => [
-                    'class' => \ymaker\social\share\drivers\Vkontakte::class,
-                ],
                 'facebook' => [
                     'class' => \ymaker\social\share\drivers\Facebook::class,
-                ],
-                'odnoklasniki' => [
-                    'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
                 ],
             ],
         ],
@@ -108,7 +100,7 @@ Tests
 You can run tests with composer command
 
 ```
-$ composer test
+$ composer tests
 ```
 
 or using following command
@@ -134,4 +126,4 @@ License
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 
-Copyright (c) 2017-2019, Yii Maker
+Copyright (c) 2017-2021, Volodymyr Kupriienko

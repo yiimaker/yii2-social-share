@@ -1,48 +1,50 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\drivers;
+namespace ymaker\social\share\tests\drivers;
 
 use Codeception\Test\Unit;
+use yii\base\InvalidConfigException;
 use ymaker\social\share\base\AbstractDriver;
 use ymaker\social\share\drivers\Tumblr;
 
 /**
  * Test case for [[Tumblr]] driver.
  *
+ * @property \ymaker\social\share\tests\UnitTester $tester
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class TumblrTest extends Unit
 {
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionInvalidPostType()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr(['postType' => 'not exist']);
     }
 
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionEmptyPhotosList()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr([
             'postType' => Tumblr::POST_TYPE_PHOTO,
             'sharePhotos' => [],
         ]);
     }
 
-    /**
-     * @expectedException \yii\base\InvalidConfigException
-     */
     public function testInitExceptionEmptyVideoShareUrl()
     {
+        $this->expectException(InvalidConfigException::class);
+
         new Tumblr([
             'postType' => Tumblr::POST_TYPE_VIDEO,
             'shareVideoUrl' => null,
@@ -64,7 +66,7 @@ class TumblrTest extends Unit
             . '&content=' . AbstractDriver::encodeData($url)
             . '&tags=' . AbstractDriver::encodeData(\implode(',', $tags));
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeLink()
@@ -86,7 +88,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareUrl);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeText()
@@ -108,7 +110,7 @@ class TumblrTest extends Unit
             . '&title=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeQuote()
@@ -130,7 +132,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($description);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypePhoto()
@@ -152,7 +154,7 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . \implode(',', $sharePhotos);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 
     public function testGetLinkWithPostTypeVideo()
@@ -174,6 +176,6 @@ class TumblrTest extends Unit
             . '&caption=' . AbstractDriver::encodeData($title)
             . '&content=' . AbstractDriver::encodeData($shareVideoUrl);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

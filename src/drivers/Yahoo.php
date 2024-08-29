@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
@@ -12,9 +13,10 @@ use ymaker\social\share\base\AbstractMailDriver;
 /**
  * Driver for Yahoo.
  *
- * @link https://www.yahoo.com
+ * @see https://www.yahoo.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 2.0
  */
 class Yahoo extends AbstractMailDriver

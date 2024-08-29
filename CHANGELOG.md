@@ -1,6 +1,15 @@
 Social Share Change Log
 =======================
 
+2.3.4 August 30, 2024
+-----------------
+* Enh: Updated code style (greeflas)
+* Enh: Added PHP 8 to CI (greeflas)
+* Enh: Codeception updated to 4.0 (greeflas)
+* Chg: Removed config for Scrutinizer CI (greeflas)
+* Fix: Deprecation warnings in unit tests for Tumblr driver (greeflas)
+* Fix: Codeception config deprecations (greeflas)
+
 2.3.3 July 26, 2019
 -------------------
 * Enh: Updates codeception version to 3.0 (greeflas)

@@ -1,0 +1,23 @@
+namespace: ymaker\social\share\tests
+suites:
+  unit:
+    path: .
+    actor: UnitTester
+    modules:
+      enabled:
+        - Asserts
+        - Yii2:
+            part: ORM
+            configFile: 'tests/_config/app.php'
+        - ymaker\social\share\tests\Helper\Unit
+    step_decorators: ~
+settings:
+  shuffle: true
+  lint: true
+  colors: true
+paths:
+  tests: tests
+  output: tests/_output
+  support: tests/_support
+  data: tests
+bootstrap: _bootstrap.php

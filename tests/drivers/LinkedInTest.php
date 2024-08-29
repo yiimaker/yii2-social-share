@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\drivers;
+namespace ymaker\social\share\tests\drivers;
 
 use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
@@ -14,7 +15,10 @@ use ymaker\social\share\drivers\LinkedIn;
 /**
  * Test case for [[LinkedIn]] driver.
  *
+ * @property \ymaker\social\share\tests\UnitTester $tester
+ *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class LinkedInTest extends Unit
@@ -34,6 +38,6 @@ class LinkedInTest extends Unit
             . '&summary=' . AbstractDriver::encodeData($description)
             . '&source=' . AbstractDriver::encodeData($siteName);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

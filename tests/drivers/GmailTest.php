@@ -1,23 +1,27 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\drivers;
+namespace ymaker\social\share\tests\drivers;
 
 use Codeception\Test\Unit;
 use ymaker\social\share\base\AbstractDriver;
-use ymaker\social\share\drivers\Yahoo;
+use ymaker\social\share\drivers\Gmail;
 
 /**
- * Test case for [[Yahoo]] driver.
+ * Test case for [[Gmail]] driver.
+ *
+ * @property \ymaker\social\share\tests\UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
- * @since 2.0
+ *
+ * @since 1.4.0
  */
-class YahooTest extends Unit
+class GmailTest extends Unit
 {
     public function testGetLink()
     {
@@ -25,16 +29,16 @@ class YahooTest extends Unit
         $description = 'this is description';
         $url = 'http://example.com';
 
-        $driver = new Yahoo(\compact('title', 'description', 'url'));
+        $driver = new Gmail(\compact('title', 'description', 'url'));
 
         $body = \strtr('{description} - {url}', [
             '{description}' => $description,
             '{url}' => $url,
         ]);
-        $expected = 'https://compose.mail.yahoo.com/'
-            . '?subject=' . AbstractDriver::encodeData($title)
+        $expected = 'https://mail.google.com/mail/?view=cm&fs=1'
+            . '&su=' . AbstractDriver::encodeData($title)
             . '&body=' . AbstractDriver::encodeData($body);
 
-        self::assertEquals($expected, $driver->getLink());
+        static::assertEquals($expected, $driver->getLink());
     }
 }

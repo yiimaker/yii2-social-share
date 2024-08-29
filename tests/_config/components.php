@@ -1,11 +1,14 @@
 <?php
 
+/**
+ * @link https://github.com/yiimaker/yii2-social-share
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
+ * @license BSD 3-Clause License
+ */
+
 use ymaker\social\share\configurators\Configurator;
 
 $drivers = [
-    'vkontakte' => [
-        'class' => \ymaker\social\share\drivers\Vkontakte::class,
-    ],
     'facebook' => [
         'class' => \ymaker\social\share\drivers\Facebook::class,
     ],
@@ -39,9 +42,6 @@ $drivers = [
     'yahoo' => [
         'class' => \ymaker\social\share\drivers\Yahoo::class,
     ],
-    'odnoklassniki' => [
-        'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
-    ],
     'trello' => [
         'class' => \ymaker\social\share\drivers\Trello::class,
     ],
@@ -55,7 +55,7 @@ return [
     'defaultIcons' => [
         'class' => Configurator::class,
         'enableIcons' => true,
-        'socialNetworks' => $drivers
+        'socialNetworks' => $drivers,
     ],
     'disableMetaTags' => [
         'class' => Configurator::class,

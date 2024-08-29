@@ -1,28 +1,16 @@
-# Windows thumbnail cache
-Thumbs.db
-
-# Mac DS_Store Files
+# Mac DS_Store files
 .DS_Store
 
-# PHPStorm project files
-.idea/
+# PhpStorm project files
+/.idea/
 
-# Netbeans project files
-nbproject
-
-# Zend studio for eclipse project files
-.buildpath
-.project
-.settings
-
-# Codeception is not needed
-codecept.phar
-
-# Composer itself is not needed
-composer.phar
-
-# Composer vendor dir
+# Composer files
 /vendor/
+/composer.lock
 
-# PHP CS Fixer cache
-.php_cs.cache
+# PHP CS Fixer files
+/.php_cs
+/.php_cs.cache
+
+# Codeception files
+/codeception.yml

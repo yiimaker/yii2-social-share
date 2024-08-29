@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
@@ -13,18 +14,19 @@ use ymaker\social\share\base\AbstractDriver;
 /**
  * Driver for Tumblr.
  *
- * @link https://www.tumblr.com
+ * @see https://www.tumblr.com
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class Tumblr extends AbstractDriver
 {
-    const POST_TYPE_LINK    = 'link';
-    const POST_TYPE_TEXT    = 'text';
-    const POST_TYPE_QUOTE   = 'quote';
-    const POST_TYPE_PHOTO   = 'photo';
-    const POST_TYPE_VIDEO   = 'video';
+    const POST_TYPE_LINK = 'link';
+    const POST_TYPE_TEXT = 'text';
+    const POST_TYPE_QUOTE = 'quote';
+    const POST_TYPE_PHOTO = 'photo';
+    const POST_TYPE_VIDEO = 'video';
 
     /**
      * @var string
@@ -52,7 +54,6 @@ class Tumblr extends AbstractDriver
      * @var array|string
      */
     public $tags = [];
-
 
     /**
      * {@inheritdoc}
@@ -98,15 +99,19 @@ class Tumblr extends AbstractDriver
                     null === $this->shareUrl ? $this->url : $this->shareUrl,
                     null !== $this->shareUrl
                 );
+
                 break;
             case self::POST_TYPE_PHOTO:
                 $this->appendToData('content', \implode(',', $this->sharePhotos));
+
                 break;
             case self::POST_TYPE_VIDEO:
                 $this->appendToData('content', $this->shareVideoUrl);
+
                 break;
             default:
                 $this->appendToData('content', $this->description, false);
+
                 break;
         }
 

@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
@@ -10,41 +11,38 @@ namespace ymaker\social\share\configurators;
 use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 use ymaker\social\share\drivers\Facebook;
+use ymaker\social\share\drivers\Gmail;
 use ymaker\social\share\drivers\GooglePlus;
 use ymaker\social\share\drivers\LinkedIn;
-use ymaker\social\share\drivers\Gmail;
-use ymaker\social\share\drivers\Trello;
-use ymaker\social\share\drivers\WhatsApp;
-use ymaker\social\share\drivers\Telegram;
 use ymaker\social\share\drivers\Pinterest;
+use ymaker\social\share\drivers\Telegram;
+use ymaker\social\share\drivers\Trello;
 use ymaker\social\share\drivers\Tumblr;
 use ymaker\social\share\drivers\Twitter;
-use ymaker\social\share\drivers\Vkontakte;
+use ymaker\social\share\drivers\WhatsApp;
 use ymaker\social\share\drivers\Yahoo;
-use ymaker\social\share\drivers\Odnoklassniki;
 
 /**
  * Configurator for social network drivers.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.0
  */
 class Configurator extends BaseObject implements ConfiguratorInterface, IconsConfigInterface, SeoConfigInterface
 {
     const DEFAULT_ICONS_MAP = [
-        Vkontakte::class     => 'si si-vk',
-        Facebook::class      => 'si si-facebook',
-        Twitter::class       => 'si si-twitter',
-        GooglePlus::class    => 'si si-google-plus',
-        LinkedIn::class      => 'si si-linkedin',
-        Pinterest::class     => 'si si-pinterest',
-        Telegram::class      => 'si si-telegram',
-        WhatsApp::class      => 'si si-whatsapp',
-        Gmail::class         => 'si si-gmail',
-        Tumblr::class        => 'si si-tumblr',
-        Yahoo::class         => 'si si-yahoo',
-        Odnoklassniki::class => 'si si-odnoklassniki',
-        Trello::class        => 'si si-trello',
+        Facebook::class => 'si si-facebook',
+        Twitter::class => 'si si-twitter',
+        GooglePlus::class => 'si si-google-plus',
+        LinkedIn::class => 'si si-linkedin',
+        Pinterest::class => 'si si-pinterest',
+        Telegram::class => 'si si-telegram',
+        WhatsApp::class => 'si si-whatsapp',
+        Gmail::class => 'si si-gmail',
+        Tumblr::class => 'si si-tumblr',
+        Yahoo::class => 'si si-yahoo',
+        Trello::class => 'si si-trello',
     ];
 
     /**
@@ -110,7 +108,6 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
      */
     public $registerMetaTags = true;
 
-
     /**
      * Set default values for special link options.
      */
@@ -119,7 +116,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
         if ($this->isSeoEnabled() && empty($this->seoOptions)) {
             $this->seoOptions = [
                 'target' => '_blank',
-                'rel'    => 'noopener',
+                'rel' => 'noopener',
             ];
         }
 
@@ -173,7 +170,7 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
     /**
      * {@inheritdoc}
      *
-     * @param string $driverName Class name of the needed driver.
+     * @param string $driverName class name of the needed driver
      */
     public function getIconSelector($driverName)
     {

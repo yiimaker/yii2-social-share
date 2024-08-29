@@ -6,6 +6,8 @@ php:
   - 7.1
   - 7.2
   - 7.3
+  - 7.4
+  - 8.0
 
 git:
   depth: 1
@@ -21,15 +23,12 @@ cache:
 
 env: DEFAULT_COMPOSER_FLAGS="--optimize-autoloader --no-interaction"
 
-before_install:
-  # Composer: boost installation
-  - composer global show hirak/prestissimo -q || travis_retry composer global require $DEFAULT_COMPOSER_FLAGS hirak/prestissimo
-
 install:
   # install dependencies
   - travis_retry composer self-update && composer --version
-  - travis_retry composer update --prefer-dist $DEFAULT_COMPOSER_FLAGS
+  - travis_retry composer install $DEFAULT_COMPOSER_FLAGS
 
 script:
   - composer validate --no-check-lock
-  - composer test
+  - composer cs-check
+  - composer tests

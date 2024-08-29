@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
@@ -11,6 +12,7 @@ namespace ymaker\social\share\base;
  * Base class for drivers for mail services like Gmail and Yahoo.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 2.0
  */
 abstract class AbstractMailDriver extends AbstractDriver
@@ -20,7 +22,6 @@ abstract class AbstractMailDriver extends AbstractDriver
      */
     public $bodyPattern = '{description} - {url}';
 
-
     /**
      * {@inheritdoc}
      */
@@ -29,9 +30,9 @@ abstract class AbstractMailDriver extends AbstractDriver
         $this->title = static::encodeData($this->title);
 
         $this->appendToData('body', \strtr($this->bodyPattern, [
-            '{url}'         => $this->url,
+            '{url}' => $this->url,
             '{description}' => $this->description,
-            '{imageUrl}'    => $this->imageUrl,
+            '{imageUrl}' => $this->imageUrl,
         ]));
     }
 }

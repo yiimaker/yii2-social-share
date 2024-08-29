@@ -20,7 +20,7 @@ Tests
 You can run tests with composer command
 
 ```
-$ composer test
+$ composer tests
 ```
 
 or using following command

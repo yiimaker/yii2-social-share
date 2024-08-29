@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @link https://github.com/yiimaker/yii2-social-share
- * @copyright Copyright (c) 2017-2019 Yii Maker
+ * @copyright Copyright (c) 2017-2021 Volodymyr Kupriienko
  * @license BSD 3-Clause License
  */
 
-namespace ymaker\social\share\tests\unit\drivers;
+namespace ymaker\social\share\tests\drivers;
 
 use Codeception\Test\Unit;
 use Yii;
@@ -14,9 +15,10 @@ use ymaker\social\share\drivers\Facebook;
 /**
  * Test case for [[Facebook]] driver.
  *
- * @property-read \UnitTester $tester
+ * @property \UnitTester $tester
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
+ *
  * @since 1.4.0
  */
 class FacebookTest extends Unit
@@ -44,6 +46,6 @@ class FacebookTest extends Unit
             $this->tester->openGraphMetaTag('og:image', $imageUrl),
         ];
 
-        self::assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
+        static::assertEquals($expected, \array_values(Yii::$app->getView()->metaTags));
     }
 }

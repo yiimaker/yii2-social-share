@@ -1,5 +1,6 @@
 <?php
 
+namespace ymaker\social\share\tests;
 
 /**
  * Inherited Methods
@@ -12,7 +13,7 @@
  * @method void am($role)
  * @method void lookForwardTo($achieveValue)
  * @method void comment($description)
- * @method \Codeception\Lib\Friend haveFriend($name, $actorClass = NULL)
+ * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
 */
