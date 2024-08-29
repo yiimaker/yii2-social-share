@@ -27,7 +27,6 @@ class SocialShareTest extends Unit
     const DEFAULT_CONFIG_CONFIGURATOR_ID = 'defaultConfig';
     const DEFAULT_ICONS_CONFIGURATOR_ID = 'defaultIcons';
 
-    private $vk = 'http://vk.com/share.php?url=test+url&amp;title=test+title&amp;description=test+description&amp;image=test+image+url';
     private $facebook = 'http://www.facebook.com/sharer.php?u=test+url';
     private $twitter = 'http://twitter.com/share?url=test+url&amp;text=test+description';
     private $googlePlus = 'https://plusone.google.com/_/+1/confirm?hl=en&amp;url=test+url';
@@ -39,7 +38,6 @@ class SocialShareTest extends Unit
     private $gmail = 'https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=test+title&amp;body=test+description+-+test+url';
     private $tumblr = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=test+url&amp;posttype=link&amp;caption=test+title&amp;content=test+url';
     private $yahoo = 'https://compose.mail.yahoo.com/?subject=test+title&amp;body=test+description+-+test+url';
-    private $odnoklassniki = 'https://connect.ok.ru/offer?url=test+url&amp;title=test+title&amp;description=test+description&amp;imageUrl=test+image+url';
     private $trello = 'https://trello.com/add-card?url=test+url&amp;name=test+title';
 
     public function testInvalidConfigException()
@@ -54,7 +52,6 @@ class SocialShareTest extends Unit
         $expectedHTML =
                     '<!--noindex-->'
                     . '<ul class="social-share">'
-                        . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\">Vkontakte</a></li>"
                         . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\">Facebook</a></li>"
                         . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\">Twitter</a></li>"
                         . "<li><a href=\"$this->googlePlus\" rel=\"noopener\" target=\"_blank\">Google Plus</a></li>"
@@ -66,7 +63,6 @@ class SocialShareTest extends Unit
                         . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\">Gmail</a></li>"
                         . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\">Tumblr</a></li>"
                         . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\">Yahoo</a></li>"
-                        . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\">Odnoklassniki</a></li>"
                         . "<li><a href=\"$this->trello\" rel=\"noopener\" target=\"_blank\">Trello</a></li>"
                     . '</ul>'
                     . '<!--/noindex-->';
@@ -94,7 +90,6 @@ class SocialShareTest extends Unit
         $expectedHTML =
             '<!--noindex-->'
             . '<ul class="social-share">'
-                . "<li><a href=\"$this->vk\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-vk\"></i></a></li>"
                 . "<li><a href=\"$this->facebook\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-facebook\"></i></a></li>"
                 . "<li><a href=\"$this->twitter\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-twitter\"></i></a></li>"
                 . "<li><a href=\"$this->googlePlus\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-google-plus\"></i></a></li>"
@@ -106,7 +101,6 @@ class SocialShareTest extends Unit
                 . "<li><a href=\"$this->gmail\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-gmail\"></i></a></li>"
                 . "<li><a href=\"$this->tumblr\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-tumblr\"></i></a></li>"
                 . "<li><a href=\"$this->yahoo\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-yahoo\"></i></a></li>"
-                . "<li><a href=\"$this->odnoklassniki\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-odnoklassniki\"></i></a></li>"
                 . "<li><a href=\"$this->trello\" rel=\"noopener\" target=\"_blank\"><i class=\"si si-trello\"></i></a></li>"
             . '</ul>'
             . '<!--/noindex-->';

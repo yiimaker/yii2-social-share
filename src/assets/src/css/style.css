@@ -1,17 +1,18 @@
 @font-face {
   font-family: 'social-icons';
   src:
-    url('../fonts/social-icons.ttf?o9q9ei') format('truetype'),
-    url('../fonts/social-icons.woff?o9q9ei') format('woff'),
-    url('../fonts/social-icons.svg?o9q9ei#social-icons') format('svg');
+    url('../fonts/social-icons.ttf?9obbpk') format('truetype'),
+    url('../fonts/social-icons.woff?9obbpk') format('woff'),
+    url('../fonts/social-icons.svg?9obbpk#social-icons') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 .si {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'social-icons' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -38,9 +39,6 @@
 .si-linkedin:before {
   content: "\eaca";
 }
-.si-yahoo:before {
-  content: "\e900";
-}
 .si-tumblr:before {
   content: "\f173";
 }
@@ -55,10 +53,4 @@
 }
 .si-google-plus:before {
   content: "\e902";
-}
-.si-vk:before {
-  content: "\e903";
-}
-.si-odnoklassniki:before {
-  content: "\e906";
 }

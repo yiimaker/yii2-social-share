@@ -14,13 +14,11 @@ use ymaker\social\share\drivers\Facebook;
 use ymaker\social\share\drivers\Gmail;
 use ymaker\social\share\drivers\GooglePlus;
 use ymaker\social\share\drivers\LinkedIn;
-use ymaker\social\share\drivers\Odnoklassniki;
 use ymaker\social\share\drivers\Pinterest;
 use ymaker\social\share\drivers\Telegram;
 use ymaker\social\share\drivers\Trello;
 use ymaker\social\share\drivers\Tumblr;
 use ymaker\social\share\drivers\Twitter;
-use ymaker\social\share\drivers\Vkontakte;
 use ymaker\social\share\drivers\WhatsApp;
 use ymaker\social\share\drivers\Yahoo;
 
@@ -34,7 +32,6 @@ use ymaker\social\share\drivers\Yahoo;
 class Configurator extends BaseObject implements ConfiguratorInterface, IconsConfigInterface, SeoConfigInterface
 {
     const DEFAULT_ICONS_MAP = [
-        Vkontakte::class => 'si si-vk',
         Facebook::class => 'si si-facebook',
         Twitter::class => 'si si-twitter',
         GooglePlus::class => 'si si-google-plus',
@@ -45,7 +42,6 @@ class Configurator extends BaseObject implements ConfiguratorInterface, IconsCon
         Gmail::class => 'si si-gmail',
         Tumblr::class => 'si si-tumblr',
         Yahoo::class => 'si si-yahoo',
-        Odnoklassniki::class => 'si si-odnoklassniki',
         Trello::class => 'si si-trello',
     ];
 

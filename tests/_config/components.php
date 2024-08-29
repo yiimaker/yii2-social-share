@@ -9,9 +9,6 @@
 use ymaker\social\share\configurators\Configurator;
 
 $drivers = [
-    'vkontakte' => [
-        'class' => \ymaker\social\share\drivers\Vkontakte::class,
-    ],
     'facebook' => [
         'class' => \ymaker\social\share\drivers\Facebook::class,
     ],
@@ -44,9 +41,6 @@ $drivers = [
     ],
     'yahoo' => [
         'class' => \ymaker\social\share\drivers\Yahoo::class,
-    ],
-    'odnoklassniki' => [
-        'class' => \ymaker\social\share\drivers\Odnoklassniki::class,
     ],
     'trello' => [
         'class' => \ymaker\social\share\drivers\Trello::class,
